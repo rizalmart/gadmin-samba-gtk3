@@ -1,0 +1,185 @@
+/* config.h.in.  Generated from configure.in by autoheader.  */
+
+/* application config dir */
+#undef APPCONFDIR
+
+/* always defined to indicate that i18n is enabled */
+#undef ENABLE_NLS
+
+/* Path to the gadmin_samba_users file */
+#undef GADMIN_SAMBA_USERS
+
+/* needed for gettext... */
+#undef GETTEXT_PACKAGE
+
+/* path to group */
+#undef GROUP_FILE
+
+/* path to gshadow */
+#undef GSHADOW_FILE
+
+/* Define to 1 if you have the 'bind_textdomain_codeset' function. */
+#undef HAVE_BIND_TEXTDOMAIN_CODESET
+
+/* Define to 1 if you have the Mac OS X function CFLocaleCopyCurrent in the
+   CoreFoundation framework. */
+#undef HAVE_CFLOCALECOPYCURRENT
+
+/* Define to 1 if you have the Mac OS X function CFPreferencesCopyAppValue in
+   the CoreFoundation framework. */
+#undef HAVE_CFPREFERENCESCOPYAPPVALUE
+
+/* Define for linking with -lcrypt */
+#undef HAVE_CRYPT
+
+/* Define to 1 if you have the 'dcgettext' function. */
+#undef HAVE_DCGETTEXT
+
+/* Define if the GNU gettext() function is already present or preinstalled. */
+#undef HAVE_GETTEXT
+
+/* Define to 1 if you have the <inttypes.h> header file. */
+#undef HAVE_INTTYPES_H
+
+/* Define if your <locale.h> file defines LC_MESSAGES. */
+#undef HAVE_LC_MESSAGES
+
+/* Define to 1 if you have the <locale.h> header file. */
+#undef HAVE_LOCALE_H
+
+/* Define to 1 if you have the <stdint.h> header file. */
+#undef HAVE_STDINT_H
+
+/* Define to 1 if you have the <stdio.h> header file. */
+#undef HAVE_STDIO_H
+
+/* Define to 1 if you have the <stdlib.h> header file. */
+#undef HAVE_STDLIB_H
+
+/* Define to 1 if you have the <strings.h> header file. */
+#undef HAVE_STRINGS_H
+
+/* Define to 1 if you have the <string.h> header file. */
+#undef HAVE_STRING_H
+
+/* Define to 1 if you have the <sys/stat.h> header file. */
+#undef HAVE_SYS_STAT_H
+
+/* Define to 1 if you have the <sys/types.h> header file. */
+#undef HAVE_SYS_TYPES_H
+
+/* Define to 1 if you have the <unistd.h> header file. */
+#undef HAVE_UNISTD_H
+
+/* Path to kerberos configuration */
+#undef KERBEROS_CONF
+
+/* var dir */
+#undef LOCALSTATEDIR
+
+/* The minimum accepted password length. */
+#undef MIN_PASS_LEN
+
+/* Path to the nmbd binary */
+#undef NMBD_BINARY
+
+/* Name of package */
+#undef PACKAGE
+
+/* Define to the address where bug reports for this package should be sent. */
+#undef PACKAGE_BUGREPORT
+
+/* Define to the full name of this package. */
+#undef PACKAGE_NAME
+
+/* Define to the full name and version of this package. */
+#undef PACKAGE_STRING
+
+/* Define to the one symbol short name of this package. */
+#undef PACKAGE_TARNAME
+
+/* Define to the home page for this package. */
+#undef PACKAGE_URL
+
+/* Define to the version of this package. */
+#undef PACKAGE_VERSION
+
+/* path to passwd */
+#undef PASSWD_FILE
+
+/* Path to the pdbedit binary */
+#undef PDBEDIT_BINARY
+
+/* path to the proc filesystem */
+#undef PROC_PATH
+
+/* Path to smbd.conf */
+#undef SAMBA_CONF
+
+/* Path to backup smb.conf */
+#undef SAMBA_CONF_BACKUP
+
+/* The user that samba runs as IE: nobody. */
+#undef SAMBA_USER
+
+/* Path to smbusers */
+#undef SAMBA_USERMAP
+
+/* path to the security log */
+#undef SECURE_LOG
+
+/* application config file */
+#undef SETTINGS_FILE
+
+/* path to shadow */
+#undef SHADOW_FILE
+
+/* path to shells */
+#undef SHELLS_FILE
+
+/* Path to the smbd binary */
+#undef SMBD_BINARY
+
+/* Define to 1 if all of the C89 standard headers exist (not just the ones
+   required in a freestanding environment). This macro is provided for
+   backward compatibility; new code need not use it. */
+#undef STDC_HEADERS
+
+/* etc dir */
+#undef SYSCONFDIR
+
+/* Command for making the server start at boot */
+#undef SYSINIT_START_CMD
+
+/* Command for not making the server start at boot */
+#undef SYSINIT_STOP_CMD
+
+/* using aix macros... */
+#undef USE_AIX
+
+/* using darwin macros... */
+#undef USE_DARWIN
+
+/* using freebsd macros... */
+#undef USE_FREEBSD
+
+/* using hpux macros... */
+#undef USE_HPUX
+
+/* using Linux macros... */
+#undef USE_LINUX
+
+/* using netbsd macros... */
+#undef USE_NETBSD
+
+/* using openbsd macros... */
+#undef USE_OPENBSD
+
+/* using sunos macros... */
+#undef USE_SUNOS
+
+/* Version number of package */
+#undef VERSION
+
+/* Path to the winbindd binary */
+#undef WINBINDD_BINARY

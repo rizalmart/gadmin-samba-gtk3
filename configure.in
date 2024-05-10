@@ -1,0 +1,210 @@
+dnl Process this file with autoconf to produce a configure script.
+
+AC_INIT(configure.in)
+
+AM_INIT_AUTOMAKE(gadmin-samba, 3.0.0)
+AM_CONFIG_HEADER(config.h)
+AM_MAINTAINER_MODE
+
+AC_CANONICAL_HOST
+AC_MSG_CHECKING([for OS type])
+case $host in
+    *-linux*)
+    AC_MSG_RESULT([Linux ($host) found.])
+    AC_DEFINE(USE_LINUX,1,[using linux macros...])
+    ;;
+    *-solaris*)
+    AC_MSG_RESULT([Solaris ($host) found.])
+    AC_DEFINE(USE_SUNOS,1,[using sunos macros...])
+    ;;
+    *-sunos*)
+    AC_MSG_RESULT([Solaris ($host) found.])
+    AC_DEFINE(USE_SUNOS,1,[using sunos macros...])
+    ;;
+    *-freebsd*)
+    AC_MSG_RESULT([Free BSD ($host) found.])
+    AC_DEFINE(USE_FREEBSD,1,[using freebsd macros...])
+    ;;
+    *-openbsd*)
+    AC_MSG_RESULT([Open BSD ($host) found.])
+    AC_DEFINE(USE_OPENBSD,1,[using openbsd macros...])
+    ;;
+    *-netbsd*)
+    AC_MSG_RESULT([Net BSD ($host) found.])
+    AC_DEFINE(USE_NETBSD,1,[using netbsd macros...])
+    ;;
+    *-darwin*)
+    AC_MSG_RESULT([Darwin Mac OS X ($host) found.])
+    AC_DEFINE(USE_DARWIN,1,[using darwin macros...])
+    ;;
+    *-aix*)
+    AC_MSG_RESULT([AIX ($host) found.])
+    AC_DEFINE(USE_AIX,1,[using aix macros...])
+    ;;
+    *-hpux*)
+    AC_MSG_RESULT([HP UX ($host) found.])
+    AC_DEFINE(USE_HPUX,1,[using hpux macros...])
+    ;;
+    *)
+    AC_MSG_RESULT([Unknown host found: ($host). Using Linux macros...])
+    AC_DEFINE(USE_LINUX,1,[using Linux macros...])
+    ;;
+esac
+
+AC_ISC_POSIX
+AC_PROG_CC
+AM_PROG_CC_STDC
+AC_HEADER_STDC
+
+pkg_modules="gtk+-3.0 >= 3.0.0"
+PKG_CHECK_MODULES(PACKAGE, [$pkg_modules])
+AC_SUBST(PACKAGE_CFLAGS)
+AC_SUBST(PACKAGE_LIBS)
+
+GETTEXT_PACKAGE=gadmin-samba
+AC_SUBST(GETTEXT_PACKAGE)
+AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE",[needed for gettext...])
+
+dnl Add the languages which your application supports here.
+ALL_LINGUAS="fr de"
+AM_GLIB_GNU_GETTEXT
+
+dnl Use -Wall if we have gcc.
+changequote(,)dnl
+if test "x$GCC" = "xyes"; then
+  case " $CFLAGS " in
+  *[\ \	]-Wall[\ \	]*) ;;
+  *) CFLAGS="$CFLAGS -Wall" ;;
+  esac
+fi
+changequote([,])dnl
+
+
+dnl Determine if we can link with -lcrypt
+AC_SEARCH_LIBS(crypt, [crypt],
+[test "$ac_cv_search_crypt" = "none required" || AUTHLIBS="-lcrypt $AUTHLIBS"
+AC_DEFINE_UNQUOTED(HAVE_CRYPT,1,[Define for linking with -lcrypt])])
+
+dnl some dynamic defines and corrections for configure options
+SYSCONFDIR=`eval echo $sysconfdir`
+AC_DEFINE_UNQUOTED(SYSCONFDIR,"`eval echo "${sysconfdir}"`",[etc dir])
+AC_SUBST(SYSCONFDIR)
+
+dnl Path to the local state directory
+LOCALSTATEDIR=`eval echo $localstatedir`
+AC_SUBST(LOCALSTATEDIR)
+AC_DEFINE_UNQUOTED(LOCALSTATEDIR,"`eval echo "${localstatedir}"`",[var dir])
+
+
+test "x$prefix" = xNONE && prefix=$ac_default_prefix
+test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
+
+
+dnl Path to the smbd binary.
+default_smbd_binary="smbd"
+test "x$SMBD_BINARY" = x && SMBD_BINARY=$default_smbd_binary
+AC_DEFINE_UNQUOTED(SMBD_BINARY,"`eval echo "${SMBD_BINARY}"`",[Path to the smbd binary])
+AC_MSG_RESULT([Using SMBD binary: (${SMBD_BINARY})])
+
+dnl Path to the nmbd binary.
+default_nmbd_binary="nmbd"
+test "x$NMBD_BINARY" = x && NMBD_BINARY=$default_nmbd_binary
+AC_DEFINE_UNQUOTED(NMBD_BINARY,"`eval echo "${NMBD_BINARY}"`",[Path to the nmbd binary])
+AC_MSG_RESULT([Using NMBD binary: (${NMBD_BINARY})])
+
+dnl Path to the winbindd binary.
+default_winbindd_binary="winbindd"
+test "x$WINBINDD_BINARY" = x && WINBINDD_BINARY=$default_winbindd_binary
+AC_DEFINE_UNQUOTED(WINBINDD_BINARY,"`eval echo "${WINBINDD_BINARY}"`",[Path to the winbindd binary])
+AC_MSG_RESULT([Using WINBINDD binary: (${WINBINDD_BINARY})])
+
+dnl Path to the pdbedit binary.
+default_pdbedit_binary="pdbedit"
+test "x$PDBEDIT_BINARY" = x && PDBEDIT_BINARY=$default_pdbedit_binary
+AC_DEFINE_UNQUOTED(PDBEDIT_BINARY,"`eval echo "${PDBEDIT_BINARY}"`",[Path to the pdbedit binary])
+AC_MSG_RESULT([Using PDBEDIT binary: (${PDBEDIT_BINARY})])
+
+dnl The default minimum accepted password length is 6.
+default_min_pass_len=6
+test "x$MIN_PASS_LEN" = x && MIN_PASS_LEN=$default_min_pass_len
+AC_DEFINE_UNQUOTED(MIN_PASS_LEN,"`eval echo "${MIN_PASS_LEN}"`",[The minimum accepted password length.])
+AC_MSG_RESULT([Using MIN_PASS_LEN: (${MIN_PASS_LEN})])
+
+dnl The default samba server user.
+default_samba_user="nobody"
+test "x$SAMBA_USER" = x && SAMBA_USER=$default_samba_user
+AC_DEFINE_UNQUOTED(SAMBA_USER,"`eval echo "${SAMBA_USER}"`",[The user that samba runs as IE: nobody.])
+AC_MSG_RESULT([Using samba server user: (${SAMBA_USER})])
+
+dnl Path to the smb.conf file.
+default_smb_conf="/etc/samba/smb.conf"
+test "x$SAMBA_CONF" = x && SAMBA_CONF=$default_smb_conf
+AC_DEFINE_UNQUOTED(SAMBA_CONF,"`eval echo "${SAMBA_CONF}"`",[Path to smbd.conf])
+AC_MSG_RESULT([Using smb.conf file: (${SAMBA_CONF})])
+
+dnl Path to the backup smb.conf file.
+default_smb_conf_backup="${SAMBA_CONF}.old.gadmin-samba-${VERSION}"
+test "x$SAMBA_CONF_BACKUP" = x && SAMBA_CONF_BACKUP=$default_smb_conf_backup
+AC_DEFINE_UNQUOTED(SAMBA_CONF_BACKUP,"`eval echo "${SAMBA_CONF_BACKUP}"`",[Path to backup smb.conf])
+AC_MSG_RESULT([Using backup smb.conf file: (${SAMBA_CONF_BACKUP})])
+
+dnl Path to the gadmin_samba_users file.
+default_gadmin_samba_users="/etc/gadmin-samba/gadmin_samba_users"
+test "x$GADMIN_SAMBA_USERS" = x && GADMIN_SAMBA_USERS=$default_gadmin_samba_users
+AC_DEFINE_UNQUOTED(GADMIN_SAMBA_USERS,"`eval echo "${GADMIN_SAMBA_USERS}"`",[Path to the gadmin_samba_users file])
+AC_MSG_RESULT([Using gadmin_samba_users file: (${GADMIN_SAMBA_USERS})])
+
+dnl Path to the smbusers file.
+default_samba_usermap="/etc/samba/smbusers"
+test "x$SAMBA_USERMAP" = x && SAMBA_USERMAP=$default_samba_usermap
+AC_DEFINE_UNQUOTED(SAMBA_USERMAP,"`eval echo "${SAMBA_USERMAP}"`",[Path to smbusers])
+AC_MSG_RESULT([Using smbusers file: (${SAMBA_USERMAP})])
+
+dnl Path to the kerberos configuration file.
+default_kerberos_conf="/etc/krb5.conf"
+test "x$KERBEROS_CONF" = x && KERBEROS_CONF=$default_kerberos_conf
+AC_DEFINE_UNQUOTED(KERBEROS_CONF,"`eval echo "${KERBEROS_CONF}"`",[Path to kerberos configuration])
+AC_MSG_RESULT([Using kerberos krbX.conf file: (${KERBEROS_CONF})])
+
+dnl Path to the security log.
+default_secure_log="/var/log/secure"
+test "x$SECURE_LOG" = x && SECURE_LOG=$default_secure_log
+AC_DEFINE_UNQUOTED(SECURE_LOG,"`eval echo "${SECURE_LOG}"`",[path to the security log])
+AC_MSG_RESULT([Using security log: (${SECURE_LOG})])
+
+dnl Path the proc filesystem.
+default_proc_path="/proc"
+test "x$PROC_PATH" = x && PROC_PATH=$default_proc_path
+AC_DEFINE_UNQUOTED(PROC_PATH,"`eval echo "${PROC_PATH}"`",[path to the proc filesystem])
+AC_MSG_RESULT([Using proc: (${PROC_PATH})])
+
+dnl Command for making the server start at boot.
+default_sysinit_start_cmd="echo"
+test "x$SYSINIT_START_CMD" = x && SYSINIT_START_CMD=$default_sysinit_start_cmd
+AC_DEFINE_UNQUOTED(SYSINIT_START_CMD,"`eval echo "${SYSINIT_START_CMD}"`",[Command for making the server start at boot])
+AC_MSG_RESULT([Using sysinit start command: (${SYSINIT_START_CMD})])
+
+dnl Command for not making the server start at boot.
+default_sysinit_stop_cmd="echo"
+test "x$SYSINIT_STOP_CMD" = x && SYSINIT_STOP_CMD=$default_sysinit_stop_cmd
+AC_DEFINE_UNQUOTED(SYSINIT_STOP_CMD,"`eval echo "${SYSINIT_STOP_CMD}"`",[Command for not making the server start at boot])
+AC_MSG_RESULT([Using sysinit stop command: (${SYSINIT_STOP_CMD})])
+
+
+dnl Hardcoded paths
+AC_DEFINE_UNQUOTED(SYSCONFDIR,"`eval echo "/etc"`",[etc dir])
+AC_DEFINE_UNQUOTED(APPCONFDIR,"`eval echo "/etc/gadmin-samba"`",[application config dir])
+AC_DEFINE_UNQUOTED(SETTINGS_FILE,"`eval echo "/etc/gadmin-samba/settings.conf"`",[application config file])
+
+AC_DEFINE_UNQUOTED(SHELLS_FILE,"`eval echo "/etc/shells"`",[path to shells])
+AC_DEFINE_UNQUOTED(PASSWD_FILE,"`eval echo "/etc/passwd"`",[path to passwd])
+AC_DEFINE_UNQUOTED(SHADOW_FILE,"`eval echo "/etc/shadow"`",[path to shadow])
+AC_DEFINE_UNQUOTED(GROUP_FILE,"`eval echo "/etc/group"`",[path to group])
+AC_DEFINE_UNQUOTED(GSHADOW_FILE,"`eval echo "/etc/gshadow"`",[path to gshadow])
+
+
+AC_OUTPUT([
+Makefile
+src/Makefile
+po/Makefile.in
+])

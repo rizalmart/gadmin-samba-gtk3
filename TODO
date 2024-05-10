@@ -1,0 +1,98 @@
+
+TODO:
+--------------------------------------------------------------
+0. Handle DOMAINNAME\JoeUser as well as continued lines "\".
+   (Delete, apply, populate users. Populate and apply shares)
+
+1. Domain management tab. Trusts, join domain etc (   )
+   Should also contain user and group mappings.
+
+2. Kerberos realm add,del,change (   )
+-----------------------------------------------------
+When changing to ADS mode "password server" should be
+set to the IP or domain name of the AD-server or '*' for any.
+
+realm = DOMAIN.EXAMPLE.ORG
+security = ads
+password server = <IP-address or name of DC>
+
+Join AD domain:
+kinit Administrator@DOMAIN.EXAMPLE.ORG <-Must be uppercase converted.
+net ads join -Uadministrator%password
+-----------------------------------------------------
+
+3. Multi local, remote user and group imports from 
+   system users to share permission entries and configuration:
+   -----------------------------------------------------------
+    Local users   ( OK )
+    Local groups  ( OK )
+
+    Add smbusers with empty passwords if they dont exist ( OK )
+    (using '-n' to set empty passwords)
+    Note: Set empty passwords to yes to allow these users to login and set their own.
+
+    Remote users  (  )  (add users as DOMAIN\user, REALM\user)
+    Remote groups (  )  (add groups as DOMAIN\@group, REALM\@group)
+    Use 'wbinfo' to receive a list of user and group accounts from domains.
+
+
+4. Settings dialog:
+   Create/Populate/Save/Use settings, 
+   _BUF extension for changing compiletime settings (  )
+   Add: "advanced mode [x]", Use add/remove tables method (  )
+
+5. Help file.
+
+
+6. Translations.
+
+
+
+
+DONE...
+
+   When selecting security level, automatically adjust options accordingly ( OK )
+
+   User tab (users in system and smbpasswd):
+    Add    ( OK )
+    Delete ( OK ) 
+            Question to delete the system user as well  ( OK )
+	    Also removes the user from any share        ( OK )
+
+    Apply add_change_user.c 
+	    Change password and comment                 ( OK )
+	    Checkbutton or question for not changing the system users passwd (  )
+	    
+	    Randomize usernames and passwords ( OK )
+	    Home directory selector           ( OK )
+
+    Show a locked account indicator/setting   ( OK )
+
+   Shared resources tab:
+    Add    ( OK )
+    Delete ( OK )
+    Apply  ( OK )
+
+    Previously added or imported users can easily be used as a template for other users ( OK )
+        
+    Share path directory selector      ( OK )
+
+    Imported users automatically gets /home/profiles/username directories ( OK )
+
+   Machine-accounts tab for adding and deleting machine accounts  ( OK )
+
+   Connections tab for smbstatus, disconnecting users etc ( OK )
+
+
+
+Additional commands to use:
+----------------------------------------------------------
+"smbclient -L //ServerName" (Lists shares)      use: Yes
+"smbstatus"  (Lists connections)		use: Yes ( OK )
+"findsmb"    (Lists domains etc)		use: Yes
+"smbcquotas"					use: Yes
+"smbcacls" (Extended Permissions) 		use: ?
+
+"smbcontrol reload-config" 			use: no
+"wbinfo" (List domain users) 			use: no?
+"smbtree" (Lists all shares incl IPC$, ADMIN$) 	use: No

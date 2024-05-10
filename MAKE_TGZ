@@ -1,0 +1,16 @@
+#!/bin/sh
+
+version='0.3.4'
+beta=''
+
+make clean
+rm -f config.cache
+rm -f Makefile
+rm -f config.h
+rm -f config.log
+rm -f config.status
+rm -f stamp*
+rm -f po/*.gmo
+rm -rf src/.deps
+cd ..
+tar -hzcvf gadmin-samba-$version$beta.tar.gz gadmin-samba-$version

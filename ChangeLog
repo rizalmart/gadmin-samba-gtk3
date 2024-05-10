@@ -1,0 +1,129 @@
+Version 0.3.4
+------------------------------------------------------
+Code cleanup and indent fixes.
+
+
+Version 0.3.3
+------------------------------------------------------
+Sets standard configuration for client signing/schannel,
+server signing/schannel and spnego to yes.
+Fixes a possible startup crash.
+Indent fixes and patch cleanups.
+Combines public and guest ok options.
+Removes the apply server settings button.
+
+
+Version 0.3.2
+------------------------------------------------------
+Allow more then 30 chars for the samba version string.
+Added Valid users = %U as default for the [homes] share.
+
+
+Version 0.3.1
+------------------------------------------------------
+Allows for more dynamic configuration of netlogon, profiles and pdf-documents.
+(Thanks to Nathan Owens of Arch Linux)
+
+
+Version 0.3.0
+------------------------------------------------------
+Changed paths to /var/lib/samba for netlogon, profiles and pdf-documents.
+All users and All groups macros can now be imported.
+Added and updated Deutsch translation (Thanks to Manfred Mueller).
+Adds better default user profile values.
+Improved handling of directories with spaces.
+A small helpfile change (add user/apply user).
+
+
+Version 0.2.9
+------------------------------------------------------
+Requires samba >= 3.4.0.
+Now using pdbedit and the tdbsam files instead
+of the smbpasswd file and binary.
+
+Edit smb.conf options as follows:
+------------------------------------
+Remove: smb passwd file = /etc/samba/smbpasswd
+Add: passdb backend = tdbsam
+
+
+Version 0.2.8
+------------------------------------------------------
+Added a share path selector.
+Added a home directory selector.
+Shows status color. Array comparizon fixes.
+Option "share modes" has been deprecated and will
+be removed automatically when a share is applied.
+Options "locking" and "strict locking" can be used instead.
+
+
+Version 0.2.7
+------------------------------------------------------
+Added "bind interfaces only = yes" to the standard configuration.
+Added French translation thanks to (Martial Lillo) <HiddenEmail>
+Only adds "wins server =" option if an IP or DNS name is given.
+
+
+Version 0.2.6
+------------------------------------------------------
+Adds gtk-remove button icon for access permissions.
+Changes standard conf so that cups printers work again:
+- printcap name = /etc/printcap
++ printcap name = cups
+
+
+Version 0.2.5
+------------------------------------------------------
+Adds support for continued lines (\).
+Improves automatic smb.conf backups.
+
+
+Version 0.2.4
+------------------------------------------------------
+Changed name from gsambad to GAdmin-SAMBA.
+Automatically adjusts gsambads application settings.
+
+
+Version 0.1.9
+------------------------------------------------------
+Added "short preserve case" and set defaults to case sensitive.
+Pam adjustment in the rpm spec file.
+Option follow symlinks is disabled by default.
+Selecting new configuration in the settings shows a standard
+configuration question. Updated the help window.
+Fixes automatic configuration backups.
+
+
+Version 0.1.8
+------------------------------------------------------
+Changed to GPL version 3. Unlocking a user requires a new password to be
+set if it has a NULL or no previous password, no password is ok otherwise.
+Clicking the account locked checkbutton instantly enables or disables the selected user.
+The version information label becomes red if samba isnt installed.
+The add user button is now called new user, it clears the user profile and
+shows some information about adding users the first time its pressed.
+User and group access now consists of 4 treeviews and is unlimited by dividing
+users and groups of 10 into as many configuration lines as required.
+The invalid users option was added. For each new version installed gsambad will write
+a backup of the old configuration like this: /etc/samba/smb.conf.old.gsambad-0.1.7.
+Removes excess whitespace from configuration after changes.
+Added a "New share" share button that clears the share settings and sets defaults.
+There are now 4 different samba account states:
+0 = Not locked.
+1 = Locked and has a valid password.
+2 = Locked but has no previous password set.
+3 = Has an empty/Null password. "Empty password: [x]" is shown.
+
+
+Version 0.1.7
+------------------------------------------------------
+Fixes insecure temp file creation in populate_conns.c
+Thanks to Steve Kemp and Michael Bienia for finding it.
+
+Version 0.1.6
+------------------------------------------------------
+Shell population fixes.
+Added SYSINIT_START_CMD and SYSINIT_STOP_CMD's so
+the servers will be automatically started at boot.
+Changed the /etc/pam.d authentication file to work with new pam specs.
+Main window size adjustments. Updated the English translation.

@@ -1,0 +1,10 @@
+GADMIN-SAMBA is an easy to use GTK+ frontend for the SAMBA file and print server.
+
+Additional required packages:
+-----------------------------
+
+gtk+  >= 2.0.0
+samba >= 3.4.0
+
+I hope you like it.
+Send bugreports, patches or comments to magnus-swe@telia.com

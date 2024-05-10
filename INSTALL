@@ -1,0 +1,21 @@
+
+		    Installation instructions:
+		----------------------------------
+
+ This package cant be installed without giving the correct configure options.
+ The "Autoinstall" file shows how this can be done.
+
+ Currently gadmin-samba has support for the following systems to a varying degree:
+ Linux
+ FreeBSD
+ OpenBSD
+ NetBSD
+ Darwin Mac OSX
+ AIX
+ HP-UX
+ Solaris
+ SunOS
+
+ If gadmin-samba doesnt work flawlessly on your system and you know how to correct it
+ then send a mail explaining how to this in detail, preferrably with a patch to:
+ magnus-swe@telia.com

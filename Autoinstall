@@ -1,0 +1,33 @@
+### Default settings ###
+# SAMBA_CONF="/etc/samba/smb.conf"
+# SAMBA_CONF_BACKUP="${SAMBA_CONF}.old.gadmin-samba-${VERSION}"
+# GADMIN_SAMBA_USERS="/etc/gadmin-samba/gadmin_samba_users"
+# SAMBA_USERMAP="/etc/samba/smbusers"
+# KERBEROS_CONF="/etc/krb5.conf"
+# SECURE_LOG="/var/log/secure"
+# PROC_PATH="/proc"
+# MIN_PASS_LEN="6"
+# SAMBA_USER="nobody"
+# SMBD_BINARY="smbd"
+# NMBD_BINARY="nmbd"
+# WINBINDD_BINARY="winbindd"
+# PDBEDIT_BINARY="pdbedit"
+# SYSINIT_START_CMD="echo"
+# SYSINIT_STOP_CMD="echo"
+
+
+### Debian/Ubuntu install ###
+# ./configure --prefix=/usr --sysconfdir=/etc \
+# --localstatedir=/var --sbindir=/usr/sbin \
+# SYSINIT_START_CMD="update-rc.d -f samba defaults" \
+# SYSINIT_STOP_CMD="update-rc.d -f samba remove" &&
+# make &&
+# make install
+
+### RH/Fedora install ###
+./configure --prefix=/usr --sysconfdir=/etc \
+--localstatedir=/var --sbindir=/usr/sbin \
+SYSINIT_START_CMD="chkconfig smb on" \
+SYSINIT_STOP_CMD="chkconfig smb off" &&
+make &&
+make install
