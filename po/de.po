@@ -1,0 +1,1602 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-08-06 19:59+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: M.Mueller aka Quax <mmueller@live-modules.org>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Write the new users name and other settings in the user profile below.\n"
+msgstr "Benutzernamen und andere Einstellungen in das Benutzer-Profil schreiben.\n"
+
+msgid ""
+"Press apply to add this new user with the selected settings.\n"
+"\n"
+msgstr ""
+"Anwenden drücken um diesen Benutzer mit diesen Einstellungen hinzuzufügen. \n"
+"\n"
+
+msgid "You can also skip this step and directly alter an existing users name and\n"
+msgstr "Sie können diesen Schritt Überspringen und den Benutzernamen sowie die\n"
+
+msgid "settings and then press apply. This can save administration time.\n"
+msgstr "Einstellungen eines existierenden Benutzers ändern und speichern. Das kann Administrationszeit einsparen.\n"
+
+msgid "Can not lock or unlock a samba user that does not exist.\n"
+msgstr "Kann keinen Samba-Nutzer sperren oder entsperren, der nicht existiert.\n"
+
+msgid "A username must be specified.\n"
+msgstr "Ein Benutzername muß angegeben werden.\n"
+
+msgid "Failed to lock samba account: %s\n"
+msgstr "Konnte Samba-Konto %s nicht sperren!\n"
+
+msgid "Failed to unlock samba account: %s using no password\n"
+msgstr "Konnte Samba-Konto %s ohne Passwort nicht entsperren\n"
+
+msgid "Failed to unlock samba account: %s using a password\n"
+msgstr "Konnte Samba-Konto %s mit Passwort nicht entsperren\n"
+
+msgid "Failed to unlock samba account: "
+msgstr "Konnte Samba-Konto nicht entsperren:"
+
+msgid "A new password is required to unlock users that have no previous\n"
+msgstr "Ein neues Passwort wird benötigt um einen Nutzer zu entsperren, \n"
+
+msgid "passwords or empty passwords. The provided password is too short.\n"
+msgstr "der bisher kein oder ein leeres Passwort hatte. Das eingegebene Passwort ist zu kurz.\n"
+
+msgid "You must specify a valid password for this new user.\n"
+msgstr "Sie müssen ein gültiges Passwort für den neuen Benutzer angeben.\n"
+
+msgid ""
+"Failed to create missing samba password file:\n"
+"%s\n"
+msgstr ""
+"Konnte die fehlende Samba Passwort-Datei nicht erstellen:\n"
+"%s\n"
+
+msgid "A groupname must be specified.\n"
+msgstr "Ein Gruppenname muß angegeben werden.\n"
+
+msgid "A comment must be specified.\n"
+msgstr "Ein Kommentar muß angegeben werden.\n"
+
+msgid "A home directory must be specified.\n"
+msgstr "Ein Heim-Verzeichnis muß angegeben werden.\n"
+
+msgid "A shell must be specified.\n"
+msgstr "Eine Shell muß angegeben werden.\n"
+
+msgid "The root system user doesnt exist, nothing was done.\n"
+msgstr "Da Benutzer root nicht existiert, wurde nichts getan.\n"
+
+msgid "Failed changing samba password or adding samba user: %s\n"
+msgstr "Änderung des Samba-Passwortes oder das Hinzufügen des neuen Nutzers: %s ist fehlgeschlagen\n"
+
+msgid ""
+"The samba password for root was changed.\n"
+"Nothing else was changed for this user.\n"
+msgstr ""
+"Das Samba Passwort für root wurde geändert.\n"
+"Nichts anderes wurde für diesen Benutzer geändert.\n"
+
+msgid "The password is too short, adding or changing samba user root failed.\n"
+msgstr "Das Passwort ist zu kurz, Hinzufügen oder Ändern des Samba-Benutzers root ist misslungen.\n"
+
+msgid ""
+"Error adding system user: %s\n"
+"The command was: %s\n"
+msgstr ""
+"Fehler beim Hinzufügen von Benutzer: %s\n"
+"Der Befehl war: %s\n"
+
+msgid "Error adding system user: %s\n"
+msgstr "Fehler beim Hinzufügen des System-Benutzers: %s\n"
+
+msgid "Failed changing password or adding samba user: %s\n"
+msgstr "Ändern des Passwortes oder Hinzufügen des Samba-Benutzers: %s ist fehlgeschlagen\n"
+
+msgid "Failed changing system comment for samba user: %s\n"
+msgstr "Fehler beim Ändern des Systemkommentares für Samba Benutzer: %s\n"
+
+msgid "Error creating directory: %s/samba/profiles/%s\n"
+msgstr "Fehler beim Erstellen des Verzeichnisses: %s/samba/profiles/%s\n"
+
+msgid "Error chowning directory: %s/samba/profiles/%s\n"
+msgstr "Rechtevergabe für Verzeichnis %s/samba/profiles/%s gescheitert\n"
+
+msgid ""
+"Failed creating missing file:\n"
+"%s\n"
+msgstr ""
+"Konnte fehlende Datei nicht erstellen:\n"
+"%s\n"
+
+msgid "This machine account already exists.\n"
+msgstr "Computer-Konto existiert bereits.\n"
+
+msgid "Error adding system machine account: %s\n"
+msgstr "Kann das System-Computerkonto: %s nicht hinzufügen\n"
+
+msgid "Failed adding samba machine account: %s\n"
+msgstr "Kann das Samba-Computerkonto: %s nicht hinzufügen\n"
+
+msgid "The share name is missing, the share was not added.\n"
+msgstr "Der Name der Freigabe fehlt. Sie wurde nicht hinzugefügt.\n"
+
+msgid "The directory to share is missing, the share was not added.\n"
+msgstr "Das freizugebende Verzeichnis fehlt. Es wurde nicht hinzugefügt.\n"
+
+msgid ""
+"Cant open smb.conf here:\n"
+"%s\n"
+msgstr ""
+"smb.conf kann hier nicht geöffnet werden:\n"
+"%s\n"
+
+msgid "The share already exists.\n"
+msgstr "Die Freigabe existiert bereits.\n"
+
+msgid ""
+"Can not write new samba configuration here:\n"
+"%s\n"
+msgstr ""
+"Eine neue Samba Konfiguration kann in:\n"
+"%s nicht geschrieben werden\n"
+
+msgid ""
+"Failed adding default smbusers file here:\n"
+"%s\n"
+msgstr ""
+"Die smbusers-Datei konnte nicht hinzugefügt werden:\n"
+"%s\n"
+
+msgid ""
+"A new smbusers map file was added here:\n"
+"%s\n"
+" It has the following contents: \"root = administrator\" and \"nobody = smbguest\".\n"
+msgstr ""
+"Eine neue smbusers map Datei wurde hier hinzugefügt:\n"
+"%s\n"
+" Sie hat den folgenden Inhalt: \"root = administrator\" und \"nobody = smbguest\".\n"
+
+msgid ""
+"Failed adding the system user:\n"
+"%s\n"
+msgstr ""
+"Konnte den Systemnutzer nicht hinzufügen:\n"
+"%s\n"
+
+msgid ""
+"Cant open smb.conf here: \n"
+"%s\n"
+msgstr ""
+"Kann die smb.conf hier nicht öffnen: \n"
+"%s\n"
+
+msgid "The define for SAMBA_CONF is bad, please reinstall the application.\n"
+msgstr "SAMBA_CONF ist falsch definiert, bitte die Anwendung neu installieren.\n"
+
+msgid "Please specify the server name.\n"
+msgstr "Bitte den Servernamen angeben.\n"
+
+msgid "Please specify a workgroup or domain name.\n"
+msgstr "Bitte Arbeitsgruppen- oder  Domänen-Namen angeben.\n"
+
+msgid ""
+"Can not find the [global] section in %s\n"
+"No changes made.\n"
+msgstr ""
+"Kann die Sektion [global] in %s nicht finden\n"
+"Es wurde nichts geändert.\n"
+
+msgid "A line with over 4000 chars is not valid in: %s\n"
+msgstr "Eine Zeile mit über 4000 Zeichen ist ungültig in: %s\n"
+
+msgid ""
+"Cant write smb.conf here:\n"
+"%s\n"
+msgstr ""
+"Kann smb.conf hier nicht schreiben:\n"
+"%s\n"
+
+msgid ""
+"Auto configuration for \"user\" security level done.\n"
+"Review any changes.\n"
+msgstr ""
+"Auto-Konfiguration für Sicherheitsebene \"Benutzer\" fertig.\n"
+"Bitte Änderungen prüfen.\n"
+
+msgid ""
+"Auto configuration for (BDC) \"backup domain controller\" done.\n"
+"Unlock and supply a samba password for the samba root account if needed.\n"
+msgstr ""
+"Auto-Konfiguration für (BDC) \"Backup Domänen-Kontroller\" fertig.\n"
+"Entsperren und ein Samba Passwort für das Samba root Konto erforderlich.\n"
+
+msgid ""
+"Auto configuration for (PDC) \"primary domain controller\" done.\n"
+"Connect to this domain as root after giving it a samba password and unlocking it.\n"
+msgstr ""
+"Auto-Konfiguration for (PDC) \"Primärer Domänen-Kontroller\" fertig.\n"
+"Bitte Samba-Passwort erstellen, entsperren und mit dieser Domäne als root verbinden.\n"
+
+msgid ""
+"Auto configuration for (ADS) \"Active directory\" security level done.\n"
+"Setup the kerberos realm and connect to this domain as root after giving it a samba password and unlocking it.\n"
+msgstr ""
+"Auto Konfiguration für das (ADS) \"Active Directory\" Sicherheitsebene fertig.\n"
+"Kerberos Realm konfigurieren, entsperren und und mit dieser Domäne als root verbinden.\n"
+
+msgid ""
+"Error!!! Auto configuration for \"No\" security level done.\n"
+"Please review any changes.\n"
+msgstr ""
+"Fehler!!! Auto Konfiguration für die \"Keine\" Sicherheitsebene fertig.\n"
+"Bitte Änderungen prüfen.\n"
+
+msgid ""
+"These default shares cant be changed at the moment.\n"
+"Edit the configuration for now\n"
+msgstr ""
+"Diese Standard-Freigaben können momentan nicht geändert werden.\n"
+"Konfiguration für temporär geändert.\n"
+
+msgid ""
+"The machine account: %s\n"
+"can not be changed because it does not exist.\n"
+msgstr ""
+"Das Computer-Konto: %s\n"
+"kann nicht geändert werden, da es nicht existiert.\n"
+
+msgid "Failed adding locked samba user: %s\n"
+msgstr "Konnte gesperrten Samba-Benutzer nicht hinzufügen: %s\n"
+
+msgid "Failed disabling/locking samba user: %s\n"
+msgstr "Konnte den Samba-Benutzer nicht deaktivieren/sperren: %s\n"
+
+msgid "Failed adding null password samba user: %s\n"
+msgstr "Konnte Samba-Benutzer ohne Passwort nicht hinzufügen: %s\n"
+
+msgid "Failed locking null password samba user: %s\n"
+msgstr "Sperren des Samba-Benutzers ohne Passwort: %s ist fehlgeschlagen\n"
+
+msgid "Process ID"
+msgstr "Prozess-ID"
+
+msgid "User"
+msgstr "Benutzer"
+
+msgid "Group"
+msgstr "Gruppe"
+
+msgid "Client computer"
+msgstr "Client-Computer"
+
+msgid "Client address"
+msgstr "Client-Adresse"
+
+msgid "File in use"
+msgstr "Datei wird benutzt"
+
+msgid "Disconnect selected processes"
+msgstr "Trenne die ausgewählten Prozesse"
+
+msgid "Delete this system user ?"
+msgstr "Diesen System-Benutzer löschen?"
+
+msgid "Do you also want to delete the system user ?"
+msgstr "Den System-Benutzer ebenfalls löschen?"
+
+msgid "Username: "
+msgstr "Benutzername: "
+
+msgid "No"
+msgstr "Nein"
+
+msgid "Delete"
+msgstr "Löschen"
+
+msgid "Mounted on"
+msgstr "Eingehängt in"
+
+msgid "Free space"
+msgstr "Freier Platz"
+
+msgid "Used space"
+msgstr "Benutzter Platz"
+
+msgid "Total space"
+msgstr "Gesamter Platz"
+
+msgid "Percent used"
+msgstr "Prozent benutzt"
+
+msgid "Device"
+msgstr "Gerät"
+
+msgid "GADMIN-SAMBA %s access permissions"
+msgstr "GADMIN-SAMBA %s Zugriffsrechte"
+
+msgid "Local computer:"
+msgstr "Client-Computer"
+
+msgid "Remote master domain:"
+msgstr "Entfernte Haupt-Domäne:"
+
+msgid "Users:"
+msgstr "Benutzer:"
+
+msgid "Groups:"
+msgstr "Gruppen"
+
+msgid "Access allowed:"
+msgstr "Zugriff erlaubt:"
+
+msgid "Access denied:"
+msgstr "Zugriff verboten:"
+
+msgid "Write access:"
+msgstr "Schreibzugriff:"
+
+msgid "Administrators:"
+msgstr "Administratoren:"
+
+msgid "Select any local users you want to import"
+msgstr "Zu importierende lokale Benutzer wählen"
+
+msgid "Select any local groups you want to import"
+msgstr "Zu importierende lokale Gruppen wählen"
+
+msgid "Select any remote users you want to import"
+msgstr "Zu importierende entfernte Benutzer wählen"
+
+msgid "Select any remote groups you want to import"
+msgstr "Zu importierende entfernte Gruppen wählen"
+
+msgid "Username"
+msgstr "Benutzername"
+
+msgid "Cancel"
+msgstr "Abbrechen"
+
+msgid " Machine name: "
+msgstr " Computername:"
+
+msgid " Comment: "
+msgstr " Kommentar:"
+
+msgid "NetBIOS machine name"
+msgstr "NetBIOS-Computername"
+
+msgid "Machine group"
+msgstr "Computergruppe"
+
+msgid "Machine comment"
+msgstr "Computerkommentar"
+
+msgid "Machine account settings:"
+msgstr "Computerkonto-Einstellungen: "
+
+msgid "Activate"
+msgstr "Aktivieren"
+
+msgid "Deactivate"
+msgstr "Deaktivieren"
+
+msgid "Reread"
+msgstr "Neu einlesen"
+
+msgid "Settings"
+msgstr "Einstellungen"
+
+msgid "Help"
+msgstr "Hilfe"
+
+msgid "About"
+msgstr "Über"
+
+msgid "Quit"
+msgstr "Beenden"
+
+msgid "Server settings"
+msgstr "Server-Einstellungen"
+
+msgid "Users"
+msgstr "Benutzer"
+
+msgid "Shares"
+msgstr "Freigaben"
+
+msgid "Machines"
+msgstr "Computer"
+
+msgid "Domain management"
+msgstr "Domänenverwaltung"
+
+msgid "Connections"
+msgstr "Verbindungen"
+
+msgid "Disc"
+msgstr "Platte"
+
+msgid "Security"
+msgstr "Sicherheit"
+
+msgid "Configuration"
+msgstr "Konfiguration"
+
+msgid "Information: cant read version"
+msgstr "Information: Kann die Version nicht lesen"
+
+msgid "Status: unknown"
+msgstr "Status: unbekannt "
+
+msgid "Security information"
+msgstr "Sicherheitsinformation"
+
+msgid " The servers host name: "
+msgstr " Name des Servers: "
+
+msgid "IE: Samba24. Use this name to connect to this server from the clients"
+msgstr "zB: Samba24. Diesen Namen benutzen, um sich mit dem Server zu verbinden"
+
+msgid "A comment for this server, IE: SAMBA Server"
+msgstr "Ein Kommentar zu diesem Server, zB: SAMBA Server"
+
+msgid " Workgroup or domain name: "
+msgstr " Arbeitsgruppen- oder Domänen-Name:"
+
+msgid "IE: work-group-name or sambaserver2.example.org (spaces arent allowed). If SAMBA is set up as a domain then use this domain name to connect to from the clients"
+msgstr "zB: Arbeitsgruppe oder sambaserver2.example.org (Leerzeichen sind nicht erlaubt). Wenn SAMBA als eine Domäne konfiguriert ist, diesen Domänennamen zum Verbinden benutzen"
+
+msgid " Security level: "
+msgstr " Sicherheitsstufe: "
+
+msgid "Backup Domain"
+msgstr "Backup Domäne"
+
+msgid "Primary Domain"
+msgstr "Primäre Domäne"
+
+msgid "Active directory"
+msgstr "Active Directory"
+
+msgid " Active directory kerberos realm: "
+msgstr " Active Directory Kerberos-Realm: "
+
+msgid "ADS Kerberos realm, IE: domain.example.org"
+msgstr "ADS Kerberos-Realm, zB: entwicklung.lin2go.com"
+
+msgid " Allowed hosts and networks: "
+msgstr " Erlaubte Rechner und Netzwerke:"
+
+msgid "Hosts and networks allowed to connect to this server, IE: 127. 192.168.0."
+msgstr "Rechner und Netzwerke, die sich mit dem Server verbinden dürfen, zB: 127. 192.168.0."
+
+msgid " Handle connections on: "
+msgstr " Behandle Verbindungen auf:"
+
+msgid "Network interfaces to listen on, IE: eth0 127.0.0.1/8 192.168.0.120/24"
+msgstr " Samba-Netzwerkschnittstellen, zB: eth0 127.0.0.1/8 192.168.0.120/24"
+
+msgid " Announce this server to: "
+msgstr " Diesen Server anzeigen als:"
+
+msgid "Announce this servers precence to the specified networks, IE: 192.168.0.255 192.168.2.44"
+msgstr "Diesen Server folgenden Netzwerken bekannt machen, zB: 192.168.0.255 192.168.2.44"
+
+msgid " Retrieve announcements from: "
+msgstr " Erhalte Bekanntmachungen von: "
+
+msgid "Retrieve announcements from the specified networks, IE: 192.168.0.255 192.168.2.44"
+msgstr "Erhalte Bekanntmachungen von folgenden Netzwerken, zB: 192.168.0.255 192.168.2.44"
+
+msgid " Printcap filepath: "
+msgstr " Printcap Dateipfad: "
+
+msgid "Path to the printcap file, IE: /etc/printcap"
+msgstr "Pfad zur printcap-Datei, zB: /etc/printcap"
+
+msgid " Automatically load printer list: "
+msgstr " Liste automatisch geladener Drucker: "
+
+msgid "Yes"
+msgstr "Ja"
+
+msgid "Server settings for advanced administrators:"
+msgstr "Server Einstellungen für fortgeschrittene Administratoren"
+
+msgid " CUPS Options: "
+msgstr " CUPS Optionen"
+
+msgid "Raw"
+msgstr "Roh"
+
+msgid " Guest user: "
+msgstr " Gast-Nutzer:"
+
+msgid "The name of the guest user, IE: guest"
+msgstr "Der Name des Gast-Nutzers, zB: gast"
+
+msgid " SAMBA log file: "
+msgstr " SAMBA Log-Datei: "
+
+msgid "Path to the log file, IE: /var/log/samba/samba.log or /var/log/samba/%m.log for individual computer logs"
+msgstr " Pfad zur Log-Datei, zB: /var/log/samba/samba.log oder /var/log/samba/%m.log für individuelle Computer-Logs"
+
+msgid " Max logfile size: "
+msgstr " Maximale Log-Datei Größe: "
+
+msgid "The maximum logfile size in Kb."
+msgstr "Maximale Größe der Log-Datei in KB."
+
+msgid " Allow empty passwords: "
+msgstr " Erlaube leere Passworte:"
+
+msgid " Username match level: "
+msgstr " Übereinstimmungsgrad Benutzername:"
+
+msgid "Username match level allows matching of _n_ characters of the username for all combinations of upper and lower case."
+msgstr "Der Übereinstimmungsgrad des Benutzernamens erlaubt _n_ Großbuchstaben im Benutzernamen."
+
+msgid " Password match level: "
+msgstr " Überinstimmungsgrad Paßwort:"
+
+msgid "Password match level allows matching of _n_ characters of the password for all combinations of upper and lower case."
+msgstr "Der Übereinstimmungsgrad des Passworts erlaubt _n_ Großbuchstaben im Paßwort."
+
+msgid " Encrypt passwords: "
+msgstr " Passworte verschlüsseln:"
+
+msgid " Syncronize passwords: "
+msgstr " Passworte synchronisieren:"
+
+msgid " Socket transfer options: "
+msgstr " Sockel-Übertragungsoptionen:"
+
+msgid "The Socket transfer options, IE: TCP_NODELAY SO_RCVBUF=8192 SO_SNDBUF=8192"
+msgstr "Die Sockel-Übertragungsoptionen, zB: TCP_NODELAY SO_RCVBUF=8192 SO_SNDBUF=8192"
+
+msgid " Local master browser: "
+msgstr " Lokaler Master-Browser"
+
+msgid " Domain master browser: "
+msgstr " Domänen Master-Browser"
+
+msgid " Preferred master: "
+msgstr " Bevorzugter Master:"
+
+msgid " Master browser election level: "
+msgstr " Master-Browser Auswahlstufe: "
+
+msgid "Determines the precedence of this server in master browser elections."
+msgstr "Ermittelt die Priorität dieses Servers in der Master-Browser-Auswahl."
+
+msgid " Domain logons: "
+msgstr " Domänen Logons: "
+
+msgid " Logon drive: "
+msgstr " Logon Laufwerk:"
+
+msgid "The drive letter of the home directory, IE: h: or m:"
+msgstr "Die Laufwerksbezeichnung des Heim-Verzeichnisses, zB: h: oder m:"
+
+msgid " Logon home: "
+msgstr " Login-Verzeichnis:"
+
+msgid "The path to the users home, \\\\%L\\homes\\%u"
+msgstr "Der Pfad zum Heim-Verzeichnis des Benutzers,  \\\\%L\\homes\\%u"
+
+msgid " Logon profile path: "
+msgstr " Loginprofil-Pfad: "
+
+msgid "The logon profile path, IE: \\\\%L\\profiles\\%u"
+msgstr "Der Loginprofil-Pfad, zB: \\\\%L\\profiles\\%u"
+
+msgid " Logon script: "
+msgstr " Login-Skript: "
+
+msgid "The logon script. IE: %U.bat (user_name.bat),%G.bat (group_name.bat), %m.bat (machine_name.bat) or just login.bat. Place the scripts in the netlogon directory"
+msgstr "Das Login-Skript. zB: %U.bat (Benutzer_Name.bat),%G.bat (Gruppen_Name.bat), %m.bat (Computer_Name.bat) oder nur login.bat. Die Skripte im \"netlogon\"-Verzeichnis ablegen."
+
+msgid " Time server: "
+msgstr " Zeit-Server:"
+
+msgid " NetBIOS name resolve order: "
+msgstr " NetBIOS Namensauflösungs-Reihenfolge: "
+
+msgid "The NetBIOS name resolve order, IE: wins lmhosts bcast"
+msgstr "Die NetBIOS Namensauflösungs-Reihenfolge, zB: wins lmhosts bcast"
+
+msgid " WINS support: "
+msgstr " WINS Unterstützung: "
+
+msgid " Wins servers: "
+msgstr " Wins Server: "
+
+msgid "The Wins servers, IE: 192.168.0.130"
+msgstr "Die Wins Server, zB: 192.168.0.130"
+
+msgid " Act as a WINS proxy: "
+msgstr " Arbeite als WINS Proxy: "
+
+msgid " Act as a DNS proxy: "
+msgstr " Arbeite als DNS Proxy: "
+
+msgid " Case sensitive filenames: "
+msgstr " Groß-/Kleinschreibung Datei-Namen: "
+
+msgid " Client use spnego: "
+msgstr " Client benutzt spnego: "
+
+msgid " Client signing: "
+msgstr " Client-Signatur:"
+
+msgid " Client schannel: "
+msgstr " Sicherer Client-Kanal:"
+
+msgid " Server signing: "
+msgstr " Server-Signatur:"
+
+msgid " Server schannel: "
+msgstr " Sicherer Server-Kanal:"
+
+msgid " Pipe support: "
+msgstr " Pipe Unterstützung: "
+
+msgid " Status support: "
+msgstr " Status Unterstützung: "
+
+msgid " Allow trusted domains: "
+msgstr " Erlaube vertraute Domänen: "
+
+msgid " Obey PAM restrictions: "
+msgstr " Beachte PAM-Einschränkungen:"
+
+msgid " Enable print spooler: "
+msgstr " Aktiviere Drucker-Warteschlange: "
+
+msgid " Allow plain text authentication: "
+msgstr " Erlaube reine Text-Authentifizierung: "
+
+msgid " Disable netbios: "
+msgstr " Deaktiviere NetBios: "
+
+msgid " Follow symlinks: "
+msgstr " Folge symbolischen Links: "
+
+msgid " Update encrypted: "
+msgstr " Verschlüsselte Aktualisierung:"
+
+msgid " PAM password change: "
+msgstr " PAM Passwortwechsel: "
+
+msgid " Password chat timeout: "
+msgstr " Passwort chat timeout:"
+
+msgid "Time until password chats time out."
+msgstr "Zeit bis zum Zeitablauf des Chat-Passwortes."
+
+msgid " Hostname lookups: "
+msgstr " Hostnamensuche: "
+
+msgid " SAMBA username file: "
+msgstr " SAMBA Benutzernamen-Datei: "
+
+msgid "The path to SAMBA's username file, IE: /etc/samba/smbusers"
+msgstr "Der Pfad zur SAMBA Benutzernamen-Datei, zB: /etc/samba/smbusers"
+
+msgid " The systems password program: "
+msgstr " Der System-Passwortbefehl: "
+
+msgid "The path to the systems passwd program, IE: /usr/bin/passwd"
+msgstr "Pfad zum System-Passwortbefehl, zB: /usr/bin/passwd"
+
+msgid " New password phraze: "
+msgstr " Anzeige für neues Passwort: "
+
+msgid ""
+"The new password phrase, IE: *new*password* \\%n\\n"
+" *ReType*new*password* \\%n\\n"
+" *password:*changed*sucessfully*"
+msgstr ""
+"Anzeige für das neue Passwort, zB: *neues*Passwort* \\%n\\n"
+" *Tippe*neues*Passwort*erneut* \\%n\\n"
+" *Passwort:*erfolgreich*gewechselt*"
+
+msgid " Add user script: "
+msgstr " System-Benutzerskript: "
+
+msgid "Add user script, IE: /usr/sbin/useradd -d /dev/null -c 'Samba User Account' -s /dev/null"
+msgstr "Benutzerskript, zB: /usr/sbin/useradd -d /dev/null -c 'Samba Benutzerkonto' -s /dev/null"
+
+msgid " Add user to group script: "
+msgstr " Benutzergruppenskript: "
+
+msgid "Add user to group script, IE: /usr/sbin/useradd -d /dev/null -c 'Samba User Account' -s /dev/null -g '%g'"
+msgstr "System-Benutzergruppenskript, zB: /usr/sbin/useradd -d /dev/null -c 'Samba Benutzerkonto' -s /dev/null -g '%g'"
+
+msgid " Add group script: "
+msgstr " Gruppenskript: "
+
+msgid "Add group script, IE: /usr/sbin/groupadd '%g'"
+msgstr "Grupenskript, zB: /usr/sbin/groupadd '%g'"
+
+msgid " Delete user script: "
+msgstr " Benutzer-Löschskript: "
+
+msgid "Delete user script, IE: /usr/sbin/userdel '%u'"
+msgstr "Benutzer-Löschskript, zB: /usr/sbin/userdel '%u'"
+
+msgid " Delete user from group script: "
+msgstr " Benutzergruppen-Löschskript:"
+
+msgid "Delete user from group script, IE: /usr/sbin/userdel '%u' '%g'"
+msgstr "Benutzergruppen-Löschskript, zB: /usr/sbin/userdel '%u' '%g'"
+
+msgid " Delete group script: "
+msgstr " Gruppen-Löschskript: "
+
+msgid "Delete group script, IE: /usr/sbin/groupdel '%g'"
+msgstr "Gruppen-Löschskript, zB: /usr/sbin/groupdel '%g'"
+
+msgid " Add machine account script: "
+msgstr " Computerkonto-Skript: "
+
+msgid "IE: /usr/sbin/useradd -d /dev/null -g sambamachines -c 'Samba Machine Account' -s /dev/null -M %u"
+msgstr "Computerkonto-Skript, zB: /usr/sbin/useradd -d /dev/null -g sambamachines -c 'Samba Computer-Konto' -s /dev/null -M %u"
+
+msgid " Machine password timeout: "
+msgstr " Computerpasswort-Zeitlimit"
+
+msgid "Machine password timeout, IE: 120 (seconds)"
+msgstr "Computerpasswort-Zeitlimit, zB: 120 (Sekunden)"
+
+msgid " Username id range: "
+msgstr " Benutzernamen ID-Bereich:"
+
+msgid "The users uids, IE: 16777216-33554431"
+msgstr "Die Benutzer uids, zB: 16777216-33554431"
+
+msgid " Group id range: "
+msgstr " Gruppen ID-Bereich"
+
+msgid "The users gids, IE: 16777216-33554431"
+msgstr "Der Gruppen ID-Bereich, zB: 16777216-33554431"
+
+msgid " Template shell: "
+msgstr " Beispiel-Shell:"
+
+msgid "The template shell, IE: /dev/null"
+msgstr "Die Beispiel-Shell, zB: /dev/null"
+
+msgid " Winbind use default domain: "
+msgstr " Winbind benutzt die Standard-Domäne:"
+
+msgid " Winbind separator: "
+msgstr " Winbind Trenner: "
+
+msgid "Winbind separator, IE: @ for user@server.org"
+msgstr "Winbind Trenner, zB: @ für user@server.org"
+
+msgid " Winbind cache timeout: "
+msgstr " Winbind Cache-Zeitlimit:"
+
+msgid "Time until winbind cache times out."
+msgstr "Zeit bis zum Ablauf des Winbind-Cache-Zeitlimits."
+
+msgid " Winbind trusted domains only: "
+msgstr " Nur Winbind vertraute Domänen:"
+
+msgid " Winbind nested groups: "
+msgstr " Verschachtelte Winbind-Gruppen:"
+
+msgid " Winbind nss info: "
+msgstr " Winbind nss Info: "
+
+msgid " Winbind refresh tickets: "
+msgstr " Winbind Aktualisierungs-Tickets:"
+
+msgid " Winbind offline logon: "
+msgstr " Winbind offline Login: "
+
+msgid "Write the new share name and other settings in the share settings below.\n"
+msgstr "Neuen Freigabe-Namen und andere Einstellungen in die Freigabe-Einstellungen schreiben.\n"
+
+msgid ""
+"Press add to add this new share with the selected settings.\n"
+"\n"
+msgstr ""
+"Hinzufügen drücken, um eine neue Freigabe mit den gewählten Einstellungen zu erstellen.\n"
+"\n"
+
+msgid "You can also skip this step and directly alter an existing shares name,\n"
+msgstr "Sie können diesen Schritt weglassen und einen existierenden Freigabe-Namen direkt ändern,\n"
+
+msgid "settings and then press add. This can save administration time.\n"
+msgstr "und dann hinzufügen drücken. Dies kann Zeit für die Administration einsparen.\n"
+
+msgid "New share"
+msgstr "Neue Freigabe"
+
+msgid " Share name: "
+msgstr " Freigabename:"
+
+msgid "The name of the Share"
+msgstr "Der Name der Freigabe"
+
+msgid "Shared directory:"
+msgstr "Freigegebenes Verzeichnis: "
+
+msgid "Select a directory to share"
+msgstr "Ein freizugebendes Verzeichnis wählen"
+
+msgid "Access permissions for users and groups in the selected share:"
+msgstr "Freigabe-Berechtigungen für Benutzer und Gruppen:"
+
+msgid "Access allowed"
+msgstr "Zugriff erlaubt"
+
+msgid "Access denied"
+msgstr "Zugriff verweigert"
+
+msgid "If a group has been allowed access you can deny access for some of the users in this group here"
+msgstr "Wenn eine Gruppe Zugriff hat, kann hier einzelnen Benutzer dieser Gruppe der Zugriff verweigert werden."
+
+msgid "Write access"
+msgstr "Schreibzugriff"
+
+msgid "Administrators"
+msgstr "Administratoren"
+
+msgid "Delete access permission"
+msgstr "Lösche Zugriffserlaubnis"
+
+msgid "Add access permissions"
+msgstr "Füge Zugriffserlaubnis hinzu"
+
+msgid " Directory mask: "
+msgstr " Verzeichnis-Maske: "
+
+msgid " Create mode: "
+msgstr " Erzeuge-Modus:"
+
+msgid " Force user: "
+msgstr " Erzwinge Benutzer: "
+
+msgid " Force group: "
+msgstr " Erzwinge Gruppe: "
+
+msgid " Read only: "
+msgstr " Nur lesbar:"
+
+msgid " Available: "
+msgstr " Verfügbar:"
+
+msgid " Browseable: "
+msgstr " Durchsuchbar:"
+
+msgid " Writable: "
+msgstr " Schreibbar: "
+
+msgid " Guest ok: "
+msgstr " Gast-Zugriff: "
+
+msgid " Public: "
+msgstr " Öffentlich: "
+
+msgid " Printable: "
+msgstr " Druckbar: "
+
+msgid " File locking: "
+msgstr " Datei-Sperrung: "
+
+msgid " Strict locking: "
+msgstr " Strikte Sperrung: "
+
+msgid "Share name"
+msgstr "Freigabename"
+
+msgid "Directory"
+msgstr "Verzeichnis"
+
+msgid "Comment"
+msgstr "Kommentar"
+
+msgid "Share settings:"
+msgstr "Freigabe-Einstellungen:"
+
+msgid "Account locked:"
+msgstr "Konto gesperrt:"
+
+msgid "New user"
+msgstr "Neuer Benutzer"
+
+msgid "Username:"
+msgstr "Benutzername:"
+
+msgid "Create a randomized username"
+msgstr "Einen zufälligen Benutzernamen generieren"
+
+msgid "The name of the user."
+msgstr "Der Benutzername."
+
+msgid "Password:"
+msgstr "Passwort:"
+
+msgid "Create a randomized password"
+msgstr "Ein zufälliges Passwort generieren"
+
+msgid "The users password."
+msgstr "Das Benutzer-Passwort"
+
+msgid " Group: "
+msgstr " Gruppe: "
+
+msgid "The group the user belongs to"
+msgstr "Die Gruppenzugehörigkeit des Benutzers"
+
+msgid "A comment about the user"
+msgstr "Ein Kommentar zu dem Benutzer"
+
+msgid "Home directory:"
+msgstr "Heimverzeichnis:"
+
+msgid "Choose a home directory for this user"
+msgstr "Ein Heimverzeichnis für diesen Benutzer wählen"
+
+msgid "The users home directory, IE: /home/UserName or /dev/null to skip making a homedirectory."
+msgstr "Das Heimverzeichnis des Benutzers, zB: /home/BenutzerName oder /dev/null für kein Heimverzeichnis."
+
+msgid " Shell: "
+msgstr " Shell:"
+
+msgid "Home directory"
+msgstr "Heim-Verzeichnis"
+
+msgid "User settings:"
+msgstr "Benutzereinstellungen:"
+
+msgid "Credits"
+msgstr "Dank an"
+
+msgid "Author: "
+msgstr "Verfasser: "
+
+msgid "I want to thank the following for their contributions:"
+msgstr "Ich möchte folgenden Personen für Ihren Beitrag danken:"
+
+msgid ""
+"The SAMBA developers.\n"
+"\n"
+msgstr ""
+"Den SAMBA Entwicklern.\n"
+"\n"
+
+msgid "for"
+msgstr "für"
+
+msgid "for the program icons.\n"
+msgstr "für die Programm-Symbole.\n"
+
+msgid "for the RPM spec file."
+msgstr "für die RPM-spec-Datei."
+
+msgid "And all translators:"
+msgstr "Und allen Übersetzern:"
+
+msgid "Afrikaans"
+msgstr "Afrikaans"
+
+msgid "Amharic"
+msgstr "Äthiopisch"
+
+msgid "Arabic"
+msgstr "Arabisch"
+
+msgid "Azerbaijani"
+msgstr "Azerbeidschanisch"
+
+msgid "Basque"
+msgstr "Baskisch"
+
+msgid "Bulgarian"
+msgstr "Bulgarisch"
+
+msgid "Breton"
+msgstr "Bretonisch"
+
+msgid "Brittish-English"
+msgstr "Britisches Englisch"
+
+msgid "Bosnian"
+msgstr "Bosnisch"
+
+msgid "Byelorussian"
+msgstr "Weißrussisch"
+
+msgid "Catalan"
+msgstr "Katalanisch"
+
+msgid "Chinese"
+msgstr "Chinesisch"
+
+msgid "Chinese-Taiwan"
+msgstr "Taiwanesisches Chinesisch"
+
+msgid "Croatian"
+msgstr "Kroatisch"
+
+msgid "Czech"
+msgstr "Tschechisch"
+
+msgid "Danish"
+msgstr "Dänisch"
+
+msgid "Dutch"
+msgstr "Niederländisch"
+
+msgid "Esperanto"
+msgstr "Esperanto"
+
+msgid "Estonian"
+msgstr "Estnisch"
+
+msgid "Finnish"
+msgstr "Finnisch"
+
+msgid "French"
+msgstr "Französisch"
+
+msgid "Galician"
+msgstr "Galizisch"
+
+msgid "German"
+msgstr "Deutsch"
+
+msgid "Greek"
+msgstr "Griechisch"
+
+msgid "Hebrew"
+msgstr "Hebräisch"
+
+msgid "Hini"
+msgstr "Hindi"
+
+msgid "Hungarian"
+msgstr "Ungarisch"
+
+msgid "Icelandic"
+msgstr "Isländisch"
+
+msgid "Indonesian"
+msgstr "Indonesisch"
+
+msgid "Irish"
+msgstr "Irisch"
+
+msgid "Italian"
+msgstr "Italienisch"
+
+msgid "Japanese"
+msgstr "Japanisch"
+
+msgid "Korean"
+msgstr "Koreanisch"
+
+msgid "Kurdish"
+msgstr "Kurdisch"
+
+msgid "Latvian-Lettish"
+msgstr "Lettisch"
+
+msgid "Lithuanian"
+msgstr "Littauisch"
+
+msgid "Macedonian"
+msgstr "Mazedonisch"
+
+msgid "Maori"
+msgstr "Maori"
+
+msgid "Maltese"
+msgstr "Maltesisch"
+
+msgid "Norwegian"
+msgstr "Norwegisch"
+
+msgid "Polish"
+msgstr "Polnisch"
+
+msgid "Portuguese"
+msgstr "Portugiesisch"
+
+msgid "Portuguese-Brazil"
+msgstr "Brasilianisches Portugiesisch"
+
+msgid "Romanian"
+msgstr "Rumänisch"
+
+msgid "Russian"
+msgstr "Russisch"
+
+msgid "Serbian"
+msgstr "Serbisch"
+
+msgid "Slovak"
+msgstr "Slowakisch"
+
+msgid "Slovenian"
+msgstr "Slowenisch"
+
+msgid "Spanish"
+msgstr "Spanisch"
+
+msgid "Swedish"
+msgstr "Schwedisch"
+
+msgid "Tamil"
+msgstr "Tamilisch"
+
+msgid "Thai"
+msgstr "Thailändisch"
+
+msgid "Turkish"
+msgstr "Türkisch"
+
+msgid "Traditional Chinese"
+msgstr "Traditionelles Chinesisch"
+
+msgid "Ukrainian"
+msgstr "Ukrainisch"
+
+msgid "Vietnamese"
+msgstr "Vietnamesisch"
+
+msgid "Wallon"
+msgstr "Wallonisch"
+
+msgid "Welch"
+msgstr "Welsch"
+
+msgid "Close"
+msgstr "Schliessen"
+
+msgid "Failed deleting samba machine account: %s\n"
+msgstr "Konnte Samba-Computerkonto nicht löschen: %s\n"
+
+msgid "No user specified.\n"
+msgstr "Kein Benutzer angegeben.\n"
+
+msgid "Cant open smb.conf here: %s run gadmin-samba as root.\n"
+msgstr "Kann smb.conf hier nicht öffnen: %s betreibt gadmin-samba als root.\n"
+
+msgid ""
+"The samba root user was deleted.\n"
+"The root system user can not be deleted.\n"
+msgstr ""
+"Der Samba-Benutzer root wurde gelöscht.\n"
+"Der System-Benutzer root kann nicht gelöscht werden.\n"
+
+msgid "Could not remove the samba user: %s\n"
+msgstr "Konnte den Samba-Benutzer nicht entfernen: %s\n"
+
+msgid "No username specified.\n"
+msgstr "Kein Benutzername angegeben.\n"
+
+msgid "The root user can not be deleted.\n"
+msgstr "Der Benutzer root kann nicht gelöscht werden.\n"
+
+msgid "Failed to delete system user: %s\n"
+msgstr "Konnte den System-Benutzer nicht löschen: %s\n"
+
+msgid "Group file not found"
+msgstr "Gruppen-Datei nicht gefunden"
+
+msgid "Group name not found"
+msgstr "Gruppen-Name nicht gefunden"
+
+msgid "User setting not found"
+msgstr "Benutzereinstellungen nicht gefunden"
+
+msgid "No value has been set"
+msgstr "Es wurde kein Wert gesetzt"
+
+msgid "Max randomize username length is 999\n"
+msgstr "Die maximale Länge eines zufälligen Benutzernamens ist 999\n"
+
+msgid "Randomize username length can only contain digits\n"
+msgstr "Eine zufällige Benutznamenlänge kann nur Zahlen enthalten\n"
+
+msgid "Max home directory length is 8192 chars.\n"
+msgstr "Die maximale Heim-Verzeichnis Länge beträgt 8192 Buchstaben.\n"
+
+msgid "Max randomize password length is 999\n"
+msgstr "Die maximale Länge eines zufälligen Passwortes beträgt 999\n"
+
+msgid "Randomize password length can only contain digits\n"
+msgstr "Eine zufällige Passwortlänge kann nur Zahlen enthalten\n"
+
+msgid "Randomize length too long, changed it to 256.\n"
+msgstr "Zufällige Länge zu lang, in 256 geändert.\n"
+
+msgid "Remote operations are not yet supported.\n"
+msgstr "Entfernte Zugriffe werden momentan nicht unterstützt.\n"
+
+msgid ""
+"New samba users where added with empty passwords.\n"
+"See server settings and empty passwords.\n"
+msgstr ""
+"Neue Samba-Benutzer wurden mit leeren Passworten hinzugefügt.\n"
+"Bitte Server-Einstellungen und leere Passworte überprüfen.\n"
+
+msgid "Number of added users: %ld\n"
+msgstr "Anzahl der hinzugefügten Benutzer: %ld\n"
+
+msgid "Number of added groups: %ld\n"
+msgstr "Anzahl der hinzugefügten Gruppen: %ld\n"
+
+msgid ""
+"Cant find the shells file here:\n"
+"%s\n"
+msgstr ""
+"Kann die Shell-Dateien hier nicht finden:\n"
+"%s\n"
+
+msgid "Missing password:"
+msgstr "Fehlendes Passwort:"
+
+msgid "Empty password:"
+msgstr "Leeres Passwort:"
+
+msgid ""
+"Couldnt open the settings file here:\n"
+"%s\n"
+msgstr ""
+"Konnte die Datei mit den Einstellungen nicht öffnen:\n"
+"%s\n"
+
+msgid "Set version failed\n"
+msgstr "Setzen der Version gescheitert\n"
+
+msgid " Information: SAMBA %s"
+msgstr " Information: SAMBA %s"
+
+msgid " samba (smbd) is not installed or not in your path."
+msgstr " SAMBA (smbd) ist nicht installiert oder nicht im Pfad verfügbar."
+
+msgid "GADMIN-SAMBA %s settings"
+msgstr "GADMIN-SAMBA %s Einstellungen"
+
+msgid "Settings:"
+msgstr "Einstellungen:"
+
+msgid " New samba configuration: "
+msgstr " Neue SAMBA Konfiguration: "
+
+msgid " Start winbind server: "
+msgstr " Starte den Winbind server: "
+
+msgid " Path to smb.conf: "
+msgstr " Pfad zur smb.conf: "
+
+msgid "GADMIN-SAMBA Help"
+msgstr "GADMIN-SAMBA Hilfe"
+
+msgid ""
+"\n"
+"Server settings:\n"
+msgstr ""
+"\n"
+"Server Einstellungen:\n"
+
+msgid "If all you want to do is share some directories you only need to change\n"
+msgstr "Wenn Sie nur einige Verzeichnisse freigeben möchten, müssen Sie nur\n"
+
+msgid "the first visible part in the server settings tab and then press apply.\n"
+msgstr "den ersten Teil in den Server Einstellungen ändern und dann anwenden drücken.\n"
+
+msgid "When you scroll down more advanced options will be shown.\n"
+msgstr "Durch Herunterscrollen werden weitere Optionen sichtbar.\n"
+
+msgid ""
+"\n"
+"Users:\n"
+msgstr ""
+"\n"
+"Benutzer:\n"
+
+msgid "Adding a user can be done by specifying its username, group, password\n"
+msgstr "Ein Benutzer kann hinzugefügt werden, indem sein Benutzernamen, die Gruppe, das Passwort\n"
+
+msgid "and other settings, then clicking add.\n"
+msgstr "und andere Einstellungen spezifiziert und dann hinzufügen gedrückt wird.\n"
+
+msgid "After one user has been added this user can serve as a profile for other users.\n"
+msgstr "Nachdem ein Benutzer hinzugefügt wurde kann dieser Benutzer als ein Profil für andere Benutzer verwendet werden.\n"
+
+msgid "Select a user in the user list, change its username and password then click add.\n"
+msgstr "Einen Benutzer aus der Benutzerliste auswählen, den Benutzernamen und das Passwort ändern und dann hinzufügen drücken.\n"
+
+msgid "Both users will then have the same settings except for the username and password.\n"
+msgstr "Beide Benutzer werden die gleichen Einstellungen außer Benutzernamen und Passwort haben.\n"
+
+msgid "The new user button can be used to clear and insert default user settings, making it\n"
+msgstr "Die Schaltfläche \"Neuer Benutzer\" kann zum Standard-Benutzer-Einstellungen Löschen\n"
+
+msgid ""
+"ready for adding new users.\n"
+"\n"
+msgstr ""
+"und Erstellen verwendet werden, um einen neuen Benutzer hinzuzufügen.\n"
+"\n"
+
+msgid "Deleting a user can be done by selecting it in the list and then clicking delete.\n"
+msgstr "Eine Benutzer kann durch Auswahl aus der Liste und anschließendes Klicken auf \"Löschen\" gelöscht werden.\n"
+
+msgid ""
+"The deleted user will also be deleted from any shared resource.\n"
+"\n"
+msgstr "Der gelöschte Benutzer wird ebenfalls von allen Freigaben entfernt.\n"
+
+msgid "Changing a users settings is done by changing the settings and clicking apply.\n"
+msgstr "Ändern der Einstellungen eines Benutzers kann durchgeführt werden, indem man ihn in der Liste auswählt und dann anwenden drückt.\n"
+
+msgid "When you add a user you can randomize its name and password or use your own.\n"
+msgstr "Beim Benutzer Hinzufügen kann man den Namen und das Passwort zufällig vergeben, oder die Eingaben selbst vornehmen.\n"
+
+msgid "You can also select its login shell and where this user should have its home directory.\n"
+msgstr "Sie können ebenfalls die Login-Umgebung und den Ort seines Heim-Verzeichnisses auswählen.\n"
+
+msgid "If the selected shell is /dev/null or /sbin/nologin the user can only login to this\n"
+msgstr "Wenn die gewählte Umgebung /dev/null oder /sbin/nologin ist, kann sich der Benutzer nur an diesem\n"
+
+msgid ""
+"server, otherwise the user can login via ssh etc if the server allows this user to do so.\n"
+"\n"
+msgstr "Server anmelden, ansonsten kann sich der Benutzer via ssh einloggen, sofern der Server dies dem Benutzer gestattet.\n"
+
+msgid "Shares:\n"
+msgstr "Freigaben:\n"
+
+msgid "Shares can be added by selecting a directory to share, setting its share permissions and clicking add.\n"
+msgstr "Freigaben können hinzugefügt werden, indem man ein Verzeichnis zum Freigeben auswählt, die Freigaberechte einstellt und hinzufgügen drückt.\n"
+
+msgid "Deleting a share is done by selecting the share to delete and clicking delete.\n"
+msgstr "Eine Freigabe kann man löschen in dem man sie auswählt und dann löschen drückt.\n"
+
+msgid ""
+"Changing share settings can be done by changing its settings and then clicking the apply button.\n"
+"\n"
+msgstr ""
+"Freigabeeinstellungen kann man ändern, in dem man die Einstellungen ändert und dann Anwenden drückt.\n"
+"\n"
+
+msgid "Adding user and group access to shares:\n"
+msgstr "Benutzer und Gruppenzugriff den Ffreigaben hinzufügen:\n"
+
+msgid "Share access for users and groups can be added in several ways. Those ways are:\n"
+msgstr "Zugriff auf eine Freigabe für Benutzer und Gruppen kann auf verschiedene Weisen hinzugefügt werden. Dies sind:\n"
+
+msgid "local users and groups, remote domain users and groups and each of these can have 4 different\n"
+msgstr "lokale Benutzer und Gruppen, entfernte Domänen-Benutzer und -Gruppen; jede von diesen kann 4 verschiedene \n"
+
+msgid ""
+"permission classes. Multiple users and groups can be imported at once and duplicate additions are ignored.\n"
+"\n"
+msgstr ""
+"Zugriffsberechitgungen haben. Mehrere Benutzer und Gruppen können auf einmal importiert werden; doppelte Einträge werden ignoriert.\n"
+"\n"
+
+msgid "The new share button can be used to clear and insert default share settings, making it ready\n"
+msgstr "Die Schaltfläche \"Neue Freigabe\" kann verwendet werden, um Standard-Freigabeeinstellungen zu\n"
+
+msgid ""
+"for adding new shares.\n"
+"\n"
+msgstr ""
+"löschen und zu erstellen, um so das Erstellen neuer Freigaben vorzubereiten.\n"
+"\n"
+
+msgid "Joining a samba domain with MSFT'tm(c)(r) (extreme copyright) clients:\n"
+msgstr "Einer Samba-Domäne mit Microsoft (tm)(c)(r) Clients bei:\n"
+
+msgid "First disconnect all current connections on the client with: net use * /d\n"
+msgstr "Zuerst alle vorhandenen Verbindungen des Rechner mit: net use * /d trennen\n"
+
+msgid "As administrator, select properties for \"this computer\" and write example.org in the domain\n"
+msgstr "Als Administrator Eigenschaften für \"Diesen Computer\" wählen und example.org als Domäne eintragen\n"
+
+msgid ""
+"field then press join domain. Use root as username and the samba root password in the dialog.\n"
+"\n"
+msgstr ""
+"und dann \"Der Domäne beitreten\" anklicken. Benutze root als Benutzername und das Samba root Passwort im Dialogfeld.\n"
+"\n"
+
+msgid "Joining the domain with Linux or other open source clients:\n"
+msgstr "Einer Domäne mit Linux oder Open Source Clients beitreten:\n"
+
+msgid "net rpc join example.org -S samba24 -U root then supply the samba root password\n"
+msgstr "net rpc join example.org -S samba24 -U root - Dann das Samba root Passwort eingeben\n"
+
+msgid "Mounting shares:\n"
+msgstr "Hänge Freigaben ein:\n"
+
+msgid ""
+"If you want to add directories thats not under the users root directory you can do this:\n"
+"\n"
+msgstr ""
+"Zum Hinzufügen von nicht im Benutzerverzeichnis vorhandenen Verzeichnisses können Sie folgendermaßen vorgehen::\n"
+"\n"
+
+msgid "Linux (as of kernel 2.4.0):\n"
+msgstr "Linux (Kernel > 2.4.0):\n"
+
+msgid ""
+"mount --bind /some/directory/to/share /home/bob/make_this_directory_first\n"
+"\n"
+msgstr ""
+"mount --bind /freizugebendes/verzeichnis /home/bob/noch_zu_erstellendes_verzeichnis\n"
+"\n"
+
+msgid ""
+"Alternatively:\n"
+"mount -o bind /var/data /home/bob/mounted_data\n"
+"\n"
+msgstr ""
+"Alternativ:\n"
+"mount -o bind /var/data /home/bob/mounted_data\n"
+"\n"
+
+msgid ""
+"*BSD (as of 4.4BSD):\n"
+"mount_null /var/data /home/bob/mounted_data\n"
+"\n"
+msgstr ""
+"*BSD (> 4.4BSD):\n"
+"mount_null /var/data /home/bob/mounted_data\n"
+"\n"
+
+msgid ""
+"Solaris:\n"
+"mount -F lofs /var/data /home/bob/mounted_data\n"
+"\n"
+msgstr ""
+"Solaris:\n"
+"mount -F lofs /var/data /home/bob/mounted_data\n"
+"\n"
+
+msgid "For more detailed information about the server and its configuration directives visit:\n"
+msgstr "Detailliertere Informationen über den Server und dessen Konfiguration auf:\n"
+
+msgid "http://www.samba.org\n"
+msgstr "http://www.samba.org\n"
+
+msgid "GADMIN-SAMBA %s information"
+msgstr "GADMIN-SAMBA %s Information"
+
+msgid ""
+"Error: Could not backup the current configuration:\n"
+"%s\n"
+msgstr ""
+"Fehler: Konnte die aktuelle Konfiguration nicht sichern:\n"
+"%s\n"
+
+msgid ""
+"The samba configuration was backed up here for safety:\n"
+"%s\n"
+msgstr ""
+"Die Samba-Konfiguration wurde als Sicherung hier gespeichert:\n"
+"%s\n"
+
+msgid ""
+"Cant write a new smb.conf here:\n"
+"%s\n"
+msgstr ""
+"Kann die neue smb.conf nicht hier schreiben:\n"
+"%s\n"
+
+msgid ""
+"Failed to create directories:\n"
+"%s\n"
+msgstr ""
+"Erstellen folgender Verzeichnisse fehlgeschlagen:\n"
+"%s\n"
+
+msgid "Failed chmodding a+r for directory: %s\n"
+msgstr "Setzen der a+r Rechte für das Verzeichnis %s fehlgeschlagen.\n"
+
+msgid "Failed chowning the directories: %s\n"
+msgstr "Ändern des Besitzers von Verzeichnis %s fehlgeschlagen\n"
+
+msgid "Failed chmodding directory: %s\n"
+msgstr "Ändern der Zugriffsrechte für Verzeichnis %s fehlgeschlagen.\n"
+
+msgid "Failed to create directory: %s/%s\n"
+msgstr "Das Verzeichnis konnte nicht erstellt werden: %s/%s\n"
+
+msgid "GADMIN-SAMBA Question"
+msgstr "GADMIN-SAMBA Fragen"
+
+msgid "GADMIN-SAMBA could not find SAMBAs configuration (smb.conf) or the current\n"
+msgstr "GADMIN-SAMBA konnte die SAMBA Konfiguration (smb.conf) nicht finden oder die momentane\n"
+
+msgid ""
+"configuration doesnt have all the features that GADMIN-SAMBA requires.\n"
+"\n"
+msgstr ""
+"Konfiguration hat nicht alle von GADMIN-SAMBA benötigten Funktionen.\n"
+"\n"
+
+msgid "Do you want to overwrite the current samba configuration ?\n"
+msgstr "Möchten Sie die aktuelle Samba-Konfiguration überschreiben?\n"
+
+msgid "\t\t\t(If you dont know then press yes)\n"
+msgstr "\t\t\t(Im Zweifelsfall \"Ja\" drücken)\n"
+
+msgid ""
+"Error: cant create the settings directory here:\n"
+"%s\n"
+msgstr ""
+"Fehler: Kann die Verzeichnis-Einstellungen hier nicht erstellen:\n"
+"%s\n"
+
+msgid ""
+"Error: cant write the settings file here:\n"
+"%s\n"
+msgstr ""
+"Fehler: Kann die Verzeichnis-Einstellungen hier nicht erstellen:\n"
+"%s\n"
+
+msgid "Status: Deactivated"
+msgstr "Status: Deaktiviert "
+
+msgid "Status: Activated %s"
+msgstr "Status: Aktiviert "
+
+msgid "Status: Activated"
+msgstr "Status: Aktiviert "
+
+msgid "Couldn't find pixmap file: %s"
+msgstr "Konnte pixmap-Datei %s nicht finden."
+
+msgid " SAMBA password file: "
+msgstr " SAMBA Passwort-Datei: "
+
+msgid " Share modes: "
+msgstr " Freigabe-Modi: "
+
+msgid "Creating private cert and key"
+msgstr "Erstelle privates Zertifikat und Schlüssel"
+
+msgid "Error writing gprotls.conf here: %s\n"
+msgstr "Fehler beim Schreiben der gprotls.conf: %s\n"
+
+msgid "Every certificate field must be filled in.\n"
+msgstr "Jedes Zertifikats-Feld muß gefüllt sein.\n"
+
+msgid "It will be used by new FTP-TLS logins.\n"
+msgstr "Es wird bei neuen Samba-Anmeldungen benutzt.\n"
+
+msgid "The certificate has been created successfully\n"
+msgstr "Das Zertifikat wurde erfogreich erstellt\n"
+
+msgid "The certificate has not been created, something went wrong.\n"
+msgstr "Fehler beim Erzeugen des Zertifikates.\n"
+
+msgid "The password field cant contain any spaces or newline chars.\n"
+msgstr "Das Passwort-Feld darf keine Leerzeichen oder Zeilenumbrüche enthalten.\n"
+
+msgid "The path to SAMBA's passwd file, IE: /etc/samba/smbpasswd"
+msgstr "Der Pfad zur SAMBA Passwort-Datei, zB: /etc/samba/smbpasswd"
+
+msgid "and placed in the correct location.\n"
+msgstr "und an der richtigen Stelle gespeichert.\n"
+

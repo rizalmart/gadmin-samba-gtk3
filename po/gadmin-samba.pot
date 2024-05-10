@@ -1,0 +1,1617 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-08-06 19:59+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid ""
+"Write the new users name and other settings in the user profile below.\n"
+msgstr ""
+
+msgid ""
+"Press apply to add this new user with the selected settings.\n"
+"\n"
+msgstr ""
+
+msgid ""
+"You can also skip this step and directly alter an existing users name and\n"
+msgstr ""
+
+msgid "settings and then press apply. This can save administration time.\n"
+msgstr ""
+
+msgid "Can not lock or unlock a samba user that does not exist.\n"
+msgstr ""
+
+msgid "A username must be specified.\n"
+msgstr ""
+
+#, c-format
+msgid "Failed to lock samba account: %s\n"
+msgstr ""
+
+#, c-format
+msgid "Failed to unlock samba account: %s using no password\n"
+msgstr ""
+
+#, c-format
+msgid "Failed to unlock samba account: %s using a password\n"
+msgstr ""
+
+msgid "Failed to unlock samba account: "
+msgstr ""
+
+msgid "A new password is required to unlock users that have no previous\n"
+msgstr ""
+
+msgid "passwords or empty passwords. The provided password is too short.\n"
+msgstr ""
+
+msgid "You must specify a valid password for this new user.\n"
+msgstr ""
+
+#, c-format
+msgid ""
+"Failed to create missing samba password file:\n"
+"%s\n"
+msgstr ""
+
+msgid "A groupname must be specified.\n"
+msgstr ""
+
+msgid "A comment must be specified.\n"
+msgstr ""
+
+msgid "A home directory must be specified.\n"
+msgstr ""
+
+msgid "A shell must be specified.\n"
+msgstr ""
+
+msgid "The root system user doesnt exist, nothing was done.\n"
+msgstr ""
+
+#, c-format
+msgid "Failed changing samba password or adding samba user: %s\n"
+msgstr ""
+
+msgid ""
+"The samba password for root was changed.\n"
+"Nothing else was changed for this user.\n"
+msgstr ""
+
+msgid "The password is too short, adding or changing samba user root failed.\n"
+msgstr ""
+
+#, c-format
+msgid ""
+"Error adding system user: %s\n"
+"The command was: %s\n"
+msgstr ""
+
+#, c-format
+msgid "Error adding system user: %s\n"
+msgstr ""
+
+#, c-format
+msgid "Failed changing password or adding samba user: %s\n"
+msgstr ""
+
+#, c-format
+msgid "Failed changing system comment for samba user: %s\n"
+msgstr ""
+
+#, c-format
+msgid "Error creating directory: %s/samba/profiles/%s\n"
+msgstr ""
+
+#, c-format
+msgid "Error chowning directory: %s/samba/profiles/%s\n"
+msgstr ""
+
+#, c-format
+msgid ""
+"Failed creating missing file:\n"
+"%s\n"
+msgstr ""
+
+msgid "This machine account already exists.\n"
+msgstr ""
+
+#, c-format
+msgid "Error adding system machine account: %s\n"
+msgstr ""
+
+#, c-format
+msgid "Failed adding samba machine account: %s\n"
+msgstr ""
+
+msgid "The share name is missing, the share was not added.\n"
+msgstr ""
+
+msgid "The directory to share is missing, the share was not added.\n"
+msgstr ""
+
+#, c-format
+msgid ""
+"Cant open smb.conf here:\n"
+"%s\n"
+msgstr ""
+
+msgid "The share already exists.\n"
+msgstr ""
+
+#, c-format
+msgid ""
+"Can not write new samba configuration here:\n"
+"%s\n"
+msgstr ""
+
+#, c-format
+msgid ""
+"Failed adding default smbusers file here:\n"
+"%s\n"
+msgstr ""
+
+#, c-format
+msgid ""
+"A new smbusers map file was added here:\n"
+"%s\n"
+" It has the following contents: \"root = administrator\" and \"nobody = "
+"smbguest\".\n"
+msgstr ""
+
+#, c-format
+msgid ""
+"Failed adding the system user:\n"
+"%s\n"
+msgstr ""
+
+#, c-format
+msgid ""
+"Cant open smb.conf here: \n"
+"%s\n"
+msgstr ""
+
+msgid "The define for SAMBA_CONF is bad, please reinstall the application.\n"
+msgstr ""
+
+msgid "Please specify the server name.\n"
+msgstr ""
+
+msgid "Please specify a workgroup or domain name.\n"
+msgstr ""
+
+#, c-format
+msgid ""
+"Can not find the [global] section in %s\n"
+"No changes made.\n"
+msgstr ""
+
+#, c-format
+msgid "A line with over 4000 chars is not valid in: %s\n"
+msgstr ""
+
+#, c-format
+msgid ""
+"Cant write smb.conf here:\n"
+"%s\n"
+msgstr ""
+
+msgid ""
+"Auto configuration for \"user\" security level done.\n"
+"Review any changes.\n"
+msgstr ""
+
+msgid ""
+"Auto configuration for (BDC) \"backup domain controller\" done.\n"
+"Unlock and supply a samba password for the samba root account if needed.\n"
+msgstr ""
+
+msgid ""
+"Auto configuration for (PDC) \"primary domain controller\" done.\n"
+"Connect to this domain as root after giving it a samba password and "
+"unlocking it.\n"
+msgstr ""
+
+msgid ""
+"Auto configuration for (ADS) \"Active directory\" security level done.\n"
+"Setup the kerberos realm and connect to this domain as root after giving it "
+"a samba password and unlocking it.\n"
+msgstr ""
+
+msgid ""
+"Error!!! Auto configuration for \"No\" security level done.\n"
+"Please review any changes.\n"
+msgstr ""
+
+msgid ""
+"These default shares cant be changed at the moment.\n"
+"Edit the configuration for now\n"
+msgstr ""
+
+#, c-format
+msgid ""
+"The machine account: %s\n"
+"can not be changed because it does not exist.\n"
+msgstr ""
+
+#, c-format
+msgid "Failed adding locked samba user: %s\n"
+msgstr ""
+
+#, c-format
+msgid "Failed disabling/locking samba user: %s\n"
+msgstr ""
+
+#, c-format
+msgid "Failed adding null password samba user: %s\n"
+msgstr ""
+
+#, c-format
+msgid "Failed locking null password samba user: %s\n"
+msgstr ""
+
+msgid "Process ID"
+msgstr ""
+
+msgid "User"
+msgstr ""
+
+msgid "Group"
+msgstr ""
+
+msgid "Client computer"
+msgstr ""
+
+msgid "Client address"
+msgstr ""
+
+msgid "File in use"
+msgstr ""
+
+msgid "Disconnect selected processes"
+msgstr ""
+
+msgid "Delete this system user ?"
+msgstr ""
+
+msgid "Do you also want to delete the system user ?"
+msgstr ""
+
+msgid "Username: "
+msgstr ""
+
+msgid "No"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "Mounted on"
+msgstr ""
+
+msgid "Free space"
+msgstr ""
+
+msgid "Used space"
+msgstr ""
+
+msgid "Total space"
+msgstr ""
+
+msgid "Percent used"
+msgstr ""
+
+msgid "Device"
+msgstr ""
+
+#, c-format
+msgid "GADMIN-SAMBA %s access permissions"
+msgstr ""
+
+msgid "Local computer:"
+msgstr ""
+
+msgid "Remote master domain:"
+msgstr ""
+
+msgid "Users:"
+msgstr ""
+
+msgid "Groups:"
+msgstr ""
+
+msgid "Access allowed:"
+msgstr ""
+
+msgid "Access denied:"
+msgstr ""
+
+msgid "Write access:"
+msgstr ""
+
+msgid "Administrators:"
+msgstr ""
+
+msgid "Select any local users you want to import"
+msgstr ""
+
+msgid "Select any local groups you want to import"
+msgstr ""
+
+msgid "Select any remote users you want to import"
+msgstr ""
+
+msgid "Select any remote groups you want to import"
+msgstr ""
+
+msgid "Username"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid " Machine name: "
+msgstr ""
+
+msgid " Comment: "
+msgstr ""
+
+msgid "NetBIOS machine name"
+msgstr ""
+
+msgid "Machine group"
+msgstr ""
+
+msgid "Machine comment"
+msgstr ""
+
+msgid "Machine account settings:"
+msgstr ""
+
+msgid "Activate"
+msgstr ""
+
+msgid "Deactivate"
+msgstr ""
+
+msgid "Reread"
+msgstr ""
+
+msgid "Settings"
+msgstr ""
+
+msgid "Help"
+msgstr ""
+
+msgid "About"
+msgstr ""
+
+msgid "Quit"
+msgstr ""
+
+msgid "Server settings"
+msgstr ""
+
+msgid "Users"
+msgstr ""
+
+msgid "Shares"
+msgstr ""
+
+msgid "Machines"
+msgstr ""
+
+msgid "Domain management"
+msgstr ""
+
+msgid "Connections"
+msgstr ""
+
+msgid "Disc"
+msgstr ""
+
+msgid "Security"
+msgstr ""
+
+msgid "Configuration"
+msgstr ""
+
+msgid "Information: cant read version"
+msgstr ""
+
+msgid "Status: unknown"
+msgstr ""
+
+msgid "Security information"
+msgstr ""
+
+msgid " The servers host name: "
+msgstr ""
+
+msgid "IE: Samba24. Use this name to connect to this server from the clients"
+msgstr ""
+
+msgid ""
+"A comment for this server, IE: SAMBA Server racoon city, 3rd floor 15th "
+"room, crazy scientist dudes"
+msgstr ""
+
+msgid " Workgroup or domain name: "
+msgstr ""
+
+msgid ""
+"IE: work-group-name or sambaserver2.example.org (spaces arent allowed). If "
+"SAMBA is set up as a domain then use this domain name to connect to from the "
+"clients"
+msgstr ""
+
+msgid " Security level: "
+msgstr ""
+
+msgid "Backup Domain"
+msgstr ""
+
+msgid "Primary Domain"
+msgstr ""
+
+msgid "Active directory"
+msgstr ""
+
+msgid " Active directory kerberos realm: "
+msgstr ""
+
+msgid "ADS Kerberos realm, IE: domain.example.org"
+msgstr ""
+
+msgid " Allowed hosts and networks: "
+msgstr ""
+
+msgid ""
+"Hosts and networks allowed to connect to this server, IE: 127. 192.168.0."
+msgstr ""
+
+msgid " Handle connections on: "
+msgstr ""
+
+msgid "Network interfaces to listen on, IE: eth0 127.0.0.1/8 192.168.0.120/24"
+msgstr ""
+
+msgid " Announce this server to: "
+msgstr ""
+
+msgid ""
+"Announce this servers precence to the specified networks, IE: 192.168.0.255 "
+"192.168.2.44"
+msgstr ""
+
+msgid " Retrieve announcements from: "
+msgstr ""
+
+msgid ""
+"Retrieve announcements from the specified networks, IE: 192.168.0.255 "
+"192.168.2.44"
+msgstr ""
+
+msgid " Printcap filepath: "
+msgstr ""
+
+msgid "Path to the printcap file, IE: /etc/printcap"
+msgstr ""
+
+msgid " Automatically load printer list: "
+msgstr ""
+
+msgid "Yes"
+msgstr ""
+
+msgid "Server settings for advanced administrators:"
+msgstr ""
+
+msgid " CUPS Options: "
+msgstr ""
+
+msgid "Raw"
+msgstr ""
+
+msgid " Guest user: "
+msgstr ""
+
+msgid "The name of the guest user, IE: guest"
+msgstr ""
+
+msgid " SAMBA log file: "
+msgstr ""
+
+#, c-format
+msgid ""
+"Path to the log file, IE: /var/log/samba/samba.log or /var/log/samba/%m.log "
+"for individual computer logs"
+msgstr ""
+
+msgid " Max logfile size: "
+msgstr ""
+
+msgid "The maximum logfile size in Kb."
+msgstr ""
+
+msgid " Allow empty passwords: "
+msgstr ""
+
+msgid " Username match level: "
+msgstr ""
+
+msgid ""
+"Username match level allows matching of _n_ characters of the username for "
+"all combinations of upper and lower case."
+msgstr ""
+
+msgid " Password match level: "
+msgstr ""
+
+msgid ""
+"Password match level allows matching of _n_ characters of the password for "
+"all combinations of upper and lower case."
+msgstr ""
+
+msgid " Encrypt passwords: "
+msgstr ""
+
+msgid " Syncronize passwords: "
+msgstr ""
+
+msgid " Socket transfer options: "
+msgstr ""
+
+msgid ""
+"The Socket transfer options, IE: TCP_NODELAY SO_RCVBUF=8192 SO_SNDBUF=8192"
+msgstr ""
+
+msgid " Local master browser: "
+msgstr ""
+
+msgid " Domain master browser: "
+msgstr ""
+
+msgid " Preferred master: "
+msgstr ""
+
+msgid " Master browser election level: "
+msgstr ""
+
+msgid "Determines the precedence of this server in master browser elections."
+msgstr ""
+
+msgid " Domain logons: "
+msgstr ""
+
+msgid " Logon drive: "
+msgstr ""
+
+msgid "The drive letter of the home directory, IE: h: or m:"
+msgstr ""
+
+msgid " Logon home: "
+msgstr ""
+
+msgid "The path to the users home, \\\\%L\\homes\\%u"
+msgstr ""
+
+msgid " Logon profile path: "
+msgstr ""
+
+msgid "The logon profile path, IE: \\\\%L\\profiles\\%u"
+msgstr ""
+
+msgid " Logon script: "
+msgstr ""
+
+msgid ""
+"The logon script. IE: %U.bat (user_name.bat),%G.bat (group_name.bat), %m.bat "
+"(machine_name.bat) or just login.bat. Place the scripts in the netlogon "
+"directory"
+msgstr ""
+
+msgid " Time server: "
+msgstr ""
+
+msgid " NetBIOS name resolve order: "
+msgstr ""
+
+msgid "The NetBIOS name resolve order, IE: wins lmhosts bcast"
+msgstr ""
+
+msgid " WINS support: "
+msgstr ""
+
+msgid " Wins servers: "
+msgstr ""
+
+msgid "The Wins servers, IE: 192.168.0.130"
+msgstr ""
+
+msgid " Act as a WINS proxy: "
+msgstr ""
+
+msgid " Act as a DNS proxy: "
+msgstr ""
+
+msgid " Case sensitive filenames: "
+msgstr ""
+
+msgid " Client use spnego: "
+msgstr ""
+
+msgid " Client signing: "
+msgstr ""
+
+msgid " Client schannel: "
+msgstr ""
+
+msgid " Server signing: "
+msgstr ""
+
+msgid " Server schannel: "
+msgstr ""
+
+msgid " Pipe support: "
+msgstr ""
+
+msgid " Status support: "
+msgstr ""
+
+msgid " Allow trusted domains: "
+msgstr ""
+
+msgid " Obey PAM restrictions: "
+msgstr ""
+
+msgid " Enable print spooler: "
+msgstr ""
+
+msgid " Allow plain text authentication: "
+msgstr ""
+
+msgid " Disable netbios: "
+msgstr ""
+
+msgid " Follow symlinks: "
+msgstr ""
+
+msgid " Update encrypted: "
+msgstr ""
+
+msgid " PAM password change: "
+msgstr ""
+
+msgid " Password chat timeout: "
+msgstr ""
+
+msgid "Time until password chats time out."
+msgstr ""
+
+msgid " Hostname lookups: "
+msgstr ""
+
+msgid " SAMBA username file: "
+msgstr ""
+
+msgid "The path to SAMBA's username file, IE: /etc/samba/smbusers"
+msgstr ""
+
+msgid " The systems password program: "
+msgstr ""
+
+msgid "The path to the systems passwd program, IE: /usr/bin/passwd"
+msgstr ""
+
+msgid " New password phraze: "
+msgstr ""
+
+#, c-format
+msgid ""
+"The new password phrase, IE: *new*password* \\%n\\n *ReType*new*password* \\%"
+"n\\n *password:*changed*sucessfully*"
+msgstr ""
+
+msgid " Add user script: "
+msgstr ""
+
+msgid ""
+"Add user script, IE: /usr/sbin/useradd -d /dev/null -c 'Samba User Account' -"
+"s /dev/null"
+msgstr ""
+
+msgid " Add user to group script: "
+msgstr ""
+
+#, c-format
+msgid ""
+"Add user to group script, IE: /usr/sbin/useradd -d /dev/null -c 'Samba User "
+"Account' -s /dev/null -g '%g'"
+msgstr ""
+
+msgid " Add group script: "
+msgstr ""
+
+#, c-format
+msgid "Add group script, IE: /usr/sbin/groupadd '%g'"
+msgstr ""
+
+msgid " Delete user script: "
+msgstr ""
+
+#, c-format
+msgid "Delete user script, IE: /usr/sbin/userdel '%u'"
+msgstr ""
+
+msgid " Delete user from group script: "
+msgstr ""
+
+#, c-format
+msgid "Delete user from group script, IE: /usr/sbin/userdel '%u' '%g'"
+msgstr ""
+
+msgid " Delete group script: "
+msgstr ""
+
+#, c-format
+msgid "Delete group script, IE: /usr/sbin/groupdel '%g'"
+msgstr ""
+
+msgid " Add machine account script: "
+msgstr ""
+
+#, c-format
+msgid ""
+"IE: /usr/sbin/useradd -d /dev/null -g sambamachines -c 'Samba Machine "
+"Account' -s /dev/null -M %u"
+msgstr ""
+
+msgid " Machine password timeout: "
+msgstr ""
+
+msgid "Machine password timeout, IE: 120 (seconds)"
+msgstr ""
+
+msgid " Username id range: "
+msgstr ""
+
+msgid "The users uids, IE: 16777216-33554431"
+msgstr ""
+
+msgid " Group id range: "
+msgstr ""
+
+msgid "The users gids, IE: 16777216-33554431"
+msgstr ""
+
+msgid " Template shell: "
+msgstr ""
+
+msgid "The template shell, IE: /dev/null"
+msgstr ""
+
+msgid " Winbind use default domain: "
+msgstr ""
+
+msgid " Winbind separator: "
+msgstr ""
+
+msgid "Winbind separator, IE: @ for user@server.org"
+msgstr ""
+
+msgid " Winbind cache timeout: "
+msgstr ""
+
+msgid "Time until winbind cache times out."
+msgstr ""
+
+msgid " Winbind trusted domains only: "
+msgstr ""
+
+msgid " Winbind nested groups: "
+msgstr ""
+
+msgid " Winbind nss info: "
+msgstr ""
+
+msgid " Winbind refresh tickets: "
+msgstr ""
+
+msgid " Winbind offline logon: "
+msgstr ""
+
+msgid ""
+"Write the new share name and other settings in the share settings below.\n"
+msgstr ""
+
+msgid ""
+"Press add to add this new share with the selected settings.\n"
+"\n"
+msgstr ""
+
+msgid ""
+"You can also skip this step and directly alter an existing shares name,\n"
+msgstr ""
+
+msgid "settings and then press add. This can save administration time.\n"
+msgstr ""
+
+msgid "New share"
+msgstr ""
+
+msgid " Share name: "
+msgstr ""
+
+msgid "The name of the Share"
+msgstr ""
+
+msgid "Shared directory:"
+msgstr ""
+
+msgid "Select a directory to share"
+msgstr ""
+
+msgid "Access permissions for users and groups in the selected share:"
+msgstr ""
+
+msgid "Access allowed"
+msgstr ""
+
+msgid "Access denied"
+msgstr ""
+
+msgid ""
+"If a group has been allowed access you can deny access for some of the users "
+"in this group here"
+msgstr ""
+
+msgid "Write access"
+msgstr ""
+
+msgid "Administrators"
+msgstr ""
+
+msgid "Delete access permission"
+msgstr ""
+
+msgid "Add access permissions"
+msgstr ""
+
+msgid " Directory mask: "
+msgstr ""
+
+msgid " Create mode: "
+msgstr ""
+
+msgid " Force user: "
+msgstr ""
+
+msgid " Force group: "
+msgstr ""
+
+msgid " Read only: "
+msgstr ""
+
+msgid " Available: "
+msgstr ""
+
+msgid " Browseable: "
+msgstr ""
+
+msgid " Writable: "
+msgstr ""
+
+msgid " Guest ok: "
+msgstr ""
+
+msgid " Public: "
+msgstr ""
+
+msgid " Printable: "
+msgstr ""
+
+msgid " File locking: "
+msgstr ""
+
+msgid " Strict locking: "
+msgstr ""
+
+msgid "Share name"
+msgstr ""
+
+msgid "Directory"
+msgstr ""
+
+msgid "Comment"
+msgstr ""
+
+msgid "Share settings:"
+msgstr ""
+
+msgid "Account locked:"
+msgstr ""
+
+msgid "New user"
+msgstr ""
+
+msgid "Username:"
+msgstr ""
+
+msgid "Create a randomized username"
+msgstr ""
+
+msgid "The name of the user."
+msgstr ""
+
+msgid "Password:"
+msgstr ""
+
+msgid "Create a randomized password"
+msgstr ""
+
+msgid "The users password."
+msgstr ""
+
+msgid " Group: "
+msgstr ""
+
+msgid "The group the user belongs to"
+msgstr ""
+
+msgid "A comment about the user"
+msgstr ""
+
+msgid "Home directory:"
+msgstr ""
+
+msgid "Choose a home directory for this user"
+msgstr ""
+
+msgid ""
+"The users home directory, IE: /home/UserName or /dev/null to skip making a "
+"homedirectory."
+msgstr ""
+
+msgid " Shell: "
+msgstr ""
+
+msgid "Home directory"
+msgstr ""
+
+msgid "User settings:"
+msgstr ""
+
+msgid "Credits"
+msgstr ""
+
+msgid "Author: "
+msgstr ""
+
+msgid "I want to thank the following for their contributions:"
+msgstr ""
+
+msgid ""
+"The SAMBA developers.\n"
+"\n"
+msgstr ""
+
+msgid "for"
+msgstr ""
+
+msgid "for the program icons.\n"
+msgstr ""
+
+msgid "for the RPM spec file."
+msgstr ""
+
+msgid "And all translators:"
+msgstr ""
+
+msgid "Afrikaans"
+msgstr ""
+
+msgid "Amharic"
+msgstr ""
+
+msgid "Arabic"
+msgstr ""
+
+msgid "Azerbaijani"
+msgstr ""
+
+msgid "Basque"
+msgstr ""
+
+msgid "Bulgarian"
+msgstr ""
+
+msgid "Breton"
+msgstr ""
+
+msgid "Brittish-English"
+msgstr ""
+
+msgid "Bosnian"
+msgstr ""
+
+msgid "Byelorussian"
+msgstr ""
+
+msgid "Catalan"
+msgstr ""
+
+msgid "Chinese"
+msgstr ""
+
+msgid "Chinese-Taiwan"
+msgstr ""
+
+msgid "Croatian"
+msgstr ""
+
+msgid "Czech"
+msgstr ""
+
+msgid "Danish"
+msgstr ""
+
+msgid "Dutch"
+msgstr ""
+
+msgid "Esperanto"
+msgstr ""
+
+msgid "Estonian"
+msgstr ""
+
+msgid "Finnish"
+msgstr ""
+
+msgid "French"
+msgstr ""
+
+msgid "Galician"
+msgstr ""
+
+msgid "German"
+msgstr ""
+
+msgid "Greek"
+msgstr ""
+
+msgid "Hebrew"
+msgstr ""
+
+msgid "Hini"
+msgstr ""
+
+msgid "Hungarian"
+msgstr ""
+
+msgid "Icelandic"
+msgstr ""
+
+msgid "Indonesian"
+msgstr ""
+
+msgid "Irish"
+msgstr ""
+
+msgid "Italian"
+msgstr ""
+
+msgid "Japanese"
+msgstr ""
+
+msgid "Korean"
+msgstr ""
+
+msgid "Kurdish"
+msgstr ""
+
+msgid "Latvian-Lettish"
+msgstr ""
+
+msgid "Lithuanian"
+msgstr ""
+
+msgid "Macedonian"
+msgstr ""
+
+msgid "Maori"
+msgstr ""
+
+msgid "Maltese"
+msgstr ""
+
+msgid "Norwegian"
+msgstr ""
+
+msgid "Polish"
+msgstr ""
+
+msgid "Portuguese"
+msgstr ""
+
+msgid "Portuguese-Brazil"
+msgstr ""
+
+msgid "Romanian"
+msgstr ""
+
+msgid "Russian"
+msgstr ""
+
+msgid "Serbian"
+msgstr ""
+
+msgid "Slovak"
+msgstr ""
+
+msgid "Slovenian"
+msgstr ""
+
+msgid "Spanish"
+msgstr ""
+
+msgid "Swedish"
+msgstr ""
+
+msgid "Tamil"
+msgstr ""
+
+msgid "Thai"
+msgstr ""
+
+msgid "Turkish"
+msgstr ""
+
+msgid "Traditional Chinese"
+msgstr ""
+
+msgid "Ukrainian"
+msgstr ""
+
+msgid "Vietnamese"
+msgstr ""
+
+msgid "Wallon"
+msgstr ""
+
+msgid "Welch"
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+#, c-format
+msgid "Failed deleting samba machine account: %s\n"
+msgstr ""
+
+msgid "No user specified.\n"
+msgstr ""
+
+#, c-format
+msgid "Cant open smb.conf here: %s run gadmin-samba as root.\n"
+msgstr ""
+
+msgid ""
+"The samba root user was deleted.\n"
+"The root system user can not be deleted.\n"
+msgstr ""
+
+#, c-format
+msgid "Could not remove the samba user: %s\n"
+msgstr ""
+
+msgid "No username specified.\n"
+msgstr ""
+
+msgid "The root user can not be deleted.\n"
+msgstr ""
+
+#, c-format
+msgid "Failed to delete system user: %s\n"
+msgstr ""
+
+msgid "Group file not found"
+msgstr ""
+
+msgid "Group name not found"
+msgstr ""
+
+msgid "User setting not found"
+msgstr ""
+
+msgid "No value has been set"
+msgstr ""
+
+msgid "Max randomize username length is 999\n"
+msgstr ""
+
+msgid "Randomize username length can only contain digits\n"
+msgstr ""
+
+msgid "Max home directory length is 8192 chars.\n"
+msgstr ""
+
+msgid "Max randomize password length is 999\n"
+msgstr ""
+
+msgid "Randomize password length can only contain digits\n"
+msgstr ""
+
+msgid "Randomize length too long, changed it to 256.\n"
+msgstr ""
+
+msgid "Remote operations are not yet supported.\n"
+msgstr ""
+
+msgid ""
+"New samba users where added with empty passwords.\n"
+"See server settings and empty passwords.\n"
+msgstr ""
+
+#, c-format
+msgid "Number of added users: %ld\n"
+msgstr ""
+
+#, c-format
+msgid "Number of added groups: %ld\n"
+msgstr ""
+
+#, c-format
+msgid ""
+"Cant find the shells file here:\n"
+"%s\n"
+msgstr ""
+
+msgid "Missing password:"
+msgstr ""
+
+msgid "Empty password:"
+msgstr ""
+
+#, c-format
+msgid ""
+"Couldnt open the settings file here:\n"
+"%s\n"
+msgstr ""
+
+msgid "Set version failed\n"
+msgstr ""
+
+#, c-format
+msgid " Information: SAMBA %s"
+msgstr ""
+
+msgid " samba (smbd) is not installed or not in your path."
+msgstr ""
+
+#, c-format
+msgid "GADMIN-SAMBA %s settings"
+msgstr ""
+
+msgid "Settings:"
+msgstr ""
+
+msgid " New samba configuration: "
+msgstr ""
+
+msgid " Start winbind server: "
+msgstr ""
+
+msgid " Path to smb.conf: "
+msgstr ""
+
+msgid "GADMIN-SAMBA Help"
+msgstr ""
+
+msgid ""
+"\n"
+"Server settings:\n"
+msgstr ""
+
+msgid ""
+"If all you want to do is share some directories you only need to change\n"
+msgstr ""
+
+msgid ""
+"the first visible part in the server settings tab and then press apply.\n"
+msgstr ""
+
+msgid "When you scroll down more advanced options will be shown.\n"
+msgstr ""
+
+msgid ""
+"\n"
+"Users:\n"
+msgstr ""
+
+msgid "Adding a user can be done by specifying its username, group, password\n"
+msgstr ""
+
+msgid "and other settings, then clicking add.\n"
+msgstr ""
+
+msgid ""
+"After one user has been added this user can serve as a profile for other "
+"users.\n"
+msgstr ""
+
+msgid ""
+"Select a user in the user list, change its username and password then click "
+"add.\n"
+msgstr ""
+
+msgid ""
+"Both users will then have the same settings except for the username and "
+"password.\n"
+msgstr ""
+
+msgid ""
+"The new user button can be used to clear and insert default user settings, "
+"making it\n"
+msgstr ""
+
+msgid ""
+"ready for adding new users.\n"
+"\n"
+msgstr ""
+
+msgid ""
+"Deleting a user can be done by selecting it in the list and then clicking "
+"delete.\n"
+msgstr ""
+
+msgid ""
+"The deleted user will also be deleted from any shared resource.\n"
+"\n"
+msgstr ""
+
+msgid ""
+"Changing a users settings is done by changing the settings and clicking "
+"apply.\n"
+msgstr ""
+
+msgid ""
+"When you add a user you can randomize its name and password or use your "
+"own.\n"
+msgstr ""
+
+msgid ""
+"You can also select its login shell and where this user should have its home "
+"directory.\n"
+msgstr ""
+
+msgid ""
+"If the selected shell is /dev/null or /sbin/nologin the user can only login "
+"to this\n"
+msgstr ""
+
+msgid ""
+"server, otherwise the user can login via ssh etc if the server allows this "
+"user to do so.\n"
+"\n"
+msgstr ""
+
+msgid "Shares:\n"
+msgstr ""
+
+msgid ""
+"Shares can be added by selecting a directory to share, setting its share "
+"permissions and clicking add.\n"
+msgstr ""
+
+msgid ""
+"Deleting a share is done by selecting the share to delete and clicking "
+"delete.\n"
+msgstr ""
+
+msgid ""
+"Changing share settings can be done by changing its settings and then "
+"clicking the apply button.\n"
+"\n"
+msgstr ""
+
+msgid "Adding user and group access to shares:\n"
+msgstr ""
+
+msgid ""
+"Share access for users and groups can be added in several ways. Those ways "
+"are:\n"
+msgstr ""
+
+msgid ""
+"local users and groups, remote domain users and groups and each of these can "
+"have 4 different\n"
+msgstr ""
+
+msgid ""
+"permission classes. Multiple users and groups can be imported at once and "
+"duplicate additions are ignored.\n"
+"\n"
+msgstr ""
+
+msgid ""
+"The new share button can be used to clear and insert default share settings, "
+"making it ready\n"
+msgstr ""
+
+msgid ""
+"for adding new shares.\n"
+"\n"
+msgstr ""
+
+msgid ""
+"Joining a samba domain with MSFT'tm(c)(r) (extreme copyright) clients:\n"
+msgstr ""
+
+msgid ""
+"First disconnect all current connections on the client with: net use * /d\n"
+msgstr ""
+
+msgid ""
+"As administrator, select properties for \"this computer\" and write example."
+"org in the domain\n"
+msgstr ""
+
+msgid ""
+"field then press join domain. Use root as username and the samba root "
+"password in the dialog.\n"
+"\n"
+msgstr ""
+
+msgid "Joining the domain with Linux or other open source clients:\n"
+msgstr ""
+
+msgid ""
+"net rpc join example.org -S samba24 -U root then supply the samba root "
+"password\n"
+msgstr ""
+
+msgid "Mounting shares:\n"
+msgstr ""
+
+msgid ""
+"If you want to add directories thats not under the users root directory you "
+"can do this:\n"
+"\n"
+msgstr ""
+
+msgid "Linux (as of kernel 2.4.0):\n"
+msgstr ""
+
+msgid ""
+"mount --bind /some/directory/to/share /home/bob/make_this_directory_first\n"
+"\n"
+msgstr ""
+
+msgid ""
+"Alternatively:\n"
+"mount -o bind /var/data /home/bob/mounted_data\n"
+"\n"
+msgstr ""
+
+msgid ""
+"*BSD (as of 4.4BSD):\n"
+"mount_null /var/data /home/bob/mounted_data\n"
+"\n"
+msgstr ""
+
+msgid ""
+"Solaris:\n"
+"mount -F lofs /var/data /home/bob/mounted_data\n"
+"\n"
+msgstr ""
+
+msgid ""
+"For more detailed information about the server and its configuration "
+"directives visit:\n"
+msgstr ""
+
+msgid "http://www.samba.org\n"
+msgstr ""
+
+#, c-format
+msgid "GADMIN-SAMBA %s information"
+msgstr ""
+
+#, c-format
+msgid ""
+"Error: Could not backup the current configuration:\n"
+"%s\n"
+msgstr ""
+
+#, c-format
+msgid ""
+"The samba configuration was backed up here for safety:\n"
+"%s\n"
+msgstr ""
+
+#, c-format
+msgid ""
+"Cant write a new smb.conf here:\n"
+"%s\n"
+msgstr ""
+
+#, c-format
+msgid ""
+"Failed to create directories:\n"
+"%s\n"
+msgstr ""
+
+#, c-format
+msgid "Failed chmodding a+r for directory: %s\n"
+msgstr ""
+
+#, c-format
+msgid "Failed chowning the directories: %s\n"
+msgstr ""
+
+#, c-format
+msgid "Failed chmodding directory: %s\n"
+msgstr ""
+
+#, c-format
+msgid "Failed to create directory: %s/%s\n"
+msgstr ""
+
+msgid "GADMIN-SAMBA Question"
+msgstr ""
+
+msgid ""
+"GADMIN-SAMBA could not find SAMBAs configuration (smb.conf) or the current\n"
+msgstr ""
+
+msgid ""
+"configuration doesnt have all the features that GADMIN-SAMBA requires.\n"
+"\n"
+msgstr ""
+
+msgid "Do you want to overwrite the current samba configuration ?\n"
+msgstr ""
+
+msgid "\t\t\t(If you dont know then press yes)\n"
+msgstr ""
+
+#, c-format
+msgid ""
+"Error: cant create the settings directory here:\n"
+"%s\n"
+msgstr ""
+
+#, c-format
+msgid ""
+"Error: cant write the settings file here:\n"
+"%s\n"
+msgstr ""
+
+msgid "Status: Deactivated"
+msgstr ""
+
+#, c-format
+msgid "Status: Activated %s"
+msgstr ""
+
+msgid "Status: Activated"
+msgstr ""
+
+#, c-format
+msgid "Couldn't find pixmap file: %s"
+msgstr ""
