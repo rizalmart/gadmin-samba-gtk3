@@ -1,0 +1,13 @@
+#!/bin/sh
+
+### SAMBA Postscript to PDF Printing by Magnus Loef ############
+### Use "printing = bsd" in smb.conf for this printer ##########
+### Install client printers as "HP Color Laserjet PS" ##########
+### Any postscript laserjet printer will do but select color ###
+
+OUTDIR="/var/lib/samba/pdf-documents"
+DATE=`date +%Y-%b-%d---%H.%M.%S`
+
+/usr/bin/ps2pdf12 $1 $OUTDIR/$DATE.pdf
+echo "$2 Created: $DATE.pdf" >> $OUTDIR/CreationLog.wri
+rm -f $1
