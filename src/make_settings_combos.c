@@ -111,7 +111,8 @@ GtkWidget * make_label_textcombo_label(GtkTable * table,
 
     hbox = gtk_hbox_new(FALSE, 2);
     label = gtk_label_new(label_text);
-    combo = gtk_combo_box_new_with_entry();
+    //combo = gtk_combo_box_new_with_entry();
+    combo = gtk_combo_box_text_new();
     pad_label = gtk_label_new("");
 
     gtk_box_pack_start(GTK_BOX(hbox), combo, FALSE, FALSE, 0);

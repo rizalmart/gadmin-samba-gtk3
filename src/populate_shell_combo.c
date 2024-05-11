@@ -31,6 +31,26 @@
 #include "show_info.h"
 #include "populate_shell_combo.h"
 
+gboolean item_shell_exists(GtkComboBox *combo_box, const gchar *text) {
+    GtkTreeIter iter;
+    GtkListStore *store;
+    
+    store = GTK_LIST_STORE(gtk_combo_box_get_model(combo_box));
+
+    if (gtk_tree_model_get_iter_first(GTK_TREE_MODEL(store), &iter)) {
+        do {
+            gchar *entry_text;
+            gtk_tree_model_get(GTK_TREE_MODEL(store), &iter, 0, &entry_text, -1);
+            if (g_strcmp0(entry_text, text) == 0) {
+                g_free(entry_text);
+                return TRUE; // Item exists
+            }
+            g_free(entry_text);
+        } while (gtk_tree_model_iter_next(GTK_TREE_MODEL(store), &iter));
+    }
+
+    return FALSE; // Item does not exist
+}
 
 
 void populate_shell_combo(GtkWidget * shell_combo)
@@ -73,9 +93,12 @@ void populate_shell_combo(GtkWidget * shell_combo)
                 shell_found = 1;
                 strcpy(new_buf, line);
                 utf8 = g_locale_to_utf8(new_buf, strlen(new_buf) - 1, NULL, NULL, NULL);
-                gtk_combo_box_text_append_text(GTK_COMBO_BOX(shell_combo), utf8);
+                if(item_shell_exists(shell_combo,utf8)==FALSE){
+					gtk_combo_box_text_append_text(GTK_COMBO_BOX(shell_combo), utf8);
+				}
             }
         }
+ 
     fclose(fp);
     free(line);
     free(new_buf);
