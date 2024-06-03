@@ -76,7 +76,7 @@
 #define KERBEROS_CONF "/etc/krb5.conf"
 
 /* var dir */
-#define LOCALSTATEDIR "/root/usr/var"
+#define LOCALSTATEDIR "/var"
 
 /* The minimum accepted password length. */
 #define MIN_PASS_LEN "6"
