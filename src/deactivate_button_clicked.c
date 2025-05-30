@@ -51,17 +51,31 @@ void deactivate_button_clicked(struct w *widgets)
        result for the admin here, hence -9 */
     if( global_winbindd_activated )
     {
-        stop = g_strdup_printf("killall -9 %s", WINBINDD_BINARY);
+        if(strstr(SYSINIT_START_CMD, "systemctl")){	
+			stop = g_strdup_printf("systemctl stop winbind");		
+		}
+		else{	
+			stop = g_strdup_printf("killall -9 %s", WINBINDD_BINARY);
+        }
+        
         if( ! run_command(stop) )
         {
             info = g_strdup_printf("Stopping samba (winbindd) failed.\n");
             show_info(info);
             g_free(info);
         }
+        
         g_free(stop);
+    
     }
 
-    stop = g_strdup_printf("killall -9 %s", SMBD_BINARY);
+	if(strstr(SYSINIT_START_CMD, "systemctl")){	
+	    stop = g_strdup_printf("systemctl stop samba");		
+	}
+    else{
+		stop = g_strdup_printf("killall -9 %s", SMBD_BINARY);
+	}
+    
     if( ! run_command(stop) )
     {
         info = g_strdup_printf("Stopping samba (smbd) failed.\n");
@@ -72,13 +86,22 @@ void deactivate_button_clicked(struct w *widgets)
 
     if( global_nmbd_activated )
     {
-        stop = g_strdup_printf("killall -9 %s", NMBD_BINARY);
+        
+		if(strstr(SYSINIT_START_CMD, "systemctl")){	
+			stop = g_strdup_printf("systemctl stop nmb");		
+		}
+		else{        
+			stop = g_strdup_printf("killall -9 %s", NMBD_BINARY);
+		}
+        
         if( ! run_command(stop) )
         {
             info = g_strdup_printf("Stopping samba (nmbd) failed.\n");
             show_info(info);
             g_free(info);
         }
+        
         g_free(stop);
+        
     }
 }

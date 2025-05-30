@@ -57,12 +57,27 @@ void activate_button_clicked(struct w *widgets)
     // FIXME: Use conf paths from settings.
 
     /* Start SMBD */
-    start = g_strdup_printf("%s -D -s %s", SMBD_BINARY, SAMBA_CONF);
+    if(strstr(SYSINIT_START_CMD, "systemctl")){	
+		start = g_strdup_printf("systemctl start samba");
+    }
+    else{
+		start = g_strdup_printf("%s -D -s %s", SMBD_BINARY, SAMBA_CONF);	
+	}	
+
+    
     if( ! run_command(start) )
     {
         printf("Starting samba (smbd) failed using this command: %s\n", start);
-        test = g_strdup_printf("%s -D -s %s 2>&1", SMBD_BINARY, SAMBA_CONF);
+        
+        if(strstr(SYSINIT_START_CMD, "systemctl")){	
+			test = g_strdup_printf("%s 2>&1", start);
+		}
+        else {
+			test = g_strdup_printf("%s -D -s %s 2>&1", SMBD_BINARY, SAMBA_CONF);
+		}
+				
         run_command_show_err(test);
+        
         g_free(test);
         g_free(start);
 
@@ -75,11 +90,24 @@ void activate_button_clicked(struct w *widgets)
 
 
     /* Start NMBD */
-    start = g_strdup_printf("%s -D -s %s", NMBD_BINARY, SAMBA_CONF);
+    if(strstr(SYSINIT_START_CMD, "systemctl")){			
+	  start = g_strdup_printf("systemctl start nmb");
+	}
+	else{
+	  start = g_strdup_printf("%s -D -s %s", NMBD_BINARY, SAMBA_CONF);	
+	}	
+    
     if( ! run_command(start) )
     {
         printf("Starting samba (nmbd) failed using this command: %s\n", start);
-        test = g_strdup_printf("%s -D -s %s 2>&1", NMBD_BINARY, SAMBA_CONF);
+        
+        if(strstr(SYSINIT_START_CMD, "systemctl")){	
+           test = g_strdup_printf("%s 2>&1", start);			
+		}
+		else{	
+           test = g_strdup_printf("%s -D -s %s 2>&1", NMBD_BINARY, SAMBA_CONF);
+	    }
+	
         run_command_show_err(test);
         g_free(test);
         g_free(start);
@@ -93,16 +121,30 @@ void activate_button_clicked(struct w *widgets)
     /* Start WinBindD if the settings sais so */
     if( global_start_winbindd )
     {
-        start = g_strdup_printf("%s -D -s %s", WINBINDD_BINARY, SAMBA_CONF);
+        if(strstr(SYSINIT_START_CMD, "systemctl")){	
+			start = g_strdup_printf("systemctl start winbind");		
+		}		
+		else{		
+			start = g_strdup_printf("%s -D -s %s", WINBINDD_BINARY, SAMBA_CONF);
+	    }
+        
         if( ! run_command(start) )
         {
             printf("Starting winbindd failed using this command: %s\nThe main SAMBA servers are working ok.\n", start);
-            test = g_strdup_printf("%s -D -s %s 2>&1", WINBINDD_BINARY, SAMBA_CONF);
+            
+            if(strstr(SYSINIT_START_CMD, "systemctl")){	
+				test = g_strdup_printf("%s 2>&1",start);				
+			}
+			else{	
+				test = g_strdup_printf("%s -D -s %s 2>&1", WINBINDD_BINARY, SAMBA_CONF);
+		    }
+            
             run_command_show_err(test);
             g_free(test);
             g_free(start);
             return;
         }
+        
         g_free(start);
     }
 }
