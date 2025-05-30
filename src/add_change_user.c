@@ -81,7 +81,7 @@ void account_locked_checkbutton_clicked(struct w *widgets)
     int locked = 0;
     int have_password = 0;
     gchar *info, *cmd;
-    G_CONST_RETURN gchar *username, *password;
+    const gchar *username, *password;
 
     username = gtk_entry_get_text(GTK_ENTRY(widgets->user_set_entry[0]));
     password = gtk_entry_get_text(GTK_ENTRY(widgets->user_set_entry[1]));
@@ -227,12 +227,12 @@ void add_change_user(struct w *widgets)
     FILE *fp;
     gchar *info, *path, *cmd;
 
-    G_CONST_RETURN gchar *username;
-    G_CONST_RETURN gchar *password;
-    G_CONST_RETURN gchar *groupname;
-    G_CONST_RETURN gchar *comment;
-    G_CONST_RETURN gchar *homedir;
-    G_CONST_RETURN gchar *shell;
+    const gchar *username;
+    const gchar *password;
+    const gchar *groupname;
+    const gchar *comment;
+    const gchar *homedir;
+    const gchar *shell;
 
     /* Get the users settings */
     username = gtk_entry_get_text(GTK_ENTRY(widgets->user_set_entry[0]));

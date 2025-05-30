@@ -65,7 +65,7 @@ void delete_user(struct w *widgets)
     int root_user = 0, i = 0, length = 0, user_deleted = 0;
     gchar *info, *cmd;
 
-    G_CONST_RETURN gchar *username;
+    const gchar *username;
 
 
     username = gtk_entry_get_text(GTK_ENTRY(widgets->user_set_entry[0]));

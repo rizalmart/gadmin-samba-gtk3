@@ -188,13 +188,13 @@ void add_share(struct w *widgets)
     GtkTreeModel *model;
 
     /* Entries, get all share settings */
-    G_CONST_RETURN gchar *share_name = gtk_entry_get_text(GTK_ENTRY(widgets->share_set_entry[0]));
-    G_CONST_RETURN gchar *directory = gtk_entry_get_text(GTK_ENTRY(widgets->share_set_entry[1]));
-    G_CONST_RETURN gchar *comment = gtk_entry_get_text(GTK_ENTRY(widgets->share_set_entry[2]));
-    G_CONST_RETURN gchar *dir_mask = gtk_entry_get_text(GTK_ENTRY(widgets->share_set_entry[3]));
-    G_CONST_RETURN gchar *create_mode = gtk_entry_get_text(GTK_ENTRY(widgets->share_set_entry[4]));
-    G_CONST_RETURN gchar *force_user = gtk_entry_get_text(GTK_ENTRY(widgets->share_set_entry[5]));
-    G_CONST_RETURN gchar *force_group = gtk_entry_get_text(GTK_ENTRY(widgets->share_set_entry[6]));
+    const gchar *share_name = gtk_entry_get_text(GTK_ENTRY(widgets->share_set_entry[0]));
+    const gchar *directory = gtk_entry_get_text(GTK_ENTRY(widgets->share_set_entry[1]));
+    const gchar *comment = gtk_entry_get_text(GTK_ENTRY(widgets->share_set_entry[2]));
+    const gchar *dir_mask = gtk_entry_get_text(GTK_ENTRY(widgets->share_set_entry[3]));
+    const gchar *create_mode = gtk_entry_get_text(GTK_ENTRY(widgets->share_set_entry[4]));
+    const gchar *force_user = gtk_entry_get_text(GTK_ENTRY(widgets->share_set_entry[5]));
+    const gchar *force_group = gtk_entry_get_text(GTK_ENTRY(widgets->share_set_entry[6]));
 
     if( share_name == NULL || strlen(share_name) < 1 )
     {

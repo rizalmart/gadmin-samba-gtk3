@@ -37,7 +37,7 @@ void create_del_system_user_question(struct w *widgets)
     GtkWidget *question_userdel_delete_button;
     GtkWidget *alignment50, *hbox230, *image50, *label305;
 
-    G_CONST_RETURN gchar *username;
+    const gchar *username;
     username = gtk_entry_get_text(GTK_ENTRY(widgets->user_set_entry[0]));
 
     widgets->del_system_user_question_window = gtk_window_new(GTK_WINDOW_TOPLEVEL);

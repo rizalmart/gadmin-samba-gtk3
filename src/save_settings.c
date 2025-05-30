@@ -40,7 +40,7 @@ void save_settings(struct w *widgets)
     long conf_size;
     char *line, *new_conf;
     gchar *settings_file, *setting;
-    G_CONST_RETURN gchar *set_smb_conf;
+    const gchar *set_smb_conf;
 
     /* APPCONFDIR is defined at compiletime */
     settings_file = g_strdup_printf("%s/settings.conf", APPCONFDIR);

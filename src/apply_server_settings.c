@@ -54,49 +54,49 @@ void apply_server_settings(struct w *widgets)
     char *line, *conf_line, *new_conf;
 
     /* Entries */
-    G_CONST_RETURN gchar *server_name;
-    G_CONST_RETURN gchar *server_comment;
-    G_CONST_RETURN gchar *domain_workgroup;
-    G_CONST_RETURN gchar *realm;
-    G_CONST_RETURN gchar *allowed_nets;
-    G_CONST_RETURN gchar *listen_nets;
-    G_CONST_RETURN gchar *announce_server_to;
-    G_CONST_RETURN gchar *retrieve_announce_from;
-    G_CONST_RETURN gchar *printcap_path;
-    G_CONST_RETURN gchar *guest_users;
-    G_CONST_RETURN gchar *samba_logfile;
-    G_CONST_RETURN gchar *samba_password_program;
-    G_CONST_RETURN gchar *new_pass_phrase;
-    G_CONST_RETURN gchar *samba_username_mapfile;
-    G_CONST_RETURN gchar *name_resolve_order;
-    G_CONST_RETURN gchar *socket_options;
-    G_CONST_RETURN gchar *wins_servers;
-    G_CONST_RETURN gchar *logon_drive;
-    G_CONST_RETURN gchar *logon_home;
-    G_CONST_RETURN gchar *logon_path;
-    G_CONST_RETURN gchar *logon_script;
-//    G_CONST_RETURN gchar *samba_root_home;
-    G_CONST_RETURN gchar *add_user_script;
-    G_CONST_RETURN gchar *add_user_to_group_script;
-    G_CONST_RETURN gchar *add_group_script;
-    G_CONST_RETURN gchar *del_user_script;
-    G_CONST_RETURN gchar *del_user_from_group_script;
-    G_CONST_RETURN gchar *del_group_script;
-    G_CONST_RETURN gchar *add_machine_script;
-    G_CONST_RETURN gchar *winbind_separator;
-    G_CONST_RETURN gchar *idmap_uid;
-    G_CONST_RETURN gchar *idmap_gid;
-    G_CONST_RETURN gchar *template_shell;
+    const gchar *server_name;
+    const gchar *server_comment;
+    const gchar *domain_workgroup;
+    const gchar *realm;
+    const gchar *allowed_nets;
+    const gchar *listen_nets;
+    const gchar *announce_server_to;
+    const gchar *retrieve_announce_from;
+    const gchar *printcap_path;
+    const gchar *guest_users;
+    const gchar *samba_logfile;
+    const gchar *samba_password_program;
+    const gchar *new_pass_phrase;
+    const gchar *samba_username_mapfile;
+    const gchar *name_resolve_order;
+    const gchar *socket_options;
+    const gchar *wins_servers;
+    const gchar *logon_drive;
+    const gchar *logon_home;
+    const gchar *logon_path;
+    const gchar *logon_script;
+//    const gchar *samba_root_home;
+    const gchar *add_user_script;
+    const gchar *add_user_to_group_script;
+    const gchar *add_group_script;
+    const gchar *del_user_script;
+    const gchar *del_user_from_group_script;
+    const gchar *del_group_script;
+    const gchar *add_machine_script;
+    const gchar *winbind_separator;
+    const gchar *idmap_uid;
+    const gchar *idmap_gid;
+    const gchar *template_shell;
 
 
     /* Spinbuttons */
-    G_CONST_RETURN gchar *max_log_file_size;
-    G_CONST_RETURN gchar *username_match_level;
-    G_CONST_RETURN gchar *password_match_level;
-    G_CONST_RETURN gchar *election_level;
-    G_CONST_RETURN gchar *password_chat_timeout;
-    G_CONST_RETURN gchar *machine_password_timeout;
-    G_CONST_RETURN gchar *winbind_cache_timeout;
+    const gchar *max_log_file_size;
+    const gchar *username_match_level;
+    const gchar *password_match_level;
+    const gchar *election_level;
+    const gchar *password_chat_timeout;
+    const gchar *machine_password_timeout;
+    const gchar *winbind_cache_timeout;
 
 
     /* If the security level combo is changed, change all other relevant options. */

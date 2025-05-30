@@ -32,7 +32,7 @@ void remove_global_option(char *option);
 
 int cmplowercase(char *buf, char *cmpstring);
 
-char *encrypt_password(G_CONST_RETURN gchar *password);
+char *encrypt_password(const gchar *password);
 
 int fix_newlines_in_conf();
 
@@ -44,13 +44,13 @@ void randomize_password(struct w *widgets);
 
 char *random_string(int len);
 
-int smbuser_exists(G_CONST_RETURN gchar*username);
+int smbuser_exists(const gchar*username);
 
-int smbuser_locked(G_CONST_RETURN gchar*username);
+int smbuser_locked(const gchar*username);
 
-int user_exists(G_CONST_RETURN gchar *username);
+int user_exists(const gchar *username);
 
-int group_exists(G_CONST_RETURN gchar *username);
+int group_exists(const gchar *username);
 
 gchar *get_user_comment(gchar *user);
 
@@ -58,7 +58,7 @@ gchar *get_user_setting(gchar *user, gchar *what);
 
 gchar *get_group_name(gchar *groupnr);
 
-void password_user(G_CONST_RETURN gchar *username, G_CONST_RETURN gchar *password);
+void password_user(const gchar *username, const gchar *password);
 
 int is_banned(char *user);
 

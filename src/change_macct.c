@@ -42,8 +42,8 @@ void change_macct(struct w *widgets)
 {
     gchar *info, *cmd, *machine_acct;
 
-    G_CONST_RETURN gchar *username; // Machine name, same thing except ($)
-    G_CONST_RETURN gchar *comment;
+    const gchar *username; // Machine name, same thing except ($)
+    const gchar *comment;
 
     /* Get the users widget settings */
     username = gtk_entry_get_text(GTK_ENTRY(widgets->macct_set_entry[0]));

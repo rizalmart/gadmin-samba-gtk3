@@ -249,7 +249,7 @@ void remove_global_option(char *option)
 }
 
 
-int smbuser_exists(G_CONST_RETURN gchar * username)
+int smbuser_exists(const gchar * username)
 {
     /* Checks if the system user exists */
     FILE *fp;
@@ -301,7 +301,7 @@ int smbuser_exists(G_CONST_RETURN gchar * username)
 }
 
 
-int smbuser_locked(G_CONST_RETURN gchar * username)
+int smbuser_locked(const gchar * username)
 {
     /* Checks if the samba user is locked */
     /* Return values: 0="Not locked" 1="Locked" 2="NULL password" */
@@ -388,7 +388,7 @@ int smbuser_locked(G_CONST_RETURN gchar * username)
 }
 
 
-int user_exists(G_CONST_RETURN gchar * username)
+int user_exists(const gchar * username)
 {
     /* Checks if the system user exists */
     FILE *fp;
@@ -472,7 +472,7 @@ int user_exists(G_CONST_RETURN gchar * username)
 }
 
 
-int group_exists(G_CONST_RETURN gchar * groupname)
+int group_exists(const gchar * groupname)
 {
     /* Checks if the system group already exists */
     FILE *fp;
@@ -783,7 +783,7 @@ gchar * get_user_setting(gchar * user, gchar * what)
 
 
 
-void password_user(G_CONST_RETURN gchar * username, G_CONST_RETURN gchar * password)
+void password_user(const gchar * username, const gchar * password)
 {
     FILE *fp;
     char *user_pass, *encrypted_pass;
@@ -858,7 +858,7 @@ void password_user(G_CONST_RETURN gchar * username, G_CONST_RETURN gchar * passw
 
 
 
-char * encrypt_password(G_CONST_RETURN gchar * password)
+char * encrypt_password(const gchar * password)
 {
     /* Make an encrypted password using the MD5 algoritm */
     int i = 0, where = 0, randlen = 8;  /* The max MD5 random stringsize is 8 */
@@ -1045,10 +1045,10 @@ void randomize_username(struct w *widgets)
     int len;
     gchar *info;
     gchar *utf8 = NULL;
-//    G_CONST_RETURN gchar *default_username_length;
+//    const gchar *default_username_length;
     char *default_username_length;
     char *default_homedir;
-//    G_CONST_RETURN gchar *default_homedir;
+//    const gchar *default_homedir;
 //    default_username_length = gtk_entry_get_text(GTK_ENTRY(widgets->server_set_spinbutton[7]));
 
 // Fixme, get from settings
@@ -1140,7 +1140,7 @@ void randomize_password(struct w *widgets)
     gchar *info;
     gchar *utf8 = NULL;
     char *default_password_length;
-//    G_CONST_RETURN gchar *default_password_length;
+//    const gchar *default_password_length;
 //    default_password_length = gtk_entry_get_text(GTK_ENTRY(widgets->server_set_spinbutton[8]));
 
     // Should be user configurable in the settings dlg
