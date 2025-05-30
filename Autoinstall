@@ -16,7 +16,7 @@
 # SYSINIT_STOP_CMD="echo"
 
 
-### Debian/Ubuntu install ###
+### Old Debian/Ubuntu install ###
 # ./configure --prefix=/usr --sysconfdir=/etc \
 # --localstatedir=/var --sbindir=/usr/sbin \
 # SYSINIT_START_CMD="update-rc.d -f samba defaults" \
@@ -24,7 +24,7 @@
 # make &&
 # make install
 
-### RH/Fedora install ###
+### Old RH/Fedora install ###
 #./configure --prefix=/usr --sysconfdir=/etc \
 #--localstatedir=/var --sbindir=/usr/sbin \
 #SYSINIT_START_CMD="chkconfig smb on" \
