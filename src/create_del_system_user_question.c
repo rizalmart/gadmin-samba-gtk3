@@ -46,14 +46,16 @@ void create_del_system_user_question(struct w *widgets)
     gtk_window_set_position(GTK_WINDOW(widgets->del_system_user_question_window),
         GTK_WIN_POS_CENTER);
 
-    vbox31 = gtk_vbox_new(TRUE, 0);
+    vbox31 = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
+    gtk_box_set_homogeneous(GTK_BOX(vbox31),TRUE);
+    
     gtk_container_add(GTK_CONTAINER(widgets->del_system_user_question_window), vbox31);
 
     label297 = gtk_label_new(_("Do you also want to delete the system user ?"));
     gtk_box_pack_start(GTK_BOX(vbox31), label297, FALSE, FALSE, 0);
     gtk_label_set_justify(GTK_LABEL(label297), GTK_JUSTIFY_LEFT);
 
-    hbox225 = gtk_hbox_new(FALSE, 0);
+    hbox225 = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
     gtk_box_pack_start(GTK_BOX(vbox31), hbox225, FALSE, FALSE, 0);
 
     label298 = gtk_label_new("");
@@ -79,7 +81,7 @@ void create_del_system_user_question(struct w *widgets)
     gtk_widget_set_size_request(label300, 90, -1);
     gtk_label_set_justify(GTK_LABEL(label300), GTK_JUSTIFY_LEFT);
 
-    hbuttonbox13 = gtk_hbutton_box_new();
+    hbuttonbox13 = gtk_button_box_new(GTK_ORIENTATION_HORIZONTAL);
     gtk_box_pack_start(GTK_BOX(vbox31), hbuttonbox13, FALSE, FALSE, 0);
     gtk_widget_set_size_request(hbuttonbox13, -1, 40);
     gtk_button_box_set_layout(GTK_BUTTON_BOX(hbuttonbox13), GTK_BUTTONBOX_SPREAD);
@@ -90,13 +92,16 @@ void create_del_system_user_question(struct w *widgets)
     //GTK_WIDGET_SET_FLAGS(question_userdel_cancel_button, GTK_CAN_DEFAULT);
     gtk_widget_set_can_default(question_userdel_cancel_button, TRUE);
 
-    alignment49 = gtk_alignment_new(0.5, 0.5, 0, 0);
+    alignment49 = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
+    gtk_widget_set_halign(alignment49, GTK_ALIGN_CENTER);
+	gtk_widget_set_valign(alignment49, GTK_ALIGN_CENTER);
+    
     gtk_container_add(GTK_CONTAINER(question_userdel_cancel_button), alignment49);
 
-    hbox229 = gtk_hbox_new(FALSE, 2);
+    hbox229 = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 2);
     gtk_container_add(GTK_CONTAINER(alignment49), hbox229);
 
-    image49 = gtk_image_new_from_stock("gtk-cancel", GTK_ICON_SIZE_BUTTON);
+    image49 = gtk_image_new_from_icon_name("gtk-cancel", GTK_ICON_SIZE_BUTTON);
     gtk_box_pack_start(GTK_BOX(hbox229), image49, FALSE, FALSE, 0);
 
     label304 = gtk_label_new_with_mnemonic(_("No"));
@@ -109,13 +114,16 @@ void create_del_system_user_question(struct w *widgets)
     //GTK_WIDGET_SET_FLAGS(question_userdel_delete_button, GTK_CAN_DEFAULT);
     gtk_widget_set_can_default(question_userdel_delete_button, TRUE);
 
-    alignment50 = gtk_alignment_new(0.5, 0.5, 0, 0);
+    alignment50 = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
+    gtk_widget_set_halign(alignment50, GTK_ALIGN_CENTER);
+	gtk_widget_set_valign(alignment50, GTK_ALIGN_CENTER);
+    
     gtk_container_add(GTK_CONTAINER(question_userdel_delete_button), alignment50);
 
-    hbox230 = gtk_hbox_new(FALSE, 2);
+    hbox230 = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 2);
     gtk_container_add(GTK_CONTAINER(alignment50), hbox230);
 
-    image50 = gtk_image_new_from_stock("gtk-remove", GTK_ICON_SIZE_BUTTON);
+    image50 = gtk_image_new_from_icon_name("gtk-remove", GTK_ICON_SIZE_BUTTON);
     gtk_box_pack_start(GTK_BOX(hbox230), image50, FALSE, FALSE, 0);
 
     label305 = gtk_label_new_with_mnemonic(_("Delete"));

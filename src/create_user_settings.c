@@ -81,15 +81,26 @@ void create_user_settings(struct w *widgets)
     widgets->acclock_label = gtk_label_new(_("Account locked:"));
 
     /* The delete, add and apply user buttons */
-    delete_user_button = gtk_button_new_from_stock(GTK_STOCK_DELETE);
+    //delete_user_button = gtk_button_new_from_stock(GTK_STOCK_DELETE);
+    
+	delete_user_button = gtk_button_new_with_mnemonic("_Delete");
+	GtkWidget *delete_user_icon = gtk_image_new_from_icon_name("gtk-delete", GTK_ICON_SIZE_BUTTON);
+	gtk_button_set_image(GTK_BUTTON(delete_user_button), delete_user_icon);
+	gtk_button_set_always_show_image(GTK_BUTTON(delete_user_button), TRUE);
+    
+    
     /* Custom new user button begin */
     new_user_button = gtk_button_new();
-    new_user_alignment = gtk_alignment_new(0.5, 0.5, 0, 0);
+    //new_user_alignment = gtk_alignment_new(0.5, 0.5, 0, 0);
+	new_user_alignment=gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 2);
+	gtk_widget_set_halign(new_user_alignment, GTK_ALIGN_CENTER);
+	gtk_widget_set_valign(new_user_alignment, GTK_ALIGN_CENTER);
+    
     gtk_container_add(GTK_CONTAINER(new_user_button), new_user_alignment);
-    new_user_hbox = gtk_hbox_new(FALSE, 2);
+    new_user_hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 2);
     gtk_container_add(GTK_CONTAINER(new_user_alignment), new_user_hbox);
-    new_user_image = gtk_image_new_from_stock("gtk-add", GTK_ICON_SIZE_BUTTON);
-
+    new_user_image = gtk_image_new_from_icon_name("gtk-add", GTK_ICON_SIZE_BUTTON);
+    
     gtk_box_pack_start(GTK_BOX(new_user_hbox), new_user_image, TRUE, TRUE, 0);
     new_user_label = gtk_label_new_with_mnemonic(_("New user"));
 
@@ -98,9 +109,14 @@ void create_user_settings(struct w *widgets)
     /* Custom new user button end */
 
     /* The apply button */
-    apply_user_button = gtk_button_new_from_stock(GTK_STOCK_APPLY);
+    //apply_user_button = gtk_button_new_from_stock(GTK_STOCK_APPLY);
+ 	apply_user_button = gtk_button_new_with_mnemonic("_Apply");
+	GtkWidget *apply_user_icon = gtk_image_new_from_icon_name("gtk-apply", GTK_ICON_SIZE_BUTTON);
+	gtk_button_set_image(GTK_BUTTON(apply_user_button), apply_user_icon);
+	gtk_button_set_always_show_image(GTK_BUTTON(apply_user_button), TRUE);   
+    
 
-    hbuttonbox = gtk_hbutton_box_new();
+    hbuttonbox = gtk_button_box_new(GTK_ORIENTATION_HORIZONTAL);
 
     gtk_box_pack_start(GTK_BOX(hbuttonbox), widgets->acclock_label, TRUE, TRUE, 0);
     gtk_box_pack_start(GTK_BOX(hbuttonbox), widgets->user_set_checkbutton[check], TRUE, TRUE, 0);

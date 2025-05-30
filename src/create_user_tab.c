@@ -45,7 +45,10 @@ void create_user_tab(struct w *widgets)
 
 
     /* Create the userlist treeview in a scrolled window */
-    user_treeview_hbox = gtk_hbox_new(TRUE, 0);
+    //user_treeview_hbox = gtk_hbox_new(TRUE, 0);
+    user_treeview_hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
+    gtk_box_set_homogeneous(GTK_BOX(user_treeview_hbox),TRUE);
+    
     gtk_box_pack_start(GTK_BOX(widgets->notebook_vbox2), user_treeview_hbox, EXPAND_USER_SECTION,
         TRUE, 0);
 
@@ -64,7 +67,7 @@ void create_user_tab(struct w *widgets)
         GTK_TREE_MODEL(widgets->user_store));
 
     gtk_container_add(GTK_CONTAINER(user_scrolled_window), widgets->user_treeview);
-    gtk_tree_view_set_rules_hint(GTK_TREE_VIEW(widgets->user_treeview), TRUE);
+    //gtk_tree_view_set_rules_hint(GTK_TREE_VIEW(widgets->user_treeview), TRUE);
 
     /* Set the column labels in the treeview */
     user_cell_renderer = gtk_cell_renderer_text_new();
@@ -96,7 +99,10 @@ void create_user_tab(struct w *widgets)
 
 
     /* Create the user settings scrolled window with a frame and a table */
-    user_settings_treeview_hbox = gtk_hbox_new(TRUE, 0);
+    //user_settings_treeview_hbox = gtk_hbox_new(TRUE, 0);
+    user_settings_treeview_hbox=gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
+    gtk_box_set_homogeneous(GTK_BOX(user_settings_treeview_hbox),TRUE);
+    
     gtk_box_pack_start(GTK_BOX(widgets->notebook_vbox2), user_settings_treeview_hbox,
         EXPAND_USER_SETTINGS_SECTION, TRUE, 0);
 
@@ -109,7 +115,10 @@ void create_user_tab(struct w *widgets)
     gtk_widget_set_size_request(widgets->user_settings_scrolled_window, -1, 100);
 
     /* Add a vbox to the scrolled window */
-    widgets->user_settings_vbox = gtk_vbox_new(FALSE, 0);
+    //widgets->user_settings_vbox = gtk_vbox_new(FALSE, 0);
+    
+    widgets->user_settings_vbox=gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
+    
     gtk_scrolled_window_add_with_viewport(GTK_SCROLLED_WINDOW(widgets->
             user_settings_scrolled_window), widgets->user_settings_vbox);
 
@@ -119,6 +128,7 @@ void create_user_tab(struct w *widgets)
     /* A table with NUM settings and 2 columns FIXME, Count */
     widgets->user_set_table =
         gtk_table_new(NUM_USERTAB_ENTRIES + NUM_USERTAB_SPINBUTTONS + NUM_USERTAB_CHECKBUTTONS, 2, FALSE);
+        
     gtk_box_pack_start(GTK_BOX(widgets->user_settings_vbox), frame, TRUE, TRUE, 1);
     gtk_container_add(GTK_CONTAINER(frame), widgets->user_set_table);
 

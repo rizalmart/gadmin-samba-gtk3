@@ -43,7 +43,10 @@ void create_server_tab(struct w *widgets)
 
 
     /* Create the server settings in a table inside a scrolled window */
-    settings_treeview_hbox = gtk_hbox_new(TRUE, 0);
+    //settings_treeview_hbox = gtk_hbox_new(TRUE, 0);
+    settings_treeview_hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
+    gtk_box_set_homogeneous(GTK_BOX(settings_treeview_hbox),TRUE);
+    
     gtk_box_pack_start(GTK_BOX(widgets->notebook_vbox1), settings_treeview_hbox,
         EXPAND_SERVER_SETTINGS_SECTION, TRUE, 0);
 
@@ -57,7 +60,9 @@ void create_server_tab(struct w *widgets)
     gtk_widget_set_size_request(widgets->server_settings_scrolled_window, -1, 100);
 
     /* Add a vbox to the scrolled window */
-    widgets->server_settings_vbox = gtk_vbox_new(TRUE, 0);
+    widgets->server_settings_vbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
+    gtk_box_set_homogeneous(GTK_BOX(widgets->server_settings_vbox),TRUE);
+    
     gtk_scrolled_window_add_with_viewport(GTK_SCROLLED_WINDOW(widgets->
             server_settings_scrolled_window), widgets->server_settings_vbox);
 

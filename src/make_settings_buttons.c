@@ -36,12 +36,16 @@ GtkWidget * make_button_with_entry(GtkTable * table,
     GtkWidget *button = gtk_button_new();
     //GtkTooltip *tooltips = gtk_tooltip_new();
 
-    GtkWidget *alignment = gtk_alignment_new(0.5, 0.5, 0, 0);
+    GtkWidget *alignment = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
+    gtk_widget_set_halign(alignment, GTK_ALIGN_CENTER);
+	gtk_widget_set_valign(alignment, GTK_ALIGN_CENTER);
+    
+    
     gtk_container_add(GTK_CONTAINER(button), alignment);
 
-    GtkWidget *hbox = gtk_hbox_new(FALSE, 2);
+    GtkWidget *hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 2);
     gtk_container_add(GTK_CONTAINER(alignment), hbox);
-    GtkWidget *image = gtk_image_new_from_stock(icon_name, GTK_ICON_SIZE_BUTTON);
+    GtkWidget *image = gtk_image_new_from_icon_name(icon_name, GTK_ICON_SIZE_BUTTON);
     gtk_box_pack_start(GTK_BOX(hbox), image, FALSE, FALSE, 0);
 
     GtkWidget *label = gtk_label_new_with_mnemonic(utf8_btn_txt);

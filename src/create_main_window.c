@@ -57,22 +57,34 @@ void create_main_window(struct w *widgets)
     pixbuf = create_pixbuf("gadmin-samba.png");
     g_object_set(pixbuf_cell_renderer, "pixbuf", pixbuf, NULL);
     gtk_window_set_icon(GTK_WINDOW(widgets->main_window), pixbuf);
-    gdk_pixbuf_unref(pixbuf);
+    g_object_unref(pixbuf);
 
-    widgets->main_vbox = gtk_vbox_new(FALSE, 0);
+    //widgets->main_vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
+    widgets->main_vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
+    
     gtk_container_add(GTK_CONTAINER(widgets->main_window), widgets->main_vbox);
 
     /* Hboxes (down) */
-    GtkWidget *toolbar_hbox = gtk_hbox_new(FALSE, 0);
+    //GtkWidget *toolbar_hbox = gtk_hbox_new(FALSE, 0);
+    GtkWidget *toolbar_hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
+    
     gtk_box_pack_start(GTK_BOX(widgets->main_vbox), toolbar_hbox, FALSE, FALSE, 0);
 
-    GtkWidget *status_hbox = gtk_hbox_new(FALSE, 0);
+    //GtkWidget *status_hbox = gtk_hbox_new(FALSE, 0);
+    GtkWidget *status_hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
+    
     gtk_box_pack_start(GTK_BOX(widgets->main_vbox), status_hbox, FALSE, FALSE, 0);
 
-    GtkWidget *status_hsep_hbox = gtk_hbox_new(TRUE, 0);
+    //GtkWidget *status_hsep_hbox = gtk_hbox_new(TRUE, 0);
+    GtkWidget *status_hsep_hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
+    gtk_box_set_homogeneous(GTK_BOX(status_hsep_hbox),TRUE);
+    
     gtk_box_pack_start(GTK_BOX(widgets->main_vbox), status_hsep_hbox, FALSE, TRUE, 0);
 
-    GtkWidget *notebook_hbox = gtk_hbox_new(TRUE, 0);
+    //GtkWidget *notebook_hbox = gtk_hbox_new(TRUE, 0);
+    GtkWidget *notebook_hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
+    gtk_box_set_homogeneous(GTK_BOX(notebook_hbox),TRUE);
+    
     gtk_box_pack_start(GTK_BOX(widgets->main_vbox), notebook_hbox, TRUE, TRUE, 0);
 
 
@@ -135,18 +147,19 @@ void create_main_window(struct w *widgets)
 	
 	
     /* The notebook */
-    GtkWidget *notebook_vbox = gtk_vbox_new(FALSE, 0);
+    //GtkWidget *notebook_vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
+    GtkWidget *notebook_vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
     gtk_box_pack_start(GTK_BOX(notebook_hbox), notebook_vbox, TRUE, TRUE, 0);
 
-    widgets->notebook_vbox1 = gtk_vbox_new(FALSE, 0);
-    widgets->notebook_vbox2 = gtk_vbox_new(FALSE, 0);
-    widgets->notebook_vbox3 = gtk_vbox_new(FALSE, 0);
-    widgets->notebook_vbox4 = gtk_vbox_new(FALSE, 0);
-    widgets->notebook_vbox5 = gtk_vbox_new(FALSE, 0);
-    widgets->notebook_vbox6 = gtk_vbox_new(FALSE, 0);
-    widgets->notebook_vbox7 = gtk_vbox_new(FALSE, 0);
-    widgets->notebook_vbox8 = gtk_vbox_new(FALSE, 0);
-    widgets->notebook_vbox9 = gtk_vbox_new(FALSE, 0);
+    widgets->notebook_vbox1 = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
+    widgets->notebook_vbox2 = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
+    widgets->notebook_vbox3 = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
+    widgets->notebook_vbox4 = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
+    widgets->notebook_vbox5 = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
+    widgets->notebook_vbox6 = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
+    widgets->notebook_vbox7 = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
+    widgets->notebook_vbox8 = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
+    widgets->notebook_vbox9 = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
 
     GtkWidget *main_notebook = gtk_notebook_new();
     gtk_box_pack_start(GTK_BOX(notebook_vbox), main_notebook, TRUE, TRUE, 0);
@@ -187,18 +200,24 @@ void create_main_window(struct w *widgets)
     /* Set version and status labels */
     widgets->version_label = gtk_label_new(_("Information: cant read version"));
     gtk_box_pack_start(GTK_BOX(status_hbox), widgets->version_label, FALSE, FALSE, 0);
-    gtk_misc_set_alignment(GTK_MISC(widgets->version_label), 0, 0);
-
+    //gtk_misc_set_alignment(GTK_MISC(widgets->version_label), 0, 0);
+	gtk_widget_set_halign(widgets->version_label, GTK_ALIGN_START);
+	gtk_widget_set_valign(widgets->version_label, GTK_ALIGN_START);
 
     GtkWidget *status_spacer_label = gtk_label_new("");
     gtk_box_pack_start(GTK_BOX(status_hbox), status_spacer_label, TRUE, TRUE, 0);
-    gtk_misc_set_alignment(GTK_MISC(status_spacer_label), 0, 0);
+    //gtk_misc_set_alignment(GTK_MISC(status_spacer_label), 0, 0);
+	gtk_widget_set_halign(status_spacer_label, GTK_ALIGN_START);
+	gtk_widget_set_valign(status_spacer_label, GTK_ALIGN_START);   
 
     widgets->status_label = gtk_label_new(_("Status: unknown"));
     gtk_box_pack_start(GTK_BOX(status_hbox), widgets->status_label, FALSE, FALSE, 0);
-    gtk_misc_set_alignment(GTK_MISC(widgets->status_label), 0, 0);
+    //gtk_misc_set_alignment(GTK_MISC(widgets->status_label), 0, 0);
+	gtk_widget_set_halign(widgets->status_label, GTK_ALIGN_START);
+	gtk_widget_set_valign(widgets->status_label, GTK_ALIGN_START);
 
-    GtkWidget *status_hseparator = gtk_hseparator_new();
+
+    GtkWidget *status_hseparator = gtk_separator_new(GTK_ORIENTATION_HORIZONTAL);
     gtk_box_pack_start(GTK_BOX(status_hsep_hbox), status_hseparator, TRUE, TRUE, 0);
     gtk_widget_set_size_request(status_hseparator, 10, 10);
 
