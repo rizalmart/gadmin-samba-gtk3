@@ -55,11 +55,23 @@ void create_macct_settings(struct w *widgets)
     //tooltips = gtk_tooltip_new();
 
     /* The delete and apply machine account settings buttons */
-    delete_macct_button = gtk_button_new_from_stock(GTK_STOCK_DELETE);
-    add_macct_button = gtk_button_new_from_stock(GTK_STOCK_ADD);
-    apply_macct_button = gtk_button_new_from_stock(GTK_STOCK_APPLY);
+		
+	 delete_macct_button = gtk_button_new_with_mnemonic("_Delete");
+	 GtkWidget *delete_macct_icon = gtk_image_new_from_icon_name("gtk-delete", GTK_ICON_SIZE_BUTTON);
+	 gtk_button_set_image(GTK_BUTTON(delete_macct_button), delete_macct_icon);
+	 gtk_button_set_always_show_image(GTK_BUTTON(delete_macct_button), TRUE);
 
-    hbuttonbox = gtk_hbutton_box_new();
+	 add_macct_button = gtk_button_new_with_mnemonic("_Add");
+	 GtkWidget *add_macct_icon = gtk_image_new_from_icon_name("gtk-add", GTK_ICON_SIZE_BUTTON);
+	 gtk_button_set_image(GTK_BUTTON(add_macct_button), add_macct_icon);
+	 gtk_button_set_always_show_image(GTK_BUTTON(add_macct_button), TRUE);   
+    
+	 apply_macct_button = gtk_button_new_with_mnemonic("_Apply");
+	 GtkWidget *apply_macct_icon = gtk_image_new_from_icon_name("gtk-apply", GTK_ICON_SIZE_BUTTON);
+	 gtk_button_set_image(GTK_BUTTON(apply_macct_button), apply_macct_icon);
+	 gtk_button_set_always_show_image(GTK_BUTTON(apply_macct_button), TRUE);   
+
+    hbuttonbox = gtk_button_box_new(GTK_ORIENTATION_HORIZONTAL);
 
     gtk_box_pack_start(GTK_BOX(hbuttonbox), delete_macct_button, TRUE, TRUE, 0);
     gtk_box_pack_start(GTK_BOX(hbuttonbox), add_macct_button, TRUE, TRUE, 0);

@@ -85,7 +85,9 @@ void create_conn_tab(struct w *widgets)
     //tooltips = gtk_tooltip_new();
 
     /* Create the conn treeview in a scrolled window */
-    conn_treeview_hbox = gtk_hbox_new(TRUE, 0);
+    conn_treeview_hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
+    gtk_box_set_homogeneous(GTK_BOX(conn_treeview_hbox),TRUE);
+    
     gtk_box_pack_start(GTK_BOX(widgets->notebook_vbox6), conn_treeview_hbox, EXPAND_CONN_SECTION, TRUE, 0);
 
     conn_scrolled_window = gtk_scrolled_window_new(NULL, NULL);
@@ -105,7 +107,7 @@ void create_conn_tab(struct w *widgets)
     gtk_tree_selection_set_mode(GTK_TREE_SELECTION(selection), GTK_SELECTION_MULTIPLE);
 
     gtk_container_add(GTK_CONTAINER(conn_scrolled_window), widgets->conns_treeview);
-    gtk_tree_view_set_rules_hint(GTK_TREE_VIEW(widgets->conns_treeview), TRUE);
+    //gtk_tree_view_set_rules_hint(GTK_TREE_VIEW(widgets->conns_treeview), TRUE);
 
 
     /* Set the column labels in the treeview */
@@ -143,17 +145,31 @@ void create_conn_tab(struct w *widgets)
 
 
     /* The update conn button */
-    GtkWidget *conn_button_box = gtk_hbutton_box_new();
+    GtkWidget *conn_button_box = gtk_button_box_new(GTK_ORIENTATION_HORIZONTAL);
     gtk_box_pack_start(GTK_BOX(widgets->notebook_vbox6), conn_button_box, FALSE, FALSE, 0);
     gtk_button_box_set_layout(GTK_BUTTON_BOX(conn_button_box), GTK_BUTTONBOX_SPREAD);
 
-    GtkWidget *dc_conn_button = gtk_button_new_from_stock(GTK_STOCK_DELETE);
+    //GtkWidget *dc_conn_button = gtk_button_new_from_stock(GTK_STOCK_DELETE);
+    GtkWidget *dc_conn_button = gtk_button_new_with_mnemonic("_Disconnect");
+	GtkWidget *dc_conn_icon = gtk_image_new_from_icon_name("gtk-disconnect", GTK_ICON_SIZE_BUTTON);
+	gtk_button_set_image(GTK_BUTTON(dc_conn_button), dc_conn_icon);
+	gtk_button_set_always_show_image(GTK_BUTTON(dc_conn_button), TRUE);
+
+    
+    
+    
     gtk_box_pack_start(GTK_BOX(conn_button_box), dc_conn_button, FALSE, FALSE, 0);
     //gtk_tooltips_set_tip(tooltips, dc_conn_button, _("Disconnect selected processes"), NULL);
     gtk_widget_set_tooltip_text(dc_conn_button, _("Disconnect selected processes"));    
     
 
-    GtkWidget *update_conn_button = gtk_button_new_from_stock(GTK_STOCK_REFRESH);
+    //GtkWidget *update_conn_button = gtk_button_new_from_stock(GTK_STOCK_REFRESH);
+    
+    GtkWidget *update_conn_button = gtk_button_new_with_mnemonic("_Refresh");
+	GtkWidget *update_conn_icon = gtk_image_new_from_icon_name("gtk-refresh", GTK_ICON_SIZE_BUTTON);
+	gtk_button_set_image(GTK_BUTTON(update_conn_button), update_conn_icon);
+	gtk_button_set_always_show_image(GTK_BUTTON(update_conn_button), TRUE);
+    
     gtk_box_pack_start(GTK_BOX(conn_button_box), update_conn_button, FALSE, FALSE, 0);
 
 

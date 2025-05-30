@@ -36,8 +36,17 @@ GtkWidget * make_progressbar_with_label(GtkTable * table,
     gtk_table_attach(table, progressbar, left_attach + 1, right_attach + 1, top_attach,
         bottom_attach, GTK_FILL | GTK_EXPAND, GTK_FILL | GTK_EXPAND, 20, 2);
 
-    gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
-    gtk_misc_set_padding(GTK_MISC(label), 2, 0);
+    //gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
+    gtk_widget_set_halign(label, GTK_ALIGN_START);
+	gtk_widget_set_valign(label, GTK_ALIGN_CENTER);
+    
+    //gtk_misc_set_padding(GTK_MISC(label), 2, 0);
+
+	gtk_widget_set_margin_top(label, 2);
+	gtk_widget_set_margin_bottom(label, 2);
+	gtk_widget_set_margin_start(label, 2);
+	gtk_widget_set_margin_end(label, 2);
+	    
     gtk_widget_set_size_request(progressbar, bar_length, -1);
 
     gtk_widget_show(progressbar);
@@ -50,8 +59,15 @@ GtkWidget * make_progressbar_with_label(GtkTable * table,
 GtkWidget * make_button(GtkTable * table,
     gint left_attach, gint right_attach, gint top_attach, gint bottom_attach, gint button_length)
 {
+	
     GtkWidget *button;
-    button = gtk_button_new_from_stock(GTK_STOCK_APPLY);
+    
+    button = gtk_button_new_with_mnemonic("_Apply");
+	GtkWidget *apply_icon = gtk_image_new_from_icon_name("gtk-apply", GTK_ICON_SIZE_BUTTON);
+	gtk_button_set_image(GTK_BUTTON(button), apply_icon);
+	gtk_button_set_always_show_image(GTK_BUTTON(button), TRUE);
+	   
+    
 
     gtk_table_attach(table, button, left_attach + 2, right_attach + 2, top_attach, bottom_attach,
         GTK_FILL | GTK_EXPAND, GTK_FILL | GTK_EXPAND, 20, 2);

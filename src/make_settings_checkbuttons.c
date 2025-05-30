@@ -39,8 +39,18 @@ GtkWidget * make_checkbutton_with_label(GtkTable * table,
     gtk_table_attach(table, checkbutton, left_attach + 1, right_attach + 1, top_attach,
         bottom_attach, GTK_FILL, GTK_EXPAND, 20, 2);
 
-    gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
-    gtk_misc_set_padding(GTK_MISC(label), 2, 2);
+    //gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
+    gtk_widget_set_halign(label, GTK_ALIGN_START);
+	gtk_widget_set_valign(label, GTK_ALIGN_CENTER);
+    
+    //gtk_misc_set_padding(GTK_MISC(label), 2, 0);
+
+	gtk_widget_set_margin_top(label, 2);
+	gtk_widget_set_margin_bottom(label, 2);
+	gtk_widget_set_margin_start(label, 2);
+	gtk_widget_set_margin_end(label, 2);    
+    
+    
 //    gtk_widget_set_size_request(spinbutton, spinbutton_length, -1);
 
     gtk_widget_show(checkbutton);

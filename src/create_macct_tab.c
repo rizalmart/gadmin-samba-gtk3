@@ -45,7 +45,10 @@ void create_macct_tab(struct w *widgets)
 
 
     /* Create the machine account list treeview in a scrolled window */
-    macct_treeview_hbox = gtk_hbox_new(TRUE, 0);
+    macct_treeview_hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
+    gtk_box_set_homogeneous(GTK_BOX(macct_treeview_hbox),TRUE);
+    
+    
     gtk_box_pack_start(GTK_BOX(widgets->notebook_vbox4), macct_treeview_hbox, EXPAND_MACCT_SECTION, TRUE, 0);
 
     macct_scrolled_window = gtk_scrolled_window_new(NULL, NULL);
@@ -62,7 +65,7 @@ void create_macct_tab(struct w *widgets)
         GTK_TREE_MODEL(widgets->macct_store));
 
     gtk_container_add(GTK_CONTAINER(macct_scrolled_window), widgets->macct_treeview);
-    gtk_tree_view_set_rules_hint(GTK_TREE_VIEW(widgets->macct_treeview), TRUE);
+    //gtk_tree_view_set_rules_hint(GTK_TREE_VIEW(widgets->macct_treeview), TRUE);
 
     /* Set the column labels in the treeview */
     macct_cell_renderer = gtk_cell_renderer_text_new();
@@ -90,7 +93,9 @@ void create_macct_tab(struct w *widgets)
 
 
     /* Create the machine account settings scrolled window with a frame and a table */
-    macct_settings_treeview_hbox = gtk_hbox_new(TRUE, 0);
+    macct_settings_treeview_hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
+    gtk_box_set_homogeneous(GTK_BOX(macct_settings_treeview_hbox),TRUE);
+    
     gtk_box_pack_start(GTK_BOX(widgets->notebook_vbox4), macct_settings_treeview_hbox,
         EXPAND_MACCT_SETTINGS_SECTION, TRUE, 0);
 
@@ -103,7 +108,7 @@ void create_macct_tab(struct w *widgets)
     gtk_widget_set_size_request(widgets->macct_settings_scrolled_window, -1, 100);
 
     /* Add a vbox to the scrolled window */
-    widgets->macct_settings_vbox = gtk_vbox_new(FALSE, 0);
+    widgets->macct_settings_vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
     gtk_scrolled_window_add_with_viewport(GTK_SCROLLED_WINDOW(widgets->
             macct_settings_scrolled_window), widgets->macct_settings_vbox);
 

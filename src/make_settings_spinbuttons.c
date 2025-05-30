@@ -43,8 +43,17 @@ GtkWidget * make_spinbutton_with_label(GtkTable * table,
     gtk_table_attach(table, spinbutton, left_attach + 1, right_attach + 1, top_attach,
         bottom_attach, GTK_FILL | GTK_EXPAND, GTK_FILL | GTK_EXPAND, 20, 2);
 
-    gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
-    gtk_misc_set_padding(GTK_MISC(label), 2, 2);
+    //gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
+    gtk_widget_set_halign(label, GTK_ALIGN_START);
+	gtk_widget_set_valign(label, GTK_ALIGN_CENTER);
+    
+    //gtk_misc_set_padding(GTK_MISC(label), 2, 0);
+
+	gtk_widget_set_margin_top(label, 2);
+	gtk_widget_set_margin_bottom(label, 2);
+	gtk_widget_set_margin_start(label, 2);
+	gtk_widget_set_margin_end(label, 2);
+	    
     gtk_widget_set_size_request(spinbutton, spinbutton_length, -1);
 
     gtk_widget_show(spinbutton);
@@ -70,7 +79,8 @@ GtkWidget * make_padded_spinbutton_with_label(GtkTable * table,
 
     label = gtk_label_new(label_text);
     padlabel = gtk_label_new("");
-    hbox = gtk_hbox_new(TRUE, 0);
+    hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
+    gtk_box_set_homogeneous(GTK_BOX(hbox),TRUE);
 
     spinbutton = gtk_spin_button_new_with_range(min, max, step);
 
@@ -83,8 +93,17 @@ GtkWidget * make_padded_spinbutton_with_label(GtkTable * table,
     gtk_widget_set_size_request(padlabel, -1, -1);
     gtk_box_pack_start(GTK_BOX(hbox), spinbutton, TRUE, TRUE, 0);
 
-    gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
-    gtk_misc_set_padding(GTK_MISC(label), 2, 2);
+    //gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
+    gtk_widget_set_halign(label, GTK_ALIGN_START);
+	gtk_widget_set_valign(label, GTK_ALIGN_CENTER);
+    
+    //gtk_misc_set_padding(GTK_MISC(label), 2, 0);
+
+	gtk_widget_set_margin_top(label, 2);
+	gtk_widget_set_margin_bottom(label, 2);
+	gtk_widget_set_margin_start(label, 2);
+	gtk_widget_set_margin_end(label, 2);    
+    
     gtk_widget_set_size_request(spinbutton, spinbutton_length, -1);
 
     gtk_widget_show(spinbutton);
@@ -113,8 +132,17 @@ GtkWidget * make_short_spinbutton_with_label(GtkTable * table,
     gtk_table_attach(table, spinbutton, left_attach + 2, right_attach + 2, top_attach,
         bottom_attach, GTK_FILL | GTK_EXPAND, GTK_FILL | GTK_EXPAND, 20, 2);
 
-    gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
-    gtk_misc_set_padding(GTK_MISC(label), 2, 2);
+    //gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
+    gtk_widget_set_halign(label, GTK_ALIGN_START);
+	gtk_widget_set_valign(label, GTK_ALIGN_CENTER);
+    
+    //gtk_misc_set_padding(GTK_MISC(label), 2, 0);
+
+	gtk_widget_set_margin_top(label, 2);
+	gtk_widget_set_margin_bottom(label, 2);
+	gtk_widget_set_margin_start(label, 2);
+	gtk_widget_set_margin_end(label, 2);
+	    
     gtk_widget_set_size_request(spinbutton, spinbutton_length, -1);
 
     gtk_widget_show(spinbutton);

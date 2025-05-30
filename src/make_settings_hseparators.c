@@ -28,7 +28,7 @@ void make_3columns_hseparator(GtkTable * table,
 {
     GtkWidget *hsep;
 
-    hsep = gtk_hseparator_new();
+    hsep = gtk_separator_new(GTK_ORIENTATION_HORIZONTAL);
     gtk_table_attach(table, hsep, left_attach, right_attach + 3, top_attach, bottom_attach,
         GTK_FILL, GTK_EXPAND, 5, 5);
     gtk_widget_show(hsep);

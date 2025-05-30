@@ -36,8 +36,17 @@ GtkWidget * make_combo_with_label(GtkTable * table,
     gtk_table_attach(table, combo, left_attach + 1, right_attach + 1, top_attach, bottom_attach,
         GTK_FILL | GTK_EXPAND, GTK_FILL | GTK_EXPAND, 20, 2);
 
-    gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
-    gtk_misc_set_padding(GTK_MISC(label), 2, 0);
+    //gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
+    gtk_widget_set_halign(label, GTK_ALIGN_START);
+	gtk_widget_set_valign(label, GTK_ALIGN_CENTER);
+    
+    //gtk_misc_set_padding(GTK_MISC(label), 2, 0);
+
+	gtk_widget_set_margin_top(label, 2);
+	gtk_widget_set_margin_bottom(label, 2);
+	gtk_widget_set_margin_start(label, 2);
+	gtk_widget_set_margin_end(label, 2);
+
 
     gtk_widget_show(combo);
     gtk_widget_show(label);
@@ -58,8 +67,17 @@ GtkWidget * make_short_combo_with_label(GtkTable * table,
     gtk_table_attach(table, combo, left_attach + 2, right_attach + 2, top_attach, bottom_attach,
         GTK_FILL | GTK_EXPAND, GTK_FILL | GTK_EXPAND, 20, 2);
 
-    gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
-    gtk_misc_set_padding(GTK_MISC(label), 2, 0);
+    //gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
+    
+	gtk_widget_set_halign(label, GTK_ALIGN_START);
+	gtk_widget_set_valign(label, GTK_ALIGN_CENTER);   
+    
+    //gtk_misc_set_padding(GTK_MISC(label), 2, 0);
+
+	gtk_widget_set_margin_top(label, 2);
+	gtk_widget_set_margin_bottom(label, 2);
+	gtk_widget_set_margin_start(label, 2);
+	gtk_widget_set_margin_end(label, 2);
 
     gtk_widget_set_size_request(combo, combo_length, -1);
 
@@ -78,7 +96,7 @@ GtkWidget * make_label_combo_label(GtkTable * table,
     GtkWidget *combo;
     GtkWidget *hbox;
 
-    hbox = gtk_hbox_new(FALSE, 2);
+    hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 2);
     label = gtk_label_new(label_text);
     combo = gtk_combo_box_text_new();
     pad_label = gtk_label_new("");
@@ -89,8 +107,17 @@ GtkWidget * make_label_combo_label(GtkTable * table,
     gtk_table_attach(table, label, 0, 1, top_attach, bottom_attach, GTK_FILL, GTK_EXPAND, 2, 2);
     gtk_table_attach(table, hbox, 1, 2, top_attach, bottom_attach, GTK_FILL, GTK_EXPAND, 20, 2);
 
-    gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
-    gtk_misc_set_padding(GTK_MISC(label), 2, 0);
+//    gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
+	gtk_widget_set_halign(label, GTK_ALIGN_START);
+	gtk_widget_set_valign(label, GTK_ALIGN_CENTER);  
+  
+    
+//    gtk_misc_set_padding(GTK_MISC(label), 2, 0);
+	gtk_widget_set_margin_top(label, 2);
+	gtk_widget_set_margin_bottom(label, 2);
+	gtk_widget_set_margin_start(label, 2);
+	gtk_widget_set_margin_end(label, 2);
+
 
     gtk_widget_show(label);
     gtk_widget_show(combo);
@@ -109,7 +136,7 @@ GtkWidget * make_label_textcombo_label(GtkTable * table,
     GtkWidget *combo;
     GtkWidget *hbox;
 
-    hbox = gtk_hbox_new(FALSE, 2);
+    hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 2);
     label = gtk_label_new(label_text);
     //combo = gtk_combo_box_new_with_entry();
     combo = gtk_combo_box_text_new();
@@ -121,8 +148,16 @@ GtkWidget * make_label_textcombo_label(GtkTable * table,
     gtk_table_attach(table, label, 0, 1, top_attach, bottom_attach, GTK_FILL, GTK_EXPAND, 2, 2);
     gtk_table_attach(table, hbox, 1, 2, top_attach, bottom_attach, GTK_FILL, GTK_EXPAND, 20, 2);
 
-    gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
-    gtk_misc_set_padding(GTK_MISC(label), 2, 0);
+    //gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
+    gtk_widget_set_halign(label, GTK_ALIGN_START);
+	gtk_widget_set_valign(label, GTK_ALIGN_CENTER);
+    
+    //gtk_misc_set_padding(GTK_MISC(label), 2, 0);
+
+	gtk_widget_set_margin_top(label, 2);
+	gtk_widget_set_margin_bottom(label, 2);
+	gtk_widget_set_margin_start(label, 2);
+	gtk_widget_set_margin_end(label, 2);
 
     gtk_widget_show(label);
     gtk_widget_show(combo);
