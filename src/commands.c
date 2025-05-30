@@ -88,11 +88,16 @@ void init_start(struct w *widgets)
     gchar *cmd;
 
     /* RH/Fedora has a separate winbindd service */
-    if( global_start_winbindd && strstr(SYSINIT_START_CMD, "chkconfig") )
+    if( global_start_winbindd && strstr(SYSINIT_START_CMD, "chkconfig") ){
         cmd = g_strdup_printf("%s && chkconfig winbind on", SYSINIT_START_CMD);
-    else
+    }
+    else if( global_start_winbindd && strstr(SYSINIT_START_CMD, "systemctl") ){
+        cmd = g_strdup_printf("%s && systemctl enable winbind", SYSINIT_START_CMD);
+    }
+    else{
         cmd = g_strdup_printf("%s", SYSINIT_START_CMD);
-
+	}
+	
     if( strlen(cmd) > 4 )
     {
         if( ! run_command(cmd) )
@@ -110,11 +115,17 @@ void init_stop(struct w *widgets)
     gchar *cmd;
 
     /* RH/Fedora has a separate winbindd service */
-    if( global_start_winbindd && strstr(SYSINIT_STOP_CMD, "chkconfig") )
+    if( global_start_winbindd && strstr(SYSINIT_STOP_CMD, "chkconfig") ){
         cmd = g_strdup_printf("%s && chkconfig winbind off", SYSINIT_STOP_CMD);
+    }
+    else if( global_start_winbindd && strstr(SYSINIT_STOP_CMD, "systemctl") ){
+        cmd = g_strdup_printf("%s && systemctl disable winbind", SYSINIT_STOP_CMD);
+    }
     else
+    {
         cmd = g_strdup_printf("%s", SYSINIT_STOP_CMD);
-
+	}
+	
     if( strlen(cmd) > 4 )
     {
         if( ! run_command(cmd) )

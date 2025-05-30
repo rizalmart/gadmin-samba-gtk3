@@ -82,130 +82,53 @@ void create_main_window(struct w *widgets)
 
     gtk_toolbar_set_style(GTK_TOOLBAR(main_toolbar), GTK_TOOLBAR_BOTH);
 
-    /* Activate button */
-    //GtkWidget *toolbar_icon_yes = gtk_image_new_from_icon_name("gtk-yes",
-    //    gtk_toolbar_get_icon_size(GTK_TOOLBAR(main_toolbar)));
-  
-	/*
-    GtkWidget *activate_button = gtk_toolbar_append_element(GTK_TOOLBAR(main_toolbar),
-        GTK_TYPE_TOOL_BUTTON, NULL, _("Activate"), NULL, NULL, toolbar_icon_yes, NULL, NULL);
-    g_signal_connect_swapped(G_OBJECT(activate_button), "clicked",
-        G_CALLBACK(activate_button_clicked), widgets);
-    */
     
-    GtkToolItem *activate_button = gtk_tool_button_new(NULL, _("Activate"));
-	gtk_tool_button_set_icon_name(activate_button, "gtk-yes");
+    GtkWidget *activate_icon = gtk_image_new_from_icon_name("gtk-yes", GTK_ICON_SIZE_SMALL_TOOLBAR);
+    GtkWidget *deactivate_icon = gtk_image_new_from_icon_name("gtk-no", GTK_ICON_SIZE_SMALL_TOOLBAR);
+    GtkWidget *apply_icon = gtk_image_new_from_icon_name("gtk-refresh", GTK_ICON_SIZE_SMALL_TOOLBAR);
+    GtkWidget *settings_icon = gtk_image_new_from_icon_name("gtk-index", GTK_ICON_SIZE_SMALL_TOOLBAR);
+    GtkWidget *help_icon = gtk_image_new_from_icon_name("gtk-help", GTK_ICON_SIZE_SMALL_TOOLBAR);
+    GtkWidget *about_icon = gtk_image_new_from_icon_name("gtk-about", GTK_ICON_SIZE_SMALL_TOOLBAR);
+    GtkWidget *quit_icon = gtk_image_new_from_icon_name("gtk-quit", GTK_ICON_SIZE_SMALL_TOOLBAR);
+
+    
+    GtkToolItem *activate_button = gtk_tool_button_new(activate_icon, _("Activate"));
 	gtk_toolbar_insert(GTK_TOOLBAR(main_toolbar), activate_button, -1);
 	g_signal_connect_swapped(G_OBJECT(activate_button), "clicked",
                          G_CALLBACK(activate_button_clicked), widgets);
-    
-        
 
-    /* Deactivate button */
-    //GtkWidget *toolbar_icon_no = gtk_image_new_from_icon_name("gtk-no",
-    //    gtk_toolbar_get_icon_size(GTK_TOOLBAR(main_toolbar)));
     
-    /*
-    GtkWidget *deactivate_button = gtk_toolbar_append_element(GTK_TOOLBAR(main_toolbar),
-        GTK_TYPE_TOOL_BUTTON,
-        NULL, _("Deactivate"), NULL, NULL, toolbar_icon_no, NULL, NULL);
-    g_signal_connect_swapped(G_OBJECT(deactivate_button), "clicked",
-        G_CALLBACK(deactivate_button_clicked), widgets);
-    */
-    
-	GtkToolItem *deactivate_button = gtk_tool_button_new(NULL, _("Deactivate"));
-	gtk_tool_button_set_icon_name(deactivate_button, "gtk-no");
+	GtkToolItem *deactivate_button = gtk_tool_button_new(deactivate_icon, _("Deactivate"));
 	gtk_toolbar_insert(GTK_TOOLBAR(main_toolbar), deactivate_button, -1);
 	g_signal_connect_swapped(G_OBJECT(deactivate_button), "clicked",
                             G_CALLBACK(deactivate_button_clicked), widgets);
  
-        
 
-
-    /* Apply button */
-    //GtkWidget *toolbar_apply_icon = gtk_image_new_from_icon_name("gtk-refresh",
-    //    gtk_toolbar_get_icon_size(GTK_TOOLBAR(main_toolbar)));
-	
-	/*	
-    GtkWidget *apply_button = gtk_toolbar_append_element(GTK_TOOLBAR(main_toolbar),
-        GTK_TYPE_TOOL_BUTTON, NULL, _("Apply"), NULL, NULL, toolbar_apply_icon, NULL, NULL);
-    g_signal_connect_swapped(G_OBJECT(apply_button), "clicked",
-        G_CALLBACK(apply_button_clicked), widgets);
-	*/
-	
-	GtkToolItem *apply_button = gtk_tool_button_new(NULL, _("Apply"));
-	gtk_tool_button_set_icon_name(apply_button, "gtk-refresh");
+	GtkToolItem *apply_button = gtk_tool_button_new(apply_icon, _("Apply"));
 	gtk_toolbar_insert(GTK_TOOLBAR(main_toolbar), apply_button, -1);
 	g_signal_connect_swapped(G_OBJECT(apply_button), "clicked",
 							 G_CALLBACK(apply_button_clicked), widgets);
 	
 	
-
-    /* Settings button */
-    //GtkWidget *toolbar_settings_icon = gtk_image_new_from_icon_name("gtk-index",
-    //    gtk_toolbar_get_icon_size(GTK_TOOLBAR(main_toolbar)));
-    
-    /*
-    GtkWidget *settings_button = gtk_toolbar_append_element(GTK_TOOLBAR(main_toolbar),
-        GTK_TYPE_TOOL_BUTTON, NULL, _("Settings"), NULL, NULL, toolbar_settings_icon, NULL, NULL);
-    g_signal_connect_swapped(G_OBJECT(settings_button), "clicked",
-        G_CALLBACK(show_settings_window), widgets);
-	*/
-	
-	GtkToolItem *settings_button = gtk_tool_button_new(NULL, _("Settings"));
-	gtk_tool_button_set_icon_name(settings_button, "gtk-index");
+	GtkToolItem *settings_button = gtk_tool_button_new(settings_icon, _("Settings"));
 	gtk_toolbar_insert(GTK_TOOLBAR(main_toolbar), settings_button, -1);
 	g_signal_connect_swapped(G_OBJECT(settings_button), "clicked",
 							 G_CALLBACK(show_settings_window), widgets);
 	
-	
 
-    /* Help button */
-    //GtkWidget *toolbar_icon_help = gtk_image_new_from_icon_name("gtk-help",
-    //    gtk_toolbar_get_icon_size(GTK_TOOLBAR(main_toolbar)));
-    
-    /*    
-    GtkWidget *help_button = gtk_toolbar_append_element(GTK_TOOLBAR(main_toolbar),
-        GTK_TYPE_TOOL_BUTTON, NULL, _("Help"), NULL, NULL, toolbar_icon_help, NULL, NULL);
-    g_signal_connect_swapped(G_OBJECT(help_button), "clicked", G_CALLBACK(show_help), widgets);
-    */
-
-	GtkToolItem *help_button = gtk_tool_button_new(NULL, _("Help"));
-	gtk_tool_button_set_icon_name(help_button, "gtk-help");
+	GtkToolItem *help_button = gtk_tool_button_new(help_icon, _("Help"));
 	gtk_toolbar_insert(GTK_TOOLBAR(main_toolbar), help_button, -1);
 	g_signal_connect_swapped(G_OBJECT(help_button), "clicked",
 							 G_CALLBACK(show_help), widgets);
 		
-
-
-    /* About button */
-    //GtkWidget *toolbar_icon_about = gtk_image_new_from_icon_name("gtk-about",
-    //    gtk_toolbar_get_icon_size(GTK_TOOLBAR(main_toolbar)));
-        
-   /*     
-    GtkWidget *about_button = gtk_toolbar_append_element(GTK_TOOLBAR(main_toolbar),
-        GTK_TYPE_TOOL_BUTTON, NULL, _("About"), NULL, NULL, toolbar_icon_about, NULL, NULL);
-    g_signal_connect_swapped(G_OBJECT(about_button), "clicked", G_CALLBACK(show_credits), widgets);
-   */
  
-	GtkToolItem *about_button = gtk_tool_button_new(NULL, _("About"));
-	gtk_tool_button_set_icon_name(about_button, "gtk-about");
+	GtkToolItem *about_button = gtk_tool_button_new(about_icon, _("About"));
 	gtk_toolbar_insert(GTK_TOOLBAR(main_toolbar), about_button, -1);
 	g_signal_connect_swapped(G_OBJECT(about_button), "clicked",
 							 G_CALLBACK(show_credits), widgets);
    
-
-    /* Quit button */
-    //GtkWidget *toolbar_icon_quit = gtk_image_new_from_icon_name("gtk-quit",
-    //    gtk_toolbar_get_icon_size(GTK_TOOLBAR(main_toolbar)));
-	/*
-    GtkWidget *quit_button = gtk_toolbar_append_element(GTK_TOOLBAR(main_toolbar),
-        GTK_TYPE_TOOL_BUTTON, NULL, _("Quit"), NULL, NULL, toolbar_icon_quit, NULL, NULL);
-    g_signal_connect_swapped(G_OBJECT(quit_button), "clicked", G_CALLBACK(gtk_main_quit), NULL);
-	*/
 	
- 	GtkToolItem *quit_button = gtk_tool_button_new(NULL, _("Quit"));
-	gtk_tool_button_set_icon_name(quit_button, "gtk-quit");
+ 	GtkToolItem *quit_button = gtk_tool_button_new(quit_icon, _("Quit"));
 	gtk_toolbar_insert(GTK_TOOLBAR(main_toolbar), quit_button, -1);
 	g_signal_connect_swapped(G_OBJECT(quit_button), "clicked",
 							 G_CALLBACK(gtk_main_quit), widgets);	

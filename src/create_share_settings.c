@@ -605,11 +605,11 @@ void create_share_settings(struct w *widgets)
         
     combo_text = g_strdup_printf(_("Yes"));
     utf8 = g_locale_to_utf8(combo_text, strlen(combo_text), NULL, NULL, NULL);
-    gtk_combo_box_text_append_text(GTK_COMBO_BOX(widgets->share_set_combo[comb]), utf8);
+    gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(widgets->share_set_combo[comb]), utf8);
     
     combo_text = g_strdup_printf(_("No"));
     utf8 = g_locale_to_utf8(combo_text, strlen(combo_text), NULL, NULL, NULL);
-    gtk_combo_box_text_append_text(GTK_COMBO_BOX(widgets->share_set_combo[comb]), utf8);
+    gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(widgets->share_set_combo[comb]), utf8);
     
     g_free(combo_text);
     g_free(utf8);
@@ -622,10 +622,10 @@ void create_share_settings(struct w *widgets)
         make_label_combo_label(GTK_TABLE(widgets->share_set_table), _(" Available: "), 0, 1, a, b, 80);
     combo_text = g_strdup_printf(_("Yes"));
     utf8 = g_locale_to_utf8(combo_text, strlen(combo_text), NULL, NULL, NULL);
-    gtk_combo_box_text_append_text(GTK_COMBO_BOX(widgets->share_set_combo[comb]), utf8);
+    gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(widgets->share_set_combo[comb]), utf8);
     combo_text = g_strdup_printf(_("No"));
     utf8 = g_locale_to_utf8(combo_text, strlen(combo_text), NULL, NULL, NULL);
-    gtk_combo_box_text_append_text(GTK_COMBO_BOX(widgets->share_set_combo[comb]), utf8);
+    gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(widgets->share_set_combo[comb]), utf8);
     g_free(combo_text);
     g_free(utf8);
     a++;
@@ -637,10 +637,10 @@ void create_share_settings(struct w *widgets)
         make_label_combo_label(GTK_TABLE(widgets->share_set_table), _(" Browseable: "), 0, 1, a, b, 80);
     combo_text = g_strdup_printf(_("Yes"));
     utf8 = g_locale_to_utf8(combo_text, strlen(combo_text), NULL, NULL, NULL);
-    gtk_combo_box_text_append_text(GTK_COMBO_BOX(widgets->share_set_combo[comb]), utf8);
+    gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(widgets->share_set_combo[comb]), utf8);
     combo_text = g_strdup_printf(_("No"));
     utf8 = g_locale_to_utf8(combo_text, strlen(combo_text), NULL, NULL, NULL);
-    gtk_combo_box_text_append_text(GTK_COMBO_BOX(widgets->share_set_combo[comb]), utf8);
+    gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(widgets->share_set_combo[comb]), utf8);
     g_free(combo_text);
     g_free(utf8);
     a++;
@@ -652,10 +652,10 @@ void create_share_settings(struct w *widgets)
         make_label_combo_label(GTK_TABLE(widgets->share_set_table), _(" Writable: "), 0, 1, a, b, 80);
     combo_text = g_strdup_printf(_("Yes"));
     utf8 = g_locale_to_utf8(combo_text, strlen(combo_text), NULL, NULL, NULL);
-    gtk_combo_box_text_append_text(GTK_COMBO_BOX(widgets->share_set_combo[comb]), utf8);
+    gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(widgets->share_set_combo[comb]), utf8);
     combo_text = g_strdup_printf(_("No"));
     utf8 = g_locale_to_utf8(combo_text, strlen(combo_text), NULL, NULL, NULL);
-    gtk_combo_box_text_append_text(GTK_COMBO_BOX(widgets->share_set_combo[comb]), utf8);
+    gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(widgets->share_set_combo[comb]), utf8);
     g_free(combo_text);
     g_free(utf8);
     a++;
@@ -667,10 +667,10 @@ void create_share_settings(struct w *widgets)
         make_label_combo_label(GTK_TABLE(widgets->share_set_table), _(" Require password: "), 0, 1, a, b, 80);
     combo_text = g_strdup_printf(_("Yes"));
     utf8 = g_locale_to_utf8(combo_text, strlen(combo_text), NULL, NULL, NULL);
-    gtk_combo_box_text_append_text(GTK_COMBO_BOX(widgets->share_set_combo[comb]), utf8);
+    gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(widgets->share_set_combo[comb]), utf8);
     combo_text = g_strdup_printf(_("No"));
     utf8 = g_locale_to_utf8(combo_text, strlen(combo_text), NULL, NULL, NULL);
-    gtk_combo_box_text_append_text(GTK_COMBO_BOX(widgets->share_set_combo[comb]), utf8);
+    gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(widgets->share_set_combo[comb]), utf8);
     g_free(combo_text);
     g_free(utf8);
     a++;
@@ -686,10 +686,10 @@ void create_share_settings(struct w *widgets)
         make_label_combo_label(GTK_TABLE(widgets->share_set_table), _(" Printable: "), 0, 1, a, b, 80);
     combo_text = g_strdup_printf(_("Yes"));
     utf8 = g_locale_to_utf8(combo_text, strlen(combo_text), NULL, NULL, NULL);
-    gtk_combo_box_text_append_text(GTK_COMBO_BOX(widgets->share_set_combo[comb]), utf8);
+    gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(widgets->share_set_combo[comb]), utf8);
     combo_text = g_strdup_printf(_("No"));
     utf8 = g_locale_to_utf8(combo_text, strlen(combo_text), NULL, NULL, NULL);
-    gtk_combo_box_text_append_text(GTK_COMBO_BOX(widgets->share_set_combo[comb]), utf8);
+    gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(widgets->share_set_combo[comb]), utf8);
     g_free(combo_text);
     g_free(utf8);
     a++;
@@ -701,10 +701,10 @@ void create_share_settings(struct w *widgets)
         make_label_combo_label(GTK_TABLE(widgets->share_set_table), _(" File locking: "), 0, 1, a, b, 80);
     combo_text = g_strdup_printf(_("Yes"));
     utf8 = g_locale_to_utf8(combo_text, strlen(combo_text), NULL, NULL, NULL);
-    gtk_combo_box_text_append_text(GTK_COMBO_BOX(widgets->share_set_combo[comb]), utf8);
+    gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(widgets->share_set_combo[comb]), utf8);
     combo_text = g_strdup_printf(_("No"));
     utf8 = g_locale_to_utf8(combo_text, strlen(combo_text), NULL, NULL, NULL);
-    gtk_combo_box_text_append_text(GTK_COMBO_BOX(widgets->share_set_combo[comb]), utf8);
+    gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(widgets->share_set_combo[comb]), utf8);
     g_free(combo_text);
     g_free(utf8);
     a++;
@@ -716,10 +716,10 @@ void create_share_settings(struct w *widgets)
         make_label_combo_label(GTK_TABLE(widgets->share_set_table), _(" Strict locking: "), 0, 1, a, b, 80);
     combo_text = g_strdup_printf(_("Yes"));
     utf8 = g_locale_to_utf8(combo_text, strlen(combo_text), NULL, NULL, NULL);
-    gtk_combo_box_text_append_text(GTK_COMBO_BOX(widgets->share_set_combo[comb]), utf8);
+    gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(widgets->share_set_combo[comb]), utf8);
     combo_text = g_strdup_printf(_("No"));
     utf8 = g_locale_to_utf8(combo_text, strlen(combo_text), NULL, NULL, NULL);
-    gtk_combo_box_text_append_text(GTK_COMBO_BOX(widgets->share_set_combo[comb]), utf8);
+    gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(widgets->share_set_combo[comb]), utf8);
     g_free(combo_text);
     g_free(utf8);
     a++;

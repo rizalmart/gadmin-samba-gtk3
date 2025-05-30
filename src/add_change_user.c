@@ -244,8 +244,8 @@ void add_change_user(struct w *widgets)
     GtkTreeIter iter;
     GtkListStore *store;
     
-    store = GTK_LIST_STORE(gtk_combo_box_get_model(widgets->user_set_combo[0]));
-    gtk_combo_box_get_active_iter(widgets->user_set_combo[0], &iter);
+    store = GTK_LIST_STORE(gtk_combo_box_get_model(GTK_COMBO_BOX(widgets->user_set_combo[0])));
+    gtk_combo_box_get_active_iter(GTK_COMBO_BOX(widgets->user_set_combo[0]), &iter);
     gtk_tree_model_get(GTK_TREE_MODEL(store), &iter, 0, &shell, -1);
         
     //shell = gtk_entry_get_text(GTK_ENTRY(gtk_container_get_children(GTK_BIN(widgets->user_set_combo[0]))));

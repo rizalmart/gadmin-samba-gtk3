@@ -66,7 +66,7 @@ void populate_shell_combo(GtkWidget * shell_combo)
     /* Append a /dev/null shell first and select it */
     combo_text = g_strdup_printf("/dev/null");
     utf8 = g_locale_to_utf8(combo_text, strlen(combo_text), NULL, NULL, NULL);
-    gtk_combo_box_text_append_text(GTK_COMBO_BOX(shell_combo), utf8);
+    gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(shell_combo), utf8);
     gtk_combo_box_set_active(GTK_COMBO_BOX(shell_combo), 0);
     g_free(combo_text);
 
@@ -93,8 +93,8 @@ void populate_shell_combo(GtkWidget * shell_combo)
                 shell_found = 1;
                 strcpy(new_buf, line);
                 utf8 = g_locale_to_utf8(new_buf, strlen(new_buf) - 1, NULL, NULL, NULL);
-                if(item_shell_exists(shell_combo,utf8)==FALSE){
-					gtk_combo_box_text_append_text(GTK_COMBO_BOX(shell_combo), utf8);
+                if(item_shell_exists(GTK_COMBO_BOX(shell_combo),utf8)==FALSE){
+					gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(shell_combo), utf8);
 				}
             }
         }
