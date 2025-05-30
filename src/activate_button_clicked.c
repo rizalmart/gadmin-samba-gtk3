@@ -58,7 +58,7 @@ void activate_button_clicked(struct w *widgets)
 
     /* Start SMBD */
     if(strstr(SYSINIT_START_CMD, "systemctl")){	
-		start = g_strdup_printf("systemctl start samba");
+		start = g_strdup_printf("systemctl start smb");
     }
     else{
 		start = g_strdup_printf("%s -D -s %s", SMBD_BINARY, SAMBA_CONF);	

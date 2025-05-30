@@ -70,7 +70,7 @@ void deactivate_button_clicked(struct w *widgets)
     }
 
 	if(strstr(SYSINIT_START_CMD, "systemctl")){	
-	    stop = g_strdup_printf("systemctl stop samba");		
+	    stop = g_strdup_printf("systemctl stop smb");		
 	}
     else{
 		stop = g_strdup_printf("killall -9 %s", SMBD_BINARY);
