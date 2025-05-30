@@ -25,9 +25,17 @@
 # make install
 
 ### RH/Fedora install ###
-./configure --prefix=/usr --sysconfdir=/etc \
---localstatedir=/var --sbindir=/usr/sbin \
-SYSINIT_START_CMD="chkconfig smb on" \
-SYSINIT_STOP_CMD="chkconfig smb off" &&
-make &&
-make install
+#./configure --prefix=/usr --sysconfdir=/etc \
+#--localstatedir=/var --sbindir=/usr/sbin \
+#SYSINIT_START_CMD="chkconfig smb on" \
+#SYSINIT_STOP_CMD="chkconfig smb off" &&
+#make &&
+#make install
+
+### systemd install ###
+ ./configure --prefix=/usr --sysconfdir=/etc \
+ --localstatedir=/var --sbindir=/usr/sbin \
+ SYSINIT_START_CMD="systemctl enable samba" \
+ SYSINIT_STOP_CMD="systemctl disable samba" &&
+ make &&
+ make install
