@@ -1,4 +1,5 @@
 GADMIN-SAMBA is an easy to use GTK+ frontend for the SAMBA file and print server.
+(Now with systemd support)
 
 Additional required packages:
 -----------------------------
