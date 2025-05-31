@@ -35,7 +35,7 @@
 ### systemd install ###
  ./configure --prefix=/usr --sysconfdir=/etc \
  --localstatedir=/var --sbindir=/usr/sbin \
- SYSINIT_START_CMD="systemctl enable samba" \
- SYSINIT_STOP_CMD="systemctl disable samba" &&
+ SYSINIT_START_CMD="systemctl enable smb" \
+ SYSINIT_STOP_CMD="systemctl disable smb" &&
  make &&
  make install
