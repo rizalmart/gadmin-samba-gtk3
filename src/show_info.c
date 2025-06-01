@@ -70,6 +70,11 @@ void show_info(gchar * content)
 
     /* Put a scrolled window in the vbox */
     scrolled_info_window = gtk_scrolled_window_new(NULL, NULL);
+    
+    gtk_widget_set_margin_top(scrolled_info_window, 5);
+    gtk_widget_set_margin_bottom(scrolled_info_window, 5);
+
+    
     gtk_box_pack_start(GTK_BOX(info_vbox), scrolled_info_window, TRUE, TRUE, 0);
 
     gtk_scrolled_window_set_policy(GTK_SCROLLED_WINDOW(scrolled_info_window),
