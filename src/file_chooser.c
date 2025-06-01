@@ -32,8 +32,10 @@ gchar * get_dialog_path_selection(gchar * type, gchar * initial_dir, gchar * ini
     if( strstr(type, "DIR") )
     {
         dialog = gtk_file_chooser_dialog_new("Select directory", NULL,
-            GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER,
-            GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL, GTK_STOCK_OPEN, GTK_RESPONSE_ACCEPT, NULL);
+				GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER,
+				"_Cancel", GTK_RESPONSE_CANCEL,
+				"_Open", GTK_RESPONSE_ACCEPT,
+				NULL);
 
         /* Set initial directory. If it doesnt exist "/" is used. */
         ret = gtk_file_chooser_set_current_folder(GTK_FILE_CHOOSER(dialog), initial_dir);
@@ -43,9 +45,11 @@ gchar * get_dialog_path_selection(gchar * type, gchar * initial_dir, gchar * ini
     else 
     if( strstr(type, "FILE") )
     {
-        dialog = gtk_file_chooser_dialog_new("Select file", NULL, GTK_FILE_CHOOSER_ACTION_OPEN,
-//  GTK_FILE_CHOOSER_ACTION_SAVE,
-            GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL, GTK_STOCK_OPEN, GTK_RESPONSE_ACCEPT, NULL);
+        dialog = gtk_file_chooser_dialog_new("Select file", NULL,
+					GTK_FILE_CHOOSER_ACTION_OPEN,
+					"_Cancel", GTK_RESPONSE_CANCEL,
+					"_Open", GTK_RESPONSE_ACCEPT,
+					NULL);
 
         /* Set initial directory. If it doesnt exist "/" is used. */
         ret = gtk_file_chooser_set_current_folder(GTK_FILE_CHOOSER(dialog), initial_dir);
