@@ -42,14 +42,24 @@ void create_share_tab(struct w *widgets)
     GtkWidget *frame;
     gchar *utf8 = NULL;
 
-    GtkTooltip *tooltips;
+    //GtkTooltip *tooltips;
     //tooltips = gtk_tooltip_new();
 
     /* Create the sharelist treeview in a scrolled window */
-    share_treeview_hbox = gtk_hbox_new(TRUE, 0);
+    share_treeview_hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
+    
     gtk_box_pack_start(GTK_BOX(widgets->notebook_vbox3), share_treeview_hbox, EXPAND_SHARE_SECTION, TRUE, 0);
 
+	gtk_widget_set_margin_start(widgets->notebook_vbox3, 5);
+	gtk_widget_set_margin_end(widgets->notebook_vbox3, 5);
+	gtk_widget_set_margin_top(widgets->notebook_vbox3, 5);
+	gtk_widget_set_margin_bottom(widgets->notebook_vbox3, 5);
+
+	gtk_widget_set_margin_bottom(share_treeview_hbox, 10);
+
+
     share_scrolled_window = gtk_scrolled_window_new(NULL, NULL);
+      
     gtk_box_pack_start(GTK_BOX(share_treeview_hbox), share_scrolled_window, TRUE, TRUE, 0);
     gtk_scrolled_window_set_policy(GTK_SCROLLED_WINDOW(share_scrolled_window),
         GTK_POLICY_AUTOMATIC, GTK_POLICY_ALWAYS);
@@ -65,7 +75,7 @@ void create_share_tab(struct w *widgets)
     gtk_tree_view_set_model(GTK_TREE_VIEW(widgets->share_treeview),
         GTK_TREE_MODEL(widgets->share_store));
     gtk_container_add(GTK_CONTAINER(share_scrolled_window), widgets->share_treeview);
-    gtk_tree_view_set_rules_hint(GTK_TREE_VIEW(widgets->share_treeview), TRUE);
+    //gtk_tree_view_set_rules_hint(GTK_TREE_VIEW(widgets->share_treeview), TRUE);
 
     /* Set the column labels in the treeview */
     share_cell_renderer = gtk_cell_renderer_text_new();
@@ -89,7 +99,7 @@ void create_share_tab(struct w *widgets)
         G_CALLBACK(share_treeview_row_clicked), widgets);
 
     /* Create the share settings scrolled window with a frame and a table */
-    share_settings_treeview_hbox = gtk_hbox_new(TRUE, 0);
+    share_settings_treeview_hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
     gtk_box_pack_start(GTK_BOX(widgets->notebook_vbox3), share_settings_treeview_hbox,
         EXPAND_SHARE_SETTINGS_SECTION, TRUE, 0);
 
@@ -102,7 +112,7 @@ void create_share_tab(struct w *widgets)
     gtk_widget_set_size_request(widgets->share_settings_scrolled_window, -1, 100);
 
     /* Add a vbox to the scrolled window */
-    widgets->share_settings_vbox = gtk_vbox_new(FALSE, 0);
+    widgets->share_settings_vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
     gtk_scrolled_window_add_with_viewport(GTK_SCROLLED_WINDOW(widgets->
             share_settings_scrolled_window), widgets->share_settings_vbox);
 

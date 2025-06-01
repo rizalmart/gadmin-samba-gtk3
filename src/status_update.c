@@ -103,7 +103,6 @@ int status_update(struct w *widgets)
     /* Activation status for smbd, nmbd and winbindd. */
     gchar *info, *utf8 = NULL;
     char *pid1, *pid2, *pid3, *ext_info;
-    GdkColor color;
 
     pid1 = get_process_pid("smbd");
     pid2 = get_process_pid("nmbd");
@@ -138,9 +137,6 @@ int status_update(struct w *widgets)
         free(pid2);
         free(pid3);
 
-        /* Set status color */
-        gdk_color_parse("red", &color);
-        gtk_widget_modify_fg(widgets->status_label, GTK_STATE_NORMAL, &color);
 
         return (TRUE);
     }
@@ -166,17 +162,11 @@ int status_update(struct w *widgets)
             info = g_strdup_printf(_("Status: Activated %s"), ext_info);
             free(ext_info);
 
-            /* Set status color */
-            gdk_color_parse("dark green", &color);
-            gtk_widget_modify_fg(widgets->status_label, GTK_STATE_NORMAL, &color);
         }
         else
         {
             info = g_strdup_printf(_("Status: Activated"));
 
-            /* Set status color */
-            gdk_color_parse("dark green", &color);
-            gtk_widget_modify_fg(widgets->status_label, GTK_STATE_NORMAL, &color);
         }
         utf8 = g_locale_to_utf8(info, strlen(info), NULL, NULL, NULL);
         gtk_label_set_text(GTK_LABEL(widgets->status_label), utf8);

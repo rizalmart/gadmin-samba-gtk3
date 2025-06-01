@@ -40,7 +40,7 @@ void show_help()
     gtk_window_set_title(GTK_WINDOW(help_window), _("GADMIN-SAMBA Help"));
     gtk_window_set_position(GTK_WINDOW(help_window), GTK_WIN_POS_CENTER);
 
-    vbox15 = gtk_vbox_new(FALSE, 0);
+    vbox15 = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
     gtk_widget_set_name(vbox15, "vbox15");
     gtk_widget_show(vbox15);
     gtk_container_add(GTK_CONTAINER(help_window), vbox15);
@@ -53,6 +53,10 @@ void show_help()
         GTK_POLICY_ALWAYS);
 
     help_textview = gtk_text_view_new();
+    
+    gtk_widget_set_margin_top(scrolledwindow16, 5);
+    gtk_widget_set_margin_bottom(scrolledwindow16, 10);
+    
     gtk_widget_set_name(help_textview, "help_textview");
     gtk_widget_show(help_textview);
     gtk_container_add(GTK_CONTAINER(scrolledwindow16), help_textview);
@@ -108,10 +112,9 @@ void show_help()
         _("Mounting shares:\n"),
         _
         ("If you want to add directories thats not under the users root directory you can do this:\n\n"),
-        _("Linux (as of kernel 2.4.0):\n"),
-        _("mount --bind /some/directory/to/share /home/bob/make_this_directory_first\n\n"),
-        _("Alternatively:\nmount -o bind /var/data /home/bob/mounted_data\n\n"),
-        _("*BSD (as of 4.4BSD):\nmount_null /var/data /home/bob/mounted_data\n\n"),
+        _("Linux:\n"),
+        _("mount -o bind /some/directory/to/share /home/bob/make_this_directory_first\n\n"),
+        _("*BSD:\nmount -t null /var/data /home/bob/mounted_data\n\n"),
         _("Solaris:\nmount -F lofs /var/data /home/bob/mounted_data\n\n"),
         _
         ("For more detailed information about the server and its configuration directives visit:\n"),
@@ -121,34 +124,23 @@ void show_help()
     gtk_text_buffer_set_text(gtk_text_view_get_buffer(GTK_TEXT_VIEW(help_textview)), help_text, -1);
 
     if(help_text != NULL)
+
+
         g_free(help_text);
 
 
-    close_help_button = gtk_button_new();
-    gtk_widget_set_name(close_help_button, "close_help_button");
-    gtk_widget_show(close_help_button);
+    close_help_button = gtk_button_new_with_mnemonic("_Close");
+	GtkWidget *close_help_icon = gtk_image_new_from_icon_name("gtk-close", GTK_ICON_SIZE_BUTTON);
+	gtk_button_set_image(GTK_BUTTON(close_help_button), close_help_icon);
+	gtk_button_set_always_show_image(GTK_BUTTON(close_help_button), TRUE);    
+    gtk_widget_set_can_default(close_help_button, TRUE);
+    
     gtk_box_pack_start(GTK_BOX(vbox15), close_help_button, FALSE, FALSE, 0);
 
-    alignment19 = gtk_alignment_new(0.5, 0.5, 0, 0);
-    gtk_widget_set_name(alignment19, "alignment19");
-    gtk_widget_show(alignment19);
-    gtk_container_add(GTK_CONTAINER(close_help_button), alignment19);
-
-    hbox52 = gtk_hbox_new(FALSE, 2);
+    hbox52 = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 2);
     gtk_widget_set_name(hbox52, "hbox52");
     gtk_widget_show(hbox52);
     gtk_container_add(GTK_CONTAINER(alignment19), hbox52);
-
-    image19 = gtk_image_new_from_stock("gtk-close", GTK_ICON_SIZE_BUTTON);
-    gtk_widget_set_name(image19, "image19");
-    gtk_widget_show(image19);
-    gtk_box_pack_start(GTK_BOX(hbox52), image19, FALSE, FALSE, 0);
-
-    label109 = gtk_label_new_with_mnemonic(_("Close"));
-    gtk_widget_set_name(label109, "label109");
-    gtk_widget_show(label109);
-    gtk_box_pack_start(GTK_BOX(hbox52), label109, FALSE, FALSE, 0);
-    gtk_label_set_justify(GTK_LABEL(label109), GTK_JUSTIFY_LEFT);
 
     g_signal_connect_swapped(close_help_button, "clicked",
     G_CALLBACK(gtk_widget_destroy), G_OBJECT(help_window));

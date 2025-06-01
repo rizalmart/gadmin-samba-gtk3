@@ -47,7 +47,11 @@ void create_macct_tab(struct w *widgets)
     /* Create the machine account list treeview in a scrolled window */
     macct_treeview_hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
     gtk_box_set_homogeneous(GTK_BOX(macct_treeview_hbox),TRUE);
-    
+
+	gtk_widget_set_margin_start(widgets->notebook_vbox4, 5);
+	gtk_widget_set_margin_end(widgets->notebook_vbox4, 5);
+	gtk_widget_set_margin_top(widgets->notebook_vbox4, 5);
+	gtk_widget_set_margin_bottom(widgets->notebook_vbox4, 5);    
     
     gtk_box_pack_start(GTK_BOX(widgets->notebook_vbox4), macct_treeview_hbox, EXPAND_MACCT_SECTION, TRUE, 0);
 
@@ -61,6 +65,9 @@ void create_macct_tab(struct w *widgets)
     widgets->macct_store = gtk_list_store_new(3, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING);
 
     widgets->macct_treeview = gtk_tree_view_new();
+    
+    gtk_widget_set_margin_bottom(widgets->macct_treeview, 10); 
+    
     gtk_tree_view_set_model(GTK_TREE_VIEW(widgets->macct_treeview),
         GTK_TREE_MODEL(widgets->macct_store));
 

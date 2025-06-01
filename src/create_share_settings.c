@@ -50,7 +50,7 @@ void share_access_treeview_row_clicked(GtkTreeView * treeview, GdkEventButton * 
     GtkTreeSelection *selection;
 
     /* The left button is pressed */
-    if( ! event->type == GDK_BUTTON_PRESS || !event->button == 1 )
+    if( event->type != GDK_BUTTON_PRESS || event->button != 1 )
         return;
 
     /* Get the number for the treeview (0-3) */
@@ -222,7 +222,7 @@ void select_share_path_clicked(struct w *widgets)
 
 void create_share_settings(struct w *widgets)
 {
-    GtkTooltip *tooltips;
+    //GtkTooltip *tooltips;
     gchar *combo_text = NULL;
     gchar *utf8 = NULL;
 
@@ -255,19 +255,38 @@ void create_share_settings(struct w *widgets)
     int comb = 0;
 
     //tooltips = gtk_tooltip_new();
-    hbox = gtk_hbox_new(FALSE, 3);
+    hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 3);
 
     /* The delete add share and apply share settings buttons */
-    delete_share_button = gtk_button_new_from_stock(GTK_STOCK_DELETE);
-    add_share_button = gtk_button_new_from_stock(GTK_STOCK_ADD);
-    apply_share_button = gtk_button_new_from_stock(GTK_STOCK_APPLY);
+    
+    delete_share_button = gtk_button_new_with_mnemonic("_Delete");
+	GtkWidget *delete_share_icon = gtk_image_new_from_icon_name("gtk-delete", GTK_ICON_SIZE_BUTTON);
+	gtk_button_set_image(GTK_BUTTON(delete_share_button), delete_share_icon);
+	gtk_button_set_always_show_image(GTK_BUTTON(delete_share_button), TRUE);
+
+    add_share_button = gtk_button_new_with_mnemonic("_Add");
+	GtkWidget *add_share_icon = gtk_image_new_from_icon_name("gtk-add", GTK_ICON_SIZE_BUTTON);
+	gtk_button_set_image(GTK_BUTTON(add_share_button), add_share_icon);
+	gtk_button_set_always_show_image(GTK_BUTTON(add_share_button), TRUE);
+	
+	apply_share_button = gtk_button_new_with_mnemonic("_Apply");
+	GtkWidget *apply_share_icon = gtk_image_new_from_icon_name("gtk-apply", GTK_ICON_SIZE_BUTTON);
+	gtk_button_set_image(GTK_BUTTON(apply_share_button), apply_share_icon);
+	gtk_button_set_always_show_image(GTK_BUTTON(apply_share_button), TRUE);    
+    
     /* Custom "New share" button */
     new_share_button = gtk_button_new();
-    new_share_alignment = gtk_alignment_new(0.5, 0.5, 0, 0);
+    new_share_alignment = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
+
+	gtk_widget_set_margin_start(new_share_alignment, 0);
+	gtk_widget_set_margin_end(new_share_alignment, 0);
+	gtk_widget_set_margin_top(new_share_alignment, 0.5);
+	gtk_widget_set_margin_bottom(new_share_alignment,0.5);
+    
     gtk_container_add(GTK_CONTAINER(new_share_button), new_share_alignment);
-    new_share_hbox = gtk_hbox_new(FALSE, 2);
+    new_share_hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 2);
     gtk_container_add(GTK_CONTAINER(new_share_alignment), new_share_hbox);
-    new_share_image = gtk_image_new_from_stock("gtk-add", GTK_ICON_SIZE_BUTTON);
+    new_share_image = gtk_image_new_from_icon_name("gtk-add", GTK_ICON_SIZE_BUTTON);
     gtk_box_pack_start(GTK_BOX(new_share_hbox), new_share_image, FALSE, FALSE, 0);
     new_share_label = gtk_label_new_with_mnemonic(_("New share"));
     gtk_box_pack_start(GTK_BOX(new_share_hbox), new_share_label, FALSE, FALSE, 0);
@@ -346,7 +365,7 @@ void create_share_settings(struct w *widgets)
     a++;
     b++;
 
-    GtkWidget *access_hseparator = gtk_hseparator_new();
+    GtkWidget *access_hseparator = gtk_separator_new(GTK_ORIENTATION_HORIZONTAL);
     gtk_table_attach(GTK_TABLE(widgets->share_set_table), access_hseparator, 0, 2, a, b, -1, 1, 1, 0);
     a++;
     b++;
@@ -371,8 +390,12 @@ void create_share_settings(struct w *widgets)
     GtkWidget *admin_users_scrolled_window;
 
     /* Create and add 2 hboxes to the table */
-    user_access_hbox1 = gtk_hbox_new(TRUE, 0);
-    user_access_hbox2 = gtk_hbox_new(TRUE, 0);
+    user_access_hbox1 = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
+    user_access_hbox2 = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
+    
+    gtk_box_set_homogeneous(GTK_BOX(user_access_hbox1),TRUE);
+    gtk_box_set_homogeneous(GTK_BOX(user_access_hbox2),TRUE);
+    
     /* table,    left, right, top, bottom, fill, expand, length, xpad, ypad */
     gtk_table_attach(GTK_TABLE(widgets->share_set_table), user_access_hbox1, 0, 2, a, b, -1, 1, 20, 10);
     a++;
@@ -396,7 +419,7 @@ void create_share_settings(struct w *widgets)
     gtk_tree_view_set_model(GTK_TREE_VIEW(widgets->valid_users_treeview),
         GTK_TREE_MODEL(widgets->valid_users_store));
     gtk_container_add(GTK_CONTAINER(valid_users_scrolled_window), widgets->valid_users_treeview);
-    gtk_tree_view_set_rules_hint(GTK_TREE_VIEW(widgets->valid_users_treeview), TRUE);
+    //gtk_tree_view_set_rules_hint(GTK_TREE_VIEW(widgets->valid_users_treeview), TRUE);
     /* Set the column labels in the treeview */
     valid_users_cell_renderer = gtk_cell_renderer_text_new();
     GtkTreeViewColumn *valid_users_col =
@@ -425,7 +448,7 @@ void create_share_settings(struct w *widgets)
         GTK_TREE_MODEL(widgets->invalid_users_store));
     gtk_container_add(GTK_CONTAINER(invalid_users_scrolled_window),
         widgets->invalid_users_treeview);
-    gtk_tree_view_set_rules_hint(GTK_TREE_VIEW(widgets->invalid_users_treeview), TRUE);
+    //gtk_tree_view_set_rules_hint(GTK_TREE_VIEW(widgets->invalid_users_treeview), TRUE);
     /* Set the column labels in the treeview */
     invalid_users_cell_renderer = gtk_cell_renderer_text_new();
     GtkTreeViewColumn *invalid_users_col =
@@ -461,7 +484,7 @@ void create_share_settings(struct w *widgets)
     gtk_tree_view_set_model(GTK_TREE_VIEW(widgets->write_users_treeview),
         GTK_TREE_MODEL(widgets->write_users_store));
     gtk_container_add(GTK_CONTAINER(write_users_scrolled_window), widgets->write_users_treeview);
-    gtk_tree_view_set_rules_hint(GTK_TREE_VIEW(widgets->write_users_treeview), TRUE);
+    //gtk_tree_view_set_rules_hint(GTK_TREE_VIEW(widgets->write_users_treeview), TRUE);
     /* Set the column labels in the treeview */
     write_users_cell_renderer = gtk_cell_renderer_text_new();
     GtkTreeViewColumn *write_users_col =
@@ -489,7 +512,7 @@ void create_share_settings(struct w *widgets)
     gtk_tree_view_set_model(GTK_TREE_VIEW(widgets->admin_users_treeview),
         GTK_TREE_MODEL(widgets->admin_users_store));
     gtk_container_add(GTK_CONTAINER(admin_users_scrolled_window), widgets->admin_users_treeview);
-    gtk_tree_view_set_rules_hint(GTK_TREE_VIEW(widgets->admin_users_treeview), TRUE);
+    //gtk_tree_view_set_rules_hint(GTK_TREE_VIEW(widgets->admin_users_treeview), TRUE);
     /* Set the column labels in the treeview */
     admin_users_cell_renderer = gtk_cell_renderer_text_new();
     GtkTreeViewColumn *admin_users_col =
@@ -508,42 +531,26 @@ void create_share_settings(struct w *widgets)
     b++;
 
 
-    GtkWidget *access_hbuttonbox = gtk_hbutton_box_new();
-
-    /* Custom "Delete access for users and groups" button */
-    del_access_button = gtk_button_new();
-    del_access_alignment = gtk_alignment_new(0.5, 0.5, 0, 0);
-    gtk_container_add(GTK_CONTAINER(del_access_button), del_access_alignment);
-
-    del_access_hbox = gtk_hbox_new(FALSE, 2);
-    gtk_container_add(GTK_CONTAINER(del_access_alignment), del_access_hbox);
-
-    del_access_image = gtk_image_new_from_stock("gtk-remove", GTK_ICON_SIZE_BUTTON);
-    gtk_box_pack_start(GTK_BOX(del_access_hbox), del_access_image, FALSE, FALSE, 0);
-
-    del_access_label = gtk_label_new_with_mnemonic(_("Delete access permission"));
-    gtk_box_pack_start(GTK_BOX(del_access_hbox), del_access_label, FALSE, FALSE, 0);
-    gtk_label_set_justify(GTK_LABEL(del_access_label), GTK_JUSTIFY_LEFT);
+    GtkWidget *access_hbuttonbox = gtk_button_box_new(GTK_ORIENTATION_HORIZONTAL);
 
     /* Custom "Add access for users and groups" button */
-    add_access_button = gtk_button_new();
-    add_access_alignment = gtk_alignment_new(0.5, 0.5, 0, 0);
-    gtk_container_add(GTK_CONTAINER(add_access_button), add_access_alignment);
+    add_access_image = gtk_image_new_from_icon_name("gtk-add", GTK_ICON_SIZE_BUTTON);
+    add_access_button = gtk_button_new_with_mnemonic(_("Add access permissions"));
+	gtk_button_set_image(GTK_BUTTON(add_access_button), add_access_image);
+	gtk_button_set_always_show_image(GTK_BUTTON(add_access_button), TRUE);
 
-    add_access_hbox = gtk_hbox_new(FALSE, 2);
-    gtk_container_add(GTK_CONTAINER(add_access_alignment), add_access_hbox);
 
-    add_access_image = gtk_image_new_from_stock("gtk-add", GTK_ICON_SIZE_BUTTON);
-    gtk_box_pack_start(GTK_BOX(add_access_hbox), add_access_image, FALSE, FALSE, 0);
-
-    add_access_label = gtk_label_new_with_mnemonic(_("Add access permissions"));
-    gtk_box_pack_start(GTK_BOX(add_access_hbox), add_access_label, FALSE, FALSE, 0);
-    gtk_label_set_justify(GTK_LABEL(add_access_label), GTK_JUSTIFY_LEFT);
+    /* Custom "Delete access for users and groups" button */
+    del_access_image = gtk_image_new_from_icon_name("gtk-remove", GTK_ICON_SIZE_BUTTON);
+    del_access_button = gtk_button_new_with_mnemonic(_("Delete access permissions"));
+	gtk_button_set_image(GTK_BUTTON(del_access_button), del_access_image);
+	gtk_button_set_always_show_image(GTK_BUTTON(del_access_button), TRUE);
 
 
     /* Add the buttons to the table */
-    gtk_box_pack_start(GTK_BOX(access_hbuttonbox), del_access_button, FALSE, FALSE, 0);
     gtk_box_pack_start(GTK_BOX(access_hbuttonbox), add_access_button, FALSE, FALSE, 0);
+    gtk_box_pack_start(GTK_BOX(access_hbuttonbox), del_access_button, FALSE, FALSE, 0);
+
     gtk_widget_set_size_request(access_hbuttonbox, -1, 40);
     gtk_button_box_set_layout(GTK_BUTTON_BOX(access_hbuttonbox), GTK_BUTTONBOX_SPREAD);
     gtk_table_attach(GTK_TABLE(widgets->share_set_table), access_hbuttonbox, 0, 2, a, b, -1, 1, 20, 10);

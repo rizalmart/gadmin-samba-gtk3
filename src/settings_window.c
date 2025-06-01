@@ -63,7 +63,7 @@ void show_settings_window(struct w *widgets)
     g_signal_connect(GTK_WINDOW(widgets->settings_window), "delete_event",
         G_CALLBACK(gtk_widget_destroy), NULL);
 
-    settings_vbox = gtk_vbox_new(FALSE, 0);
+    settings_vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
     gtk_container_add(GTK_CONTAINER(widgets->settings_window), settings_vbox);
 
 
@@ -99,16 +99,29 @@ void show_settings_window(struct w *widgets)
     gtk_entry_set_text(GTK_ENTRY(widgets->settings_entry[0]), utf8);
 
 
-    GtkWidget *settings_hbuttonbox = gtk_hbutton_box_new();
+    GtkWidget *settings_hbuttonbox = gtk_button_box_new(GTK_ORIENTATION_HORIZONTAL);
     gtk_box_pack_start(GTK_BOX(settings_vbox), settings_hbuttonbox, FALSE, FALSE, 0);
     gtk_button_box_set_layout(GTK_BUTTON_BOX(settings_hbuttonbox), GTK_BUTTONBOX_SPREAD);
 
-    GtkWidget *apply_settings_button = gtk_button_new_from_stock(GTK_STOCK_APPLY);
+    //GtkWidget *apply_settings_button = gtk_button_new_from_stock(GTK_STOCK_APPLY);
+    
+    GtkWidget *apply_settings_button = gtk_button_new_with_mnemonic("_Apply");
+	GtkWidget *apply_settings_icon = gtk_image_new_from_icon_name("gtk-apply", GTK_ICON_SIZE_BUTTON);
+	gtk_button_set_image(GTK_BUTTON(apply_settings_button), apply_settings_icon);
+	gtk_button_set_always_show_image(GTK_BUTTON(apply_settings_button), TRUE);
+
     gtk_container_add(GTK_CONTAINER(settings_hbuttonbox), apply_settings_button);
+
+
     g_signal_connect_swapped(G_OBJECT(apply_settings_button), "clicked",
         G_CALLBACK(apply_settings_button_clicked), widgets);
 
-    GtkWidget *cancel_settings_button = gtk_button_new_from_stock(GTK_STOCK_CANCEL);
+    GtkWidget *cancel_settings_button = gtk_button_new_with_mnemonic("_Cancel");
+	GtkWidget *cancel_settings_icon = gtk_image_new_from_icon_name("gtk-cancel", GTK_ICON_SIZE_BUTTON);
+	gtk_button_set_image(GTK_BUTTON(cancel_settings_button), cancel_settings_icon);
+	gtk_button_set_always_show_image(GTK_BUTTON(cancel_settings_button), TRUE);    
+    
+    
     gtk_container_add(GTK_CONTAINER(settings_hbuttonbox), cancel_settings_button);
     g_signal_connect_swapped(G_OBJECT(cancel_settings_button), "clicked",
         G_CALLBACK(cancel_settings_button_clicked), widgets);

@@ -175,11 +175,11 @@ void create_main_window(struct w *widgets)
     GtkWidget *resource_label = gtk_label_new(_("Shares"));
 
     GtkWidget *maccts_label = gtk_label_new(_("Machines"));
-    GtkWidget *dom_mgmt_label = gtk_label_new(_("Domains"));
+    //GtkWidget *dom_mgmt_label = gtk_label_new(_("Domains"));
 
     GtkWidget *conn_label = gtk_label_new(_("Connections"));
 
-    GtkWidget *disc_label = gtk_label_new(_("Disc"));
+    GtkWidget *disc_label = gtk_label_new(_("Disk space"));
     GtkWidget *security_label = gtk_label_new(_("Security"));
     GtkWidget *conf_label = gtk_label_new(_("Configuration"));
 
@@ -187,7 +187,7 @@ void create_main_window(struct w *widgets)
     gtk_notebook_insert_page(GTK_NOTEBOOK(main_notebook), widgets->notebook_vbox2, user_label, 1);
     gtk_notebook_insert_page(GTK_NOTEBOOK(main_notebook), widgets->notebook_vbox3, resource_label, 2);
     gtk_notebook_insert_page(GTK_NOTEBOOK(main_notebook), widgets->notebook_vbox4, maccts_label, 3);
-    gtk_notebook_insert_page(GTK_NOTEBOOK(main_notebook), widgets->notebook_vbox5, dom_mgmt_label, 4);
+    //gtk_notebook_insert_page(GTK_NOTEBOOK(main_notebook), widgets->notebook_vbox5, dom_mgmt_label, 4);
     gtk_notebook_insert_page(GTK_NOTEBOOK(main_notebook), widgets->notebook_vbox6, conn_label, 5);
     gtk_notebook_insert_page(GTK_NOTEBOOK(main_notebook), widgets->notebook_vbox7, disc_label, 6);
     gtk_notebook_insert_page(GTK_NOTEBOOK(main_notebook), widgets->notebook_vbox8, security_label, 7);

@@ -65,7 +65,7 @@ void show_info(gchar * content)
     gtk_window_set_title(GTK_WINDOW(info_window), info);
     g_free(info);
 
-    info_vbox = gtk_vbox_new(FALSE, 0);
+    info_vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
     gtk_container_add(GTK_CONTAINER(info_window), info_vbox);
 
     /* Put a scrolled window in the vbox */
@@ -82,9 +82,13 @@ void show_info(gchar * content)
     gtk_container_add(GTK_CONTAINER(info_viewport), info_textview);
 
     gtk_text_view_set_wrap_mode(GTK_TEXT_VIEW(info_textview), GTK_WRAP_WORD);
-
-
-    GtkWidget *close_info_button = gtk_button_new_from_stock(GTK_STOCK_CLOSE);
+    
+	GtkWidget *close_info_button = gtk_button_new_with_mnemonic("_Close");
+	GtkWidget *close_info_icon = gtk_image_new_from_icon_name("gtk-close", GTK_ICON_SIZE_BUTTON);
+	gtk_button_set_image(GTK_BUTTON(close_info_button), close_info_icon);
+	gtk_button_set_always_show_image(GTK_BUTTON(close_info_button), TRUE);   
+    
+    
     gtk_box_pack_start(GTK_BOX(info_vbox), close_info_button, FALSE, TRUE, 0);
 
 

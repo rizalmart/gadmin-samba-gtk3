@@ -40,11 +40,16 @@ void show_credits()
     gtk_window_set_title(GTK_WINDOW(credits_window), _("Credits"));
     gtk_window_set_position(GTK_WINDOW(credits_window), GTK_WIN_POS_CENTER);
 
-    credits_vbox = gtk_vbox_new(FALSE, 0);
+    credits_vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
+    
     gtk_widget_show(credits_vbox);
     gtk_container_add(GTK_CONTAINER(credits_window), credits_vbox);
 
     credits_scrolledwindow = gtk_scrolled_window_new(NULL, NULL);
+	
+	gtk_widget_set_margin_top(credits_scrolledwindow, 5);	
+    gtk_widget_set_margin_bottom(credits_scrolledwindow, 5);
+    
     gtk_widget_show(credits_scrolledwindow);
     gtk_box_pack_start(GTK_BOX(credits_vbox), credits_scrolledwindow, TRUE, TRUE, 0);
     gtk_scrolled_window_set_policy(GTK_SCROLLED_WINDOW(credits_scrolledwindow),
@@ -63,7 +68,7 @@ void show_credits()
     gtk_text_view_set_left_margin(GTK_TEXT_VIEW(credits_textview), 29);
 
     credits = g_strconcat("\n",
-        _("Author: "), "Magnus Loef <magnus-swe@telia.com>\n",
+        _("Author: "), "Magnus Loef <magnus-swe@telia.com>\nModified by rizalmart\n",
         "\n",
         _("I want to thank the following for their contributions:"),
         "\n-------------------------------------------------------------------------\n",
@@ -137,27 +142,36 @@ void show_credits()
     if( credits != NULL )
         g_free(credits);
 
-    close_credits_button = gtk_button_new();
-    gtk_widget_show(close_credits_button);
+    close_credits_button = gtk_button_new_with_mnemonic("_Close");
+	GtkWidget *close_credits_icon = gtk_image_new_from_icon_name("gtk-close", GTK_ICON_SIZE_BUTTON);
+	gtk_button_set_image(GTK_BUTTON(close_credits_button), close_credits_icon);
+	gtk_button_set_always_show_image(GTK_BUTTON(close_credits_button), TRUE); 
+
     gtk_box_pack_start(GTK_BOX(credits_vbox), close_credits_button, FALSE, FALSE, 0);
 
-    credits_alignment = gtk_alignment_new(0.5, 0.5, 0, 0);
+    credits_alignment = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
+    
+    gtk_widget_set_margin_start(credits_alignment, 5);
+	gtk_widget_set_margin_end(credits_alignment, 5);
+	gtk_widget_set_margin_top(credits_alignment, 5);
+	gtk_widget_set_margin_bottom(credits_alignment, 5);
+    
     gtk_widget_show(credits_alignment);
     gtk_container_add(GTK_CONTAINER(close_credits_button), credits_alignment);
 
-    credits_hbox = gtk_hbox_new(FALSE, 2);
+    credits_hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 2);
+    
     gtk_widget_show(credits_hbox);
     gtk_container_add(GTK_CONTAINER(credits_alignment), credits_hbox);
 
-    credits_image = gtk_image_new_from_stock("gtk-close", GTK_ICON_SIZE_BUTTON);
-    gtk_widget_show(credits_image);
+    credits_image = gtk_image_new_from_icon_name("gtk-close", GTK_ICON_SIZE_BUTTON);
+    
     gtk_box_pack_start(GTK_BOX(credits_hbox), credits_image, FALSE, FALSE, 0);
 
-    credits_label = gtk_label_new_with_mnemonic(_("Close"));
-    gtk_widget_show(credits_label);
-    gtk_box_pack_start(GTK_BOX(credits_hbox), credits_label, FALSE, FALSE, 0);
-    gtk_label_set_justify(GTK_LABEL(credits_label), GTK_JUSTIFY_LEFT);
+    gtk_widget_show(close_credits_button);
 
+    gtk_box_pack_start(GTK_BOX(credits_hbox), close_credits_button, FALSE, FALSE, 0);
+    
     g_signal_connect_swapped((gpointer) close_credits_button, "clicked",
         G_CALLBACK(gtk_widget_destroy), G_OBJECT(credits_window));
 

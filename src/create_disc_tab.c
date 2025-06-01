@@ -44,7 +44,14 @@ void create_disc_tab(struct w *widgets)
     //tooltips = gtk_tooltip_new();
 
     /* Create the disc treeview in a scrolled window */
-    disc_treeview_hbox = gtk_hbox_new(TRUE, 0);
+    disc_treeview_hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
+    gtk_box_set_homogeneous(GTK_BOX(disc_treeview_hbox),TRUE);
+
+	gtk_widget_set_margin_start(widgets->notebook_vbox7, 5);
+	gtk_widget_set_margin_end(widgets->notebook_vbox7, 5);
+	gtk_widget_set_margin_top(widgets->notebook_vbox7, 5);
+	gtk_widget_set_margin_bottom(widgets->notebook_vbox7, 5);
+    
     gtk_box_pack_start(GTK_BOX(widgets->notebook_vbox7), disc_treeview_hbox, EXPAND_DISC_SECTION, TRUE, 0);
 
     disc_scrolled_window = gtk_scrolled_window_new(NULL, NULL);
@@ -60,7 +67,7 @@ void create_disc_tab(struct w *widgets)
                                GTK_TREE_MODEL(widgets->disc_store));
 
     gtk_container_add(GTK_CONTAINER(disc_scrolled_window), widgets->disc_treeview);
-    gtk_tree_view_set_rules_hint(GTK_TREE_VIEW(widgets->disc_treeview), TRUE);
+    //gtk_tree_view_set_rules_hint(GTK_TREE_VIEW(widgets->disc_treeview), TRUE);
 
     /* Set the column labels in the treeview */
     disc_cell_renderer = gtk_cell_renderer_text_new();
@@ -96,11 +103,16 @@ void create_disc_tab(struct w *widgets)
         GTK_TREE_VIEW_COLUMN(device_col));
 
     /* The update disc button */
-    GtkWidget *disc_button_box = gtk_hbutton_box_new();
+    GtkWidget *disc_button_box = gtk_button_box_new(GTK_ORIENTATION_HORIZONTAL);
     gtk_box_pack_start(GTK_BOX(widgets->notebook_vbox7), disc_button_box, FALSE, FALSE, 0);
     gtk_button_box_set_layout(GTK_BUTTON_BOX(disc_button_box), GTK_BUTTONBOX_SPREAD);
+    
+    GtkWidget *update_disc_button = gtk_button_new_with_mnemonic("_Refresh");
+	GtkWidget *update_disc_icon = gtk_image_new_from_icon_name("gtk-refresh", GTK_ICON_SIZE_BUTTON);
+	gtk_button_set_image(GTK_BUTTON(update_disc_button), update_disc_icon);
+	gtk_button_set_always_show_image(GTK_BUTTON(update_disc_button), TRUE);
 
-    GtkWidget *update_disc_button = gtk_button_new_from_stock(GTK_STOCK_REFRESH);
+    
     gtk_box_pack_start(GTK_BOX(disc_button_box), update_disc_button, FALSE, FALSE, 0);
     g_signal_connect_swapped(G_OBJECT(update_disc_button), "clicked",
         G_CALLBACK(populate_discs), widgets);

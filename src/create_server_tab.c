@@ -47,6 +47,11 @@ void create_server_tab(struct w *widgets)
     settings_treeview_hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
     gtk_box_set_homogeneous(GTK_BOX(settings_treeview_hbox),TRUE);
     
+	gtk_widget_set_margin_start(widgets->notebook_vbox1, 5);
+	gtk_widget_set_margin_end(widgets->notebook_vbox1, 5);
+	gtk_widget_set_margin_top(widgets->notebook_vbox1, 5);
+	gtk_widget_set_margin_bottom(widgets->notebook_vbox1, 5);    
+    
     gtk_box_pack_start(GTK_BOX(widgets->notebook_vbox1), settings_treeview_hbox,
         EXPAND_SERVER_SETTINGS_SECTION, TRUE, 0);
 

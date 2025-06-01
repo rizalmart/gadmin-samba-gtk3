@@ -47,6 +47,11 @@ void create_security_tab(struct w *widgets)
     //security_treeview_hbox = gtk_hbox_new(TRUE, 0);
     security_treeview_hbox=gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
     gtk_box_set_homogeneous(GTK_BOX(security_treeview_hbox),TRUE);
+
+	gtk_widget_set_margin_start(widgets->notebook_vbox8, 5);
+	gtk_widget_set_margin_end(widgets->notebook_vbox8, 5);
+	gtk_widget_set_margin_top(widgets->notebook_vbox8, 5);
+	gtk_widget_set_margin_bottom(widgets->notebook_vbox8, 5);
     
     gtk_box_pack_start(GTK_BOX(widgets->notebook_vbox8), security_treeview_hbox,
         EXPAND_SECURITY_SECTION, TRUE, 0);
@@ -60,6 +65,9 @@ void create_security_tab(struct w *widgets)
         G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING);
 
     widgets->security_treeview = gtk_tree_view_new();
+    
+    gtk_widget_set_margin_bottom(widgets->security_treeview, 5);
+    
     gtk_tree_view_set_model(GTK_TREE_VIEW(widgets->security_treeview),
         GTK_TREE_MODEL(widgets->security_store));
 

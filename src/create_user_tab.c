@@ -49,6 +49,11 @@ void create_user_tab(struct w *widgets)
     user_treeview_hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
     gtk_box_set_homogeneous(GTK_BOX(user_treeview_hbox),TRUE);
     
+	gtk_widget_set_margin_start(widgets->notebook_vbox2, 5);
+	gtk_widget_set_margin_end(widgets->notebook_vbox2, 5);
+	gtk_widget_set_margin_top(widgets->notebook_vbox2, 5);
+	gtk_widget_set_margin_bottom(widgets->notebook_vbox2, 5);    
+    
     gtk_box_pack_start(GTK_BOX(widgets->notebook_vbox2), user_treeview_hbox, EXPAND_USER_SECTION,
         TRUE, 0);
 
@@ -65,6 +70,8 @@ void create_user_tab(struct w *widgets)
     widgets->user_treeview = gtk_tree_view_new();
     gtk_tree_view_set_model(GTK_TREE_VIEW(widgets->user_treeview),
         GTK_TREE_MODEL(widgets->user_store));
+
+	gtk_widget_set_margin_bottom(widgets->user_treeview, 10);
 
     gtk_container_add(GTK_CONTAINER(user_scrolled_window), widgets->user_treeview);
     //gtk_tree_view_set_rules_hint(GTK_TREE_VIEW(widgets->user_treeview), TRUE);

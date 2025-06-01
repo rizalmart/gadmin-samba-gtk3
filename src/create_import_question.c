@@ -162,7 +162,7 @@ void create_import_question(struct w *widgets)
     g_signal_connect(GTK_WINDOW(widgets->import_question_window), "delete_event",
         G_CALLBACK(gtk_widget_destroy), NULL);
 
-    question_vbox = gtk_vbox_new(FALSE, 0);
+    question_vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
     gtk_container_add(GTK_CONTAINER(widgets->import_question_window), question_vbox);
 
     //tooltips = gtk_tooltip_new();
@@ -230,13 +230,21 @@ void create_import_question(struct w *widgets)
         make_checkbutton_with_label(GTK_TABLE(table3), _("Administrators:"), 0, 1, a, b);
 
     /* Buttons, "Abort", "Next" */
-    GtkWidget *hbutton_box = gtk_hbutton_box_new();
+    GtkWidget *hbutton_box = gtk_button_box_new(GTK_ORIENTATION_HORIZONTAL);
     gtk_button_box_set_layout(GTK_BUTTON_BOX(hbutton_box), GTK_BUTTONBOX_SPREAD);
 
     GtkWidget *cancel_button, *forward_button;
-
-    cancel_button = gtk_button_new_from_stock(GTK_STOCK_QUIT);
-    forward_button = gtk_button_new_from_stock(GTK_STOCK_GO_FORWARD);
+    
+	cancel_button = gtk_button_new_with_mnemonic("_Cancel");
+	GtkWidget *cancel_icon = gtk_image_new_from_icon_name("gtk-cancel", GTK_ICON_SIZE_BUTTON);
+	gtk_button_set_image(GTK_BUTTON(cancel_button), cancel_icon);
+	gtk_button_set_always_show_image(GTK_BUTTON(cancel_button), TRUE);
+  
+	forward_button = gtk_button_new_with_mnemonic("_Forward");
+	GtkWidget *forward_icon = gtk_image_new_from_icon_name("gtk-go-forward", GTK_ICON_SIZE_BUTTON);
+	gtk_button_set_image(GTK_BUTTON(forward_button), forward_icon);
+	gtk_button_set_always_show_image(GTK_BUTTON(forward_button), TRUE);    
+    
 
     gtk_box_pack_start(GTK_BOX(hbutton_box), cancel_button, FALSE, FALSE, 0);
     gtk_box_pack_start(GTK_BOX(hbutton_box), forward_button, FALSE, FALSE, 0);

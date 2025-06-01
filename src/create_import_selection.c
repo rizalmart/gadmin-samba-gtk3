@@ -91,7 +91,7 @@ void create_import_selection(struct w *widgets)
     GtkWidget *hbox3;
     GtkWidget *image2;
     GtkWidget *label3;
-    GtkTooltip *tooltips;
+    //GtkTooltip *tooltips;
 
     /* Destroy the first question window */
     gtk_widget_destroy(widgets->import_question_window);
@@ -120,7 +120,7 @@ void create_import_selection(struct w *widgets)
     /* Set a variable window title */
     gtk_window_set_title(GTK_WINDOW(widgets->import_window), utf8);
     gtk_window_set_position(GTK_WINDOW(widgets->import_window), GTK_WIN_POS_CENTER);
-    import_vbox = gtk_vbox_new(FALSE, 0);
+    import_vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
     gtk_container_add(GTK_CONTAINER(widgets->import_window), import_vbox);
 
     import_label0 = gtk_label_new(utf8);
@@ -128,7 +128,11 @@ void create_import_selection(struct w *widgets)
 
     gtk_box_pack_start(GTK_BOX(import_vbox), import_label0, FALSE, FALSE, 0);
     gtk_label_set_justify(GTK_LABEL(import_label0), GTK_JUSTIFY_LEFT);
-    gtk_misc_set_padding(GTK_MISC(import_label0), 0, 5);
+    
+	gtk_widget_set_margin_start(import_label0, 5);
+	gtk_widget_set_margin_end(import_label0, 5);
+	gtk_widget_set_margin_top(import_label0, 0);
+	gtk_widget_set_margin_bottom(import_label0, 5);
 
     import_scrolledwindow = gtk_scrolled_window_new(NULL, NULL);
     gtk_box_pack_start(GTK_BOX(import_vbox), import_scrolledwindow, TRUE, TRUE, 0);
@@ -136,8 +140,9 @@ void create_import_selection(struct w *widgets)
         GTK_POLICY_AUTOMATIC);
 
     widgets->import_treeview = gtk_tree_view_new();
+    gtk_widget_set_margin_bottom(widgets->import_treeview, 5);
     gtk_container_add(GTK_CONTAINER(import_scrolledwindow), widgets->import_treeview);
-    gtk_tree_view_set_rules_hint(GTK_TREE_VIEW(widgets->import_treeview), TRUE);
+    //gtk_tree_view_set_rules_hint(GTK_TREE_VIEW(widgets->import_treeview), TRUE);
 
     widgets->import_store = gtk_list_store_new(2, G_TYPE_STRING, G_TYPE_STRING);
     gtk_tree_view_set_model(GTK_TREE_VIEW(widgets->import_treeview),
@@ -160,45 +165,20 @@ void create_import_selection(struct w *widgets)
     gtk_tree_selection_set_mode(GTK_TREE_SELECTION(selection), GTK_SELECTION_MULTIPLE);
 
 
-    import_hbuttonbox = gtk_hbutton_box_new();
+    import_hbuttonbox = gtk_button_box_new(GTK_ORIENTATION_HORIZONTAL);
     gtk_box_pack_start(GTK_BOX(import_vbox), import_hbuttonbox, FALSE, FALSE, 0);
     gtk_button_box_set_layout(GTK_BUTTON_BOX(import_hbuttonbox), GTK_BUTTONBOX_SPREAD);
 
     /* Import cancel button */
-    import_cancel_button = gtk_button_new();
-    gtk_container_add(GTK_CONTAINER(import_hbuttonbox), import_cancel_button);
-    //GTK_WIDGET_SET_FLAGS(import_cancel_button, GTK_CAN_DEFAULT);
+    import_cancel_button = gtk_button_new_with_mnemonic("_Cancel");
+	GtkWidget *import_cancel_icon = gtk_image_new_from_icon_name("gtk-cancel", GTK_ICON_SIZE_BUTTON);
+	gtk_button_set_image(GTK_BUTTON(import_cancel_button), import_cancel_icon);
+	gtk_button_set_always_show_image(GTK_BUTTON(import_cancel_button), TRUE);    
     gtk_widget_set_can_default(import_cancel_button, TRUE);
 
-    alignment2 = gtk_alignment_new(0.5, 0.5, 0, 0);
-    gtk_container_add(GTK_CONTAINER(import_cancel_button), alignment2);
-
-    hbox3 = gtk_hbox_new(FALSE, 2);
-    gtk_container_add(GTK_CONTAINER(alignment2), hbox3);
-
-    image2 = gtk_image_new_from_stock("gtk-cancel", GTK_ICON_SIZE_BUTTON);
-    gtk_box_pack_start(GTK_BOX(hbox3), image2, FALSE, FALSE, 0);
-
-    label3 = gtk_label_new_with_mnemonic(_("Cancel"));
-    gtk_box_pack_start(GTK_BOX(hbox3), label3, FALSE, FALSE, 0);
-    gtk_label_set_justify(GTK_LABEL(label3), GTK_JUSTIFY_LEFT);
-
+    gtk_container_add(GTK_CONTAINER(import_hbuttonbox), import_cancel_button);
 
     /* The import button */
-    import_button = gtk_button_new();
-    gtk_container_add(GTK_CONTAINER(import_hbuttonbox), import_button);
-    //GTK_WIDGET_SET_FLAGS(import_button, GTK_CAN_DEFAULT);
-    gtk_widget_set_can_default(import_button, TRUE);
-
-    alignment1 = gtk_alignment_new(0.5, 0.5, 0, 0);
-    gtk_container_add(GTK_CONTAINER(import_button), alignment1);
-
-    hbox2 = gtk_hbox_new(FALSE, 2);
-    gtk_container_add(GTK_CONTAINER(alignment1), hbox2);
-
-    image1 = gtk_image_new_from_stock("gtk-yes", GTK_ICON_SIZE_BUTTON);
-    gtk_box_pack_start(GTK_BOX(hbox2), image1, FALSE, FALSE, 0);
-
 
     /* Variable import button text */
     if( global_import_users )
@@ -207,12 +187,17 @@ void create_import_selection(struct w *widgets)
         import_msg = g_strdup_printf("Import groups");
 
     utf8 = g_locale_to_utf8(import_msg, strlen(import_msg), NULL, NULL, NULL);
+
+    import_button = gtk_button_new_with_mnemonic(import_msg);
+	GtkWidget *import_icon = gtk_image_new_from_icon_name("gtk-yes", GTK_ICON_SIZE_BUTTON);
+	gtk_button_set_image(GTK_BUTTON(import_button), import_icon);
+	gtk_button_set_always_show_image(GTK_BUTTON(import_button), TRUE);    
+    gtk_widget_set_can_default(import_button, TRUE);
+
+    gtk_container_add(GTK_CONTAINER(import_hbuttonbox), import_button);
+
     g_free(import_msg);
 
-    label2 = gtk_label_new_with_mnemonic(utf8);
-
-    gtk_box_pack_start(GTK_BOX(hbox2), label2, FALSE, FALSE, 0);
-    gtk_label_set_justify(GTK_LABEL(label2), GTK_JUSTIFY_LEFT);
 
     /* Callback is located in import_functions.c */
     g_signal_connect((gpointer) import_button, "clicked",

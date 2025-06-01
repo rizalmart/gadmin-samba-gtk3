@@ -41,8 +41,16 @@ void create_conf_tab(struct w *widgets)
 
 
     /* Create the conf textview in a scrolled window */
-    conf_textview_hbox = gtk_hbox_new(TRUE, 0);
+    conf_textview_hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
+    
+    gtk_box_set_homogeneous(GTK_BOX(conf_textview_hbox),TRUE);
+    
     gtk_box_pack_start(GTK_BOX(widgets->notebook_vbox9), conf_textview_hbox, EXPAND_CONF_SECTION, TRUE, 0);
+
+	gtk_widget_set_margin_start(widgets->notebook_vbox9, 5);
+	gtk_widget_set_margin_end(widgets->notebook_vbox9, 5);
+	gtk_widget_set_margin_top(widgets->notebook_vbox9, 5);
+	gtk_widget_set_margin_bottom(widgets->notebook_vbox9, 5);
 
     conf_scrolled_window = gtk_scrolled_window_new(NULL, NULL);
     gtk_box_pack_start(GTK_BOX(conf_textview_hbox), conf_scrolled_window, TRUE, TRUE, 0);
@@ -50,14 +58,21 @@ void create_conf_tab(struct w *widgets)
         GTK_POLICY_AUTOMATIC, GTK_POLICY_ALWAYS);
 
     widgets->conf_textview = gtk_text_view_new();
+    gtk_widget_set_margin_bottom(widgets->conf_textview, 5);
+    
     gtk_container_add(GTK_CONTAINER(conf_scrolled_window), widgets->conf_textview);
 
     /* The save conf button */
-    GtkWidget *conf_button_box = gtk_hbutton_box_new();
+    GtkWidget *conf_button_box = gtk_button_box_new(GTK_ORIENTATION_HORIZONTAL);
+    
     gtk_box_pack_start(GTK_BOX(widgets->notebook_vbox9), conf_button_box, FALSE, FALSE, 0);
     gtk_button_box_set_layout(GTK_BUTTON_BOX(conf_button_box), GTK_BUTTONBOX_SPREAD);
 
-    GtkWidget *save_conf_button = gtk_button_new_from_stock(GTK_STOCK_SAVE);
+    GtkWidget *save_conf_button = gtk_button_new_with_mnemonic("_Save");
+	GtkWidget *save_conf_icon = gtk_image_new_from_icon_name("gtk-save", GTK_ICON_SIZE_BUTTON);
+	gtk_button_set_image(GTK_BUTTON(save_conf_button), save_conf_icon);
+	gtk_button_set_always_show_image(GTK_BUTTON(save_conf_button), TRUE);    
+    
     gtk_box_pack_start(GTK_BOX(conf_button_box), save_conf_button, FALSE, FALSE, 0);
     g_signal_connect_swapped(G_OBJECT(save_conf_button), "clicked",
         G_CALLBACK(save_conf_tab), widgets);

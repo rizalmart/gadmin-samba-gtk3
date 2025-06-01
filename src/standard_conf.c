@@ -461,7 +461,7 @@ void create_standard_conf_question(struct w *widgets)
         _("GADMIN-SAMBA Question"));
     gtk_window_set_position(GTK_WINDOW(widgets->default_conf_question_window), GTK_WIN_POS_CENTER);
 
-    vbox18 = gtk_vbox_new(FALSE, 0);
+    vbox18 = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
     gtk_container_add(GTK_CONTAINER(widgets->default_conf_question_window), vbox18);
 
     label182 = gtk_label_new("");
@@ -494,46 +494,26 @@ void create_standard_conf_question(struct w *widgets)
     g_free(text);
 
 
-    hbuttonbox11 = gtk_hbutton_box_new();
+    hbuttonbox11 = gtk_button_box_new(GTK_ORIENTATION_HORIZONTAL);
     gtk_box_pack_start(GTK_BOX(vbox18), hbuttonbox11, FALSE, FALSE, 0);
     gtk_widget_set_size_request(hbuttonbox11, -1, 40);
     gtk_button_box_set_layout(GTK_BUTTON_BOX(hbuttonbox11), GTK_BUTTONBOX_SPREAD);
 
-    yes_default_question_button = gtk_button_new();
-    gtk_container_add(GTK_CONTAINER(hbuttonbox11), yes_default_question_button);
-    //GTK_WIDGET_SET_FLAGS(yes_default_question_button, GTK_CAN_DEFAULT);
+    yes_default_question_button = gtk_button_new_with_mnemonic("_Yes");
+	GtkWidget *yes_default_question_icon = gtk_image_new_from_icon_name("gtk-yes", GTK_ICON_SIZE_BUTTON);
+	gtk_button_set_image(GTK_BUTTON(yes_default_question_button), yes_default_question_icon);
+	gtk_button_set_always_show_image(GTK_BUTTON(yes_default_question_button), TRUE);    
     gtk_widget_set_can_default(yes_default_question_button, TRUE);
 
-    alignment44 = gtk_alignment_new(0.5, 0.5, 0, 0);
-    gtk_container_add(GTK_CONTAINER(yes_default_question_button), alignment44);
+    gtk_container_add(GTK_CONTAINER(hbuttonbox11), yes_default_question_button);
 
-    hbox98 = gtk_hbox_new(FALSE, 2);
-    gtk_container_add(GTK_CONTAINER(alignment44), hbox98);
-
-    image44 = gtk_image_new_from_stock("gtk-yes", GTK_ICON_SIZE_BUTTON);
-    gtk_box_pack_start(GTK_BOX(hbox98), image44, FALSE, FALSE, 0);
-
-    label184 = gtk_label_new_with_mnemonic(_("Yes"));
-    gtk_box_pack_start(GTK_BOX(hbox98), label184, FALSE, FALSE, 0);
-    gtk_label_set_justify(GTK_LABEL(label184), GTK_JUSTIFY_LEFT);
-
-    no_default_question_button = gtk_button_new();
-    gtk_container_add(GTK_CONTAINER(hbuttonbox11), no_default_question_button);
-    //GTK_WIDGET_SET_FLAGS(no_default_question_button, GTK_CAN_DEFAULT);
+    no_default_question_button = gtk_button_new_with_mnemonic("_No");
+	GtkWidget *no_default_question_icon = gtk_image_new_from_icon_name("gtk-no", GTK_ICON_SIZE_BUTTON);
+	gtk_button_set_image(GTK_BUTTON(no_default_question_button), no_default_question_icon);
+	gtk_button_set_always_show_image(GTK_BUTTON(no_default_question_button), TRUE);    
     gtk_widget_set_can_default(no_default_question_button, TRUE);
 
-    alignment45 = gtk_alignment_new(0.5, 0.5, 0, 0);
-    gtk_container_add(GTK_CONTAINER(no_default_question_button), alignment45);
-
-    hbox99 = gtk_hbox_new(FALSE, 2);
-    gtk_container_add(GTK_CONTAINER(alignment45), hbox99);
-
-    image45 = gtk_image_new_from_stock("gtk-no", GTK_ICON_SIZE_BUTTON);
-    gtk_box_pack_start(GTK_BOX(hbox99), image45, FALSE, FALSE, 0);
-
-    label185 = gtk_label_new_with_mnemonic(_("No"));
-    gtk_box_pack_start(GTK_BOX(hbox99), label185, FALSE, FALSE, 0);
-    gtk_label_set_justify(GTK_LABEL(label185), GTK_JUSTIFY_LEFT);
+    gtk_container_add(GTK_CONTAINER(hbuttonbox11), no_default_question_button);
 
     if(utf8 != NULL)
         g_free(utf8);
