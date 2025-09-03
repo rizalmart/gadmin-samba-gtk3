@@ -40,6 +40,7 @@ extern int global_start_winbindd;
 void activate_button_clicked(struct w *widgets)
 {
     gchar *start, *test;
+    int retval;
 
     if(activated)
         return;
@@ -63,9 +64,17 @@ void activate_button_clicked(struct w *widgets)
     else{
 		start = g_strdup_printf("%s -D -s %s", SMBD_BINARY, SAMBA_CONF);	
 	}	
+	
+	retval=run_command(start);
+	
+	//debian used smbd instead of smb
+	if( ! retval && strstr(start, "systemctl")){
+	  	start = g_strdup_printf("systemctl start smbd");
+	  	retval=run_command(start);
+	}
+	
 
-    
-    if( ! run_command(start) )
+    if( ! retval )
     {
         printf("Starting samba (smbd) failed using this command: %s\n", start);
         
@@ -86,6 +95,7 @@ void activate_button_clicked(struct w *widgets)
 
         return;
     }
+    
     g_free(start);
 
 
@@ -96,8 +106,17 @@ void activate_button_clicked(struct w *widgets)
 	else{
 	  start = g_strdup_printf("%s -D -s %s", NMBD_BINARY, SAMBA_CONF);	
 	}	
+
+	retval=run_command(start);
+	
+	//debian used nmbd instead of nmb
+	if( ! retval && strstr(start, "systemctl")){
+	  	start = g_strdup_printf("systemctl start nmbd");
+	  	retval=run_command(start);
+	}
     
-    if( ! run_command(start) )
+    
+    if( ! retval )
     {
         printf("Starting samba (nmbd) failed using this command: %s\n", start);
         
@@ -111,9 +130,13 @@ void activate_button_clicked(struct w *widgets)
         run_command_show_err(test);
         g_free(test);
         g_free(start);
+        
+        
         return;
     }
+    
     g_free(start);
+       
 
     /* We want it started by init at boot */
     init_start(widgets);

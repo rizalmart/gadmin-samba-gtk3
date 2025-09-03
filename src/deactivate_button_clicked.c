@@ -39,6 +39,7 @@ extern int global_winbindd_activated;
 void deactivate_button_clicked(struct w *widgets)
 {
     gchar *stop, *info;
+    int retval;
 
     /* We dont want it started by init at boot */
     init_stop(widgets);
@@ -75,13 +76,23 @@ void deactivate_button_clicked(struct w *widgets)
     else{
 		stop = g_strdup_printf("killall -9 %s", SMBD_BINARY);
 	}
+
+	retval=run_command(stop);
     
-    if( ! run_command(stop) )
+    //debian used smbd instead of smb
+	if( ! retval && strstr(stop, "systemctl")){
+	  	stop = g_strdup_printf("systemctl stop smbd");
+	  	retval=run_command(stop);
+	}    
+    
+    
+    if( ! retval )
     {
         info = g_strdup_printf("Stopping samba (smbd) failed.\n");
         show_info(info);
         g_free(info);
     }
+    
     g_free(stop);
 
     if( global_nmbd_activated )
@@ -94,7 +105,15 @@ void deactivate_button_clicked(struct w *widgets)
 			stop = g_strdup_printf("killall -9 %s", NMBD_BINARY);
 		}
         
-        if( ! run_command(stop) )
+		retval=run_command(stop);
+		
+		//debian used nmbd instead of nmb
+		if( ! retval && strstr(stop, "systemctl") ){
+			stop = g_strdup_printf("systemctl stop nmbd");
+			retval=run_command(stop);
+		}        
+        
+        if( ! retval )
         {
             info = g_strdup_printf("Stopping samba (nmbd) failed.\n");
             show_info(info);
