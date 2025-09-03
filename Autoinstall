@@ -32,10 +32,19 @@
 #make &&
 #make install
 
-### systemd install ###
+### systemd redhat/fedora/arch install ###
  ./configure --prefix=/usr --sysconfdir=/etc \
  --localstatedir=/var --sbindir=/usr/sbin \
  SYSINIT_START_CMD="systemctl enable smb" \
  SYSINIT_STOP_CMD="systemctl disable smb" &&
  make &&
  make install
+
+### systemd debian/ubuntu install ###
+# ./configure --prefix=/usr --sysconfdir=/etc \
+# --localstatedir=/var --sbindir=/usr/sbin \
+# SYSINIT_START_CMD="systemctl enable smbd" \
+# SYSINIT_STOP_CMD="systemctl disable smbd" &&
+# make &&
+# make install
+
