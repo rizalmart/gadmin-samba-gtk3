@@ -32,7 +32,7 @@
 
 extern int MAX_READ_POPEN;
 extern int global_start_winbindd;
-
+extern int global_start_nmbd;
 
 
 void run_command_show_err(gchar * command)
@@ -86,20 +86,24 @@ int run_command(gchar * command)
 void init_start(struct w *widgets)
 {
     gchar *cmd;
+    
+    cmd=g_strdup_printf("%s",SYSINIT_START_CMD);
 
-    /* RH/Fedora has a separate winbindd service */
+    /* start nmbd service */
+    if( global_start_nmbd && strstr(SYSINIT_START_CMD, "chkconfig") ){
+        cmd = g_strdup_printf("%s && chkconfig nmb on", cmd);
+    }
+    else if( global_start_nmbd && strstr(SYSINIT_START_CMD, "systemctl") ){
+        cmd = g_strdup_printf("%s && systemctl enable nmb nmbd", cmd);
+    }
+
+    /* start winbindd service */
     if( global_start_winbindd && strstr(SYSINIT_START_CMD, "chkconfig") ){
-        cmd = g_strdup_printf("%s && chkconfig winbind on", SYSINIT_START_CMD);
+        cmd = g_strdup_printf("%s && chkconfig winbind on", cmd);
     }
     else if( global_start_winbindd && strstr(SYSINIT_START_CMD, "systemctl") ){
-        cmd = g_strdup_printf("%s && systemctl enable nmb && systemctl enable winbind", SYSINIT_START_CMD);
+        cmd = g_strdup_printf("%s && systemctl enable winbind", cmd);
     }
-    else if( strstr(SYSINIT_START_CMD, "systemctl") ){
-        cmd = g_strdup_printf("%s && systemctl enable nmb", SYSINIT_START_CMD);
-    }
-    else{
-        cmd = g_strdup_printf("%s", SYSINIT_START_CMD);
-	}
 	
     if( strlen(cmd) > 4 )
     {
@@ -116,21 +120,25 @@ void init_start(struct w *widgets)
 void init_stop(struct w *widgets)
 {
     gchar *cmd;
+    
+    cmd=g_strdup_printf("%s",SYSINIT_STOP_CMD);
 
-    /* RH/Fedora has a separate winbindd service */
+    /* stop nmbd service */
+    if( global_start_nmbd && strstr(SYSINIT_STOP_CMD, "chkconfig") ){
+        cmd = g_strdup_printf("%s && chkconfig nmb off", cmd);
+    }
+    else if( global_start_nmbd && strstr(SYSINIT_STOP_CMD, "systemctl") ){
+        cmd = g_strdup_printf("%s && systemctl disable nmb nmbd", cmd);
+    }
+
+    /* stop winbindd service */
     if( global_start_winbindd && strstr(SYSINIT_STOP_CMD, "chkconfig") ){
-        cmd = g_strdup_printf("%s && chkconfig winbind off", SYSINIT_STOP_CMD);
+        cmd = g_strdup_printf("%s && chkconfig winbind off", cmd);
     }
     else if( global_start_winbindd && strstr(SYSINIT_STOP_CMD, "systemctl") ){
-        cmd = g_strdup_printf("%s && systemctl disable nmb && systemctl disable winbind", SYSINIT_STOP_CMD);
+        cmd = g_strdup_printf("%s && systemctl disable winbind", cmd);
     }
-    else if( global_start_winbindd && strstr(SYSINIT_STOP_CMD, "systemctl") ){
-        cmd = g_strdup_printf("%s && systemctl disable nmb", SYSINIT_STOP_CMD);
-    }    
-    else
-    {
-        cmd = g_strdup_printf("%s", SYSINIT_STOP_CMD);
-	}
+
 	
     if( strlen(cmd) > 4 )
     {

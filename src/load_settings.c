@@ -31,6 +31,7 @@
 #include "load_settings.h"
 
 extern int global_start_winbindd;
+extern int global_start_nmbd;
 //extern char RESOLV_PATH_BUF[1024];
 
 
@@ -67,6 +68,16 @@ void load_settings(struct w *widgets)
                 else
                     global_start_winbindd = 0;
             }
+ 
+            if( strstr(line, "start_nmbd:") )
+            {
+                if( strstr(line, "yes") )
+                    global_start_nmbd = 1;
+                else
+                    global_start_nmbd = 0;
+            }
+            
+            
         }
     fclose(fp);
     free(line);

@@ -59,7 +59,10 @@ int global_winbindd_activated = 0;
 int global_share_access_treeview_num = 0;
 
 /* Wether or not to start winbindd */
-int global_start_winbindd = 1;
+int global_start_winbindd = 0;
+
+/* Wether or not to start nmbd */
+int global_start_nmbd = 0;
 
 int info_window_exit_main = 0;
 

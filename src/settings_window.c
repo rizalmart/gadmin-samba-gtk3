@@ -39,7 +39,7 @@
 #define MAX_CONF_LINE 1000
 
 extern int global_start_winbindd;
-
+extern int global_start_nmbd;
 
 
 void show_settings_window(struct w *widgets)
@@ -71,7 +71,7 @@ void show_settings_window(struct w *widgets)
     frame = gtk_frame_new(_("Settings:"));
 
     /* A table with 6 settings and 2 columns */
-    table = gtk_table_new(6, 2, FALSE);
+    table = gtk_table_new(7, 2, FALSE);
 
     gtk_box_pack_start(GTK_BOX(settings_vbox), frame, TRUE, TRUE, 1);
     gtk_container_add(GTK_CONTAINER(frame), table);
@@ -83,14 +83,23 @@ void show_settings_window(struct w *widgets)
     widgets->settings_checkbutton[0] =
         make_checkbutton_with_label(GTK_TABLE(table), _(" New samba configuration: "), 0, 1, 1, 2);
 
+    /* Start netbios checkbutton */
+    widgets->settings_checkbutton[2] =
+        make_checkbutton_with_label(GTK_TABLE(table), _(" Start netbios server: "), 0, 1, 2, 3);
+
     /* Start winbindd checkbutton */
     widgets->settings_checkbutton[1] =
-        make_checkbutton_with_label(GTK_TABLE(table), _(" Start winbind server: "), 0, 1, 2, 3);
+        make_checkbutton_with_label(GTK_TABLE(table), _(" Start winbind server: "), 0, 1, 3, 4);
 
     if( global_start_winbindd )
         gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(widgets->settings_checkbutton[1]), TRUE);
     else
         gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(widgets->settings_checkbutton[1]), FALSE);
+
+    if( global_start_nmbd )
+        gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(widgets->settings_checkbutton[2]), TRUE);
+    else
+        gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(widgets->settings_checkbutton[2]), FALSE);
 
     /* Path to smb.conf */
     widgets->settings_entry[0] =

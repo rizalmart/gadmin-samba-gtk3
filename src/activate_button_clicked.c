@@ -34,7 +34,7 @@
 
 extern int activated;
 extern int global_start_winbindd;
-
+extern int global_start_nmbd;
 
 
 void activate_button_clicked(struct w *widgets)
@@ -100,42 +100,47 @@ void activate_button_clicked(struct w *widgets)
 
 
     /* Start NMBD */
-    if(strstr(SYSINIT_START_CMD, "systemctl")){			
-	  start = g_strdup_printf("systemctl start nmb");
-	}
-	else{
-	  start = g_strdup_printf("%s -D -s %s", NMBD_BINARY, SAMBA_CONF);	
-	}	
-
-	retval=run_command(start);
-	
-	//debian used nmbd instead of nmb
-	if( ! retval && strstr(start, "systemctl")){
-	  	start = g_strdup_printf("systemctl start nmbd");
-	  	retval=run_command(start);
-	}
-    
-    
-    if( ! retval )
+    if( global_start_nmbd )
     {
-        printf("Starting samba (nmbd) failed using this command: %s\n", start);
-        
-        if(strstr(SYSINIT_START_CMD, "systemctl")){	
-           test = g_strdup_printf("%s 2>&1", start);			
+
+		if(strstr(SYSINIT_START_CMD, "systemctl")){			
+		  start = g_strdup_printf("systemctl start nmb");
 		}
-		else{	
-           test = g_strdup_printf("%s -D -s %s 2>&1", NMBD_BINARY, SAMBA_CONF);
-	    }
-	
-        run_command_show_err(test);
-        g_free(test);
-        g_free(start);
-        
-        
-        return;
-    }
+		else{
+		  start = g_strdup_printf("%s -D -s %s", NMBD_BINARY, SAMBA_CONF);	
+		}	
+
+		retval=run_command(start);
+		
+		//debian used nmbd instead of nmb
+		if( ! retval && strstr(start, "systemctl")){
+			start = g_strdup_printf("systemctl start nmbd");
+			retval=run_command(start);
+		}
+		
+		
+		if( ! retval )
+		{
+			printf("Starting samba (nmbd) failed using this command: %s\n", start);
+			
+			if(strstr(SYSINIT_START_CMD, "systemctl")){	
+			   test = g_strdup_printf("%s 2>&1", start);			
+			}
+			else{	
+			   test = g_strdup_printf("%s -D -s %s 2>&1", NMBD_BINARY, SAMBA_CONF);
+			}
+		
+			run_command_show_err(test);
+			g_free(test);
+			g_free(start);
+			
+			
+			return;
+		}
+		
+		g_free(start);
     
-    g_free(start);
+	}
        
 
     /* We want it started by init at boot */

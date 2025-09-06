@@ -70,6 +70,9 @@ void save_settings(struct w *widgets)
             if( strstr(line, "start_winbindd:") )
                 continue;
 
+            if( strstr(line, "start_nmbd:") )
+                continue;
+
             if( strstr(line, "smb_conf:") )
                 continue;
 
@@ -104,6 +107,13 @@ void save_settings(struct w *widgets)
         setting = g_strdup_printf("\nstart_winbindd: yes\n");
     else
         setting = g_strdup_printf("\nstart_winbindd: no\n");
+    fputs(setting, fp);
+    g_free(setting);
+
+    if( gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(widgets->settings_checkbutton[2])) )
+        setting = g_strdup_printf("\nstart_nmbd: yes\n");
+    else
+        setting = g_strdup_printf("\nstart_nmbd: no\n");
     fputs(setting, fp);
     g_free(setting);
 
